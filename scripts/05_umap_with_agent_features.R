@@ -157,20 +157,52 @@ agent_full <- cbind(pc_mat, subcel_mat, tissue_mat, ct_mat, pw_mat, sev_mat, cr_
 cat("Agent feature matrix:", nrow(agent_full), "x", ncol(agent_full), "\n")
 
 # =============================================================================
-# 3. MERGE WITH DATABASE MATRIX
+# 3. MERGE WITH DATABASE MATRIX — UNION OF GENES (pad zeros for missing)
 # =============================================================================
-cat("\nMerging matrices...\n")
+cat("\nMerging matrices (union of genes)...\n")
 
-common_genes <- intersect(rownames(mat_ann), rownames(agent_full))
-cat("Common genes:", length(common_genes), "\n")
+# Union of all genes
+all_gene_set <- union(rownames(mat_ann), rownames(agent_full))
+cat("Union of genes:", length(all_gene_set), "\n")
+cat("  In both db + agent:", length(intersect(rownames(mat_ann), rownames(agent_full))), "\n")
+cat("  Only in db (will pad agent cols with 0):", length(setdiff(rownames(mat_ann), rownames(agent_full))), "\n")
+cat("  Only in agent (will pad db cols with 0):", length(setdiff(rownames(agent_full), rownames(mat_ann))), "\n")
 
-mat_combined <- cbind(mat_ann[common_genes, ], agent_full[common_genes, ])
+# Pad mat_ann with zero rows for genes not present
+missing_from_db <- setdiff(all_gene_set, rownames(mat_ann))
+if (length(missing_from_db) > 0) {
+  pad_db <- matrix(0, nrow = length(missing_from_db), ncol = ncol(mat_ann))
+  rownames(pad_db) <- missing_from_db
+  colnames(pad_db) <- colnames(mat_ann)
+  mat_ann_full <- rbind(mat_ann, pad_db)
+} else {
+  mat_ann_full <- mat_ann
+}
+
+# Pad agent_full with zero rows for genes not present
+missing_from_agent <- setdiff(all_gene_set, rownames(agent_full))
+if (length(missing_from_agent) > 0) {
+  pad_agent <- matrix(0, nrow = length(missing_from_agent), ncol = ncol(agent_full))
+  rownames(pad_agent) <- missing_from_agent
+  colnames(pad_agent) <- colnames(agent_full)
+  agent_full_padded <- rbind(agent_full, pad_agent)
+} else {
+  agent_full_padded <- agent_full
+}
+
+# Align rows and combine
+mat_combined <- cbind(mat_ann_full[all_gene_set, ], agent_full_padded[all_gene_set, ])
 cat("Combined matrix:", nrow(mat_combined), "x", ncol(mat_combined), "\n")
 
 # Remove zero-variance columns
 col_var <- apply(mat_combined, 2, var)
 mat_combined <- mat_combined[, col_var > 0]
 cat("After zero-var removal:", ncol(mat_combined), "\n")
+
+# Genes with near-zero total features may still be placed poorly
+n_features_per_gene <- rowSums(mat_combined)
+cat("Genes with 0 total features:", sum(n_features_per_gene == 0), "\n")
+cat("Median features per gene:", median(n_features_per_gene), "\n")
 
 # =============================================================================
 # 4. PCA + UMAP
@@ -198,15 +230,15 @@ sil <- round(mean(silhouette(km$cluster, dist(umap_res))[,3]), 3)
 cat("Silhouette:", sil, "\n")
 
 umap_df <- data.frame(
-  gene=common_genes, UMAP1=umap_res[,1], UMAP2=umap_res[,2],
+  gene=rownames(mat_combined), UMAP1=umap_res[,1], UMAP2=umap_res[,2],
   cluster=km$cluster, stringsAsFactors=FALSE
 ) %>%
   dplyr::left_join(diff_genes, by=c("gene"="mgi_symbol")) %>%
   dplyr::left_join(agent %>% dplyr::select(gene, protein_class, one_line_summary), by="gene")
 
-# Add missing genes at periphery
+# Add any truly unannotated genes (0 features in combined matrix) at periphery
 all_syms <- diff_genes$mgi_symbol
-missing <- setdiff(all_syms, common_genes)
+missing <- setdiff(all_syms, rownames(mat_combined))
 if (length(missing) > 0) {
   xr <- range(umap_df$UMAP1); yr <- range(umap_df$UMAP2)
   set.seed(42)
