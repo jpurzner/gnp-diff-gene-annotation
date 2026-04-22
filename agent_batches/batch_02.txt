@@ -1,0 +1,518 @@
+# Batch 2 — 39 genes
+# Clusters: 0
+
+========== GENE: Fam63b ==========
+Description: family with sequence similarity 63, member B [Source:MGI Symbol;Acc:MGI:2443086]
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (13 papers, 3 tier1) ---
+Breast cancer, the most prevalent cancer in females, is a heterogeneous disease with various molecular subtypes, which presents challenges in diagnosis and treatment. Ubiquitination is one of the most critical post-translational protein modifications, that plays regulatory roles in numerous cellular processes including cell cycle progression, DNA replication & repair, apoptosis, transcription r...
+---
+Epigenetic studies present unique opportunities to advance schizophrenia research because they can potentially account for many of its clinical features and suggest novel strategies to improve disease management. To identify schizophrenia DNA methylation biomarkers in blood. The sample consisted of 759 schizophrenia cases and 738 controls (N<U+2009>=<U+2009>1497) collected in Sweden. We used methyl-CpG-bindi...
+---
+Aberrant DNA methylation can lead to the onset of pathological phenotypes and is increasingly being implicated in age-related metabolic diseases. In our preceding study we show that the heterozygous ablation of Pcyt2, the rate limiting enzyme in phosphatidylethanolamine (PE) synthesis, causes an age-dependent development of non-alcoholic steatohepatitis (NASH), and that treatment with the Pcyt2...
+---
+Cognitive resilience refers to maintaining cognitive function despite Alzheimer's disease (AD) pathophysiology. We analyzed amyloid-positive individuals across clinical stages of AD in two cohorts: the Amsterdam Dementia Cohort (ADC, N<U+00A0>=<U+00A0>1036) and Alzheimer's Disease Neuroimaging Initiative (ADNI, N<U+00A0>=<U+00A0>685). Cognitive resilience was conceptualized from a canonical correlation analysis of magneti...
+---
+Schizophrenia (SZ) and bipolar disorder (BD) have been known to share genetic and environmental risk factors, and complex gene-environmental interactions may contribute to their pathophysiology. In contrast to high genetic overlap between SZ and BD, as revealed by genome-wide association studies, the extent of epigenetic overlap remains largely unknown. In the present study, we explored whether...
+---
+Narcolepsy type 1 (NT1) is a chronic sleep disorder caused by a specific loss of hypocretin-producing neurons. The incidence of NT1 increased in Sweden, Finland and Norway following Pandemrix<U+00AE>-vaccination, initiated to prevent the 2009 influenza pandemic. The pathogenesis of NT1 is poorly understood, and causal links to vaccination are yet to be clarified. The strong association with Human leuk...
+---
+No study has, until now, examined the deep eutectic solvent (DES) extraction of Tremella fuciformis polysaccharide (TFP). In this study, a DES composed of choline chloride and citric acid (1:1 molar ratio) was prepared for TFP extraction. Artificial neural network optimization based on genetic and sparrow search algorithms was applied, yielding the polysaccharide TFP-1 with an average molecular...
+---
+Breast cancer is a prevalent disease that has a dismal prognosis for patients and a bad outlook for treatments. Ubiquitination is a reversible biological process that regulates protein production and degradation, as well as plays a vital role in protein transport, localization, and biological activity. We obtained the breast cancer patient sample data and used a machine learning technique to cr...
+
+
+========== GENE: Fam159b ==========
+Description: family with sequence similarity 159, member B [Source:MGI Symbol;Acc:MGI:1925053]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (7 papers, 3 tier1) ---
+Insulin-producing stem cell-derived islets (SC-islets) provide a virtually unlimited cell source for diabetes cell replacement therapy. While SC-islets are less functional when first differentiated in vitro compared to isolated cadaveric islets, transplantation into mice has been shown to increase their maturation. To understand the effects of transplantation on maturation and function of SC-is...
+---
+The identification of genes associated with human pancreatic beta cell maturation could stimulate a better understanding of normal human islet development and function, be informative for improving stem cell-derived islet (SC-islet) differentiation, and facilitate the sorting of more mature beta cells from a pool of differentiated cells. While several candidate factors to mark beta cell maturat...
+---
+Little is known about the adaptor protein FAM159B. Recently, FAM159B was shown to be particularly expressed in neuroendocrine cells and tissues, such as pancreatic islets and neuroendocrine cells of the bronchopulmonary and gastrointestinal tracts, as well as in different types of neuroendocrine tumours. To gain insights into possible interactions of FAM159B with other proteins and/or receptors...
+---
+FAM159B is a so-called adaptor protein. These proteins are essential components in numerous cell signalling pathways. However, little is known regarding FAM159B expression in normal and neoplastic human tissues. The commercially available rabbit polyclonal anti-human FAM159B antibody HPA011778 was initially characterised for its specificity using Western blot analyses and immunocytochemistry an...
+---
+Little is known about the adaptor protein FAM159B. To determine whether FAM159B expression findings in rats or mice can be extrapolated to humans, we compared FAM159B expression in healthy tissue samples from all three species using immunohistochemistry. Despite variations in expression intensity, similar FAM159B expression patterns were observed in most organs across species. The most prominen...
+---
+DNA methylation (DNAm) has been proposed to mediate the associations of gestational exposure to organophosphate esters (OPEs) and replacement brominated flame retardants (RBFRs) with health outcomes. However, there have not been previous epigenome-wide association studies (EWAS) on the impact of prenatal exposure to these chemicals on newborn DNAm. In 252 pregnant women recruited to the Health ...
+---
+The pancreas is composed of both exocrine glands and intermingled endocrine cells to execute its diverse functions, including enzyme production for digestion of nutrients and hormone secretion for regulation of blood glucose levels. To define the molecular constituents with elevated expression in the human pancreas, we employed a genome-wide RNA sequencing analysis of the human transcriptome to...
+
+
+========== GENE: 1110032A04Rik ==========
+Description: RIKEN cDNA 1110032A04 gene [Source:MGI Symbol;Acc:MGI:1913433]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (11 papers, 5 tier1) ---
+In this study, we used single-cell transcriptomic analysis to identify new specific biomarkers for nucleus pulposus (NP) and inner annulus fibrosis (iAF) cells, and to define cell populations within non-degenerating (nD) and degenerating (D) human intervertebral discs (IVD) of the same individual. Cluster analysis based on differential gene expression delineated 14 cell clusters. Gene expressio...
+---
+Ovarian cancer (OC) is one of the most lethal gynecological malignancies. This study aimed to identify biomarkers that were sensitive to platinum-based chemotherapeutic agents and can be used in immunotherapy and explore the importance of their mechanisms of action. RNA-seq profiles and clinicopathological data for OC samples were obtained from The Cancer Genome Atlas (TCGA) and cBioPortal plat...
+---
+The molecular pathways linking genetic variants to Parkinson's disease (PD) onset and progression remain incompletely defined; however, risk alleles in multiple genes, including GBA1, strongly implicate lipid metabolism. To systematically identify causal biomarker signatures, we analyzed comprehensive metabolome profiles from blood plasma in 149 PD patients and 150 controls, along with compleme...
+---
+Alzheimer's disease (AD) is a progressive neurodegenerative disease that worsens with age. Long non-coding RNAs (lncRNAs) dysregulation and its associated competing endogenous RNA (ceRNA) network have a potential connection with the occurrence and development of AD. A total of 358 differentially expressed genes (DEGs) were screened via RNA sequencing, including 302 differentially expressed mRNA...
+---
+Ceramides are essential lipids for skin permeability barrier function, and a wide variety of ceramide species exist in the stratum corneum (SC). Although ceramides with long-chain bases (LCBs) of various lengths have been identified in the human SC, a quantitative analysis that distinguishes ceramide species with different LCB chain lengths has not been yet published. Therefore, the whole pictu...
+---
+Sphingolipids typically have an 18-carbon (C18) sphingoid long chain base (LCB) backbone. Although sphingolipids with LCBs of other chain lengths have been identified, the functional significance of these low-abundance sphingolipids is unknown. The LCB chain length is determined by serine palmitoyltransferase (SPT) isoenzymes, which are trimeric proteins composed of two large subunits (SPTLC1 a...
+---
+Anti-androgens are a common therapy in prostate cancer (PCa) targeting androgen receptor (AR) signaling. However, these therapies fail due to selection of highly aggressive AR-negative cancer cells that have no therapeutic options available. We demonstrate that elevating endogenous ceramide levels with administration of exogenous ceramide nanoliposomes (CNLs) was efficacious in AR-negative cell...
+---
+Serine palmitoyltransferase, long chain base subunit 1 (SPTLC1) catalyzes the first step in sphingolipid synthesis and has been implicated in the progression of various cancers. However, its role in clear cell renal cell carcinoma (ccRCC) remains unclear. Here, we investigated the expression and prognostic value of SPTLC1 in ccRCC. Three ccRCC patient cohorts were studied. ccRCC and adjacent no...
+
+
+========== GENE: Chi3l7 ==========
+Description: chitinase 3-like 7 [Source:MGI Symbol;Acc:MGI:2676649]
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (20 papers, 20 tier1) ---
+Chromatin has distinct three-dimensional (3D) architectures important in key biological processes, such as cell cycle, replication, differentiation, and transcription regulation. In turn, aberrant 3D structures play a vital role in developing abnormalities and diseases such as cancer. This review discusses key 3D chromatin structures (topologically associating domain, lamina-associated domain, ...
+---
+The exploration of three-dimensional chromatin interaction and organization provides insight into mechanisms underlying gene regulation, cell differentiation and disease development. Advances in chromosome conformation capture technologies, such as high-throughput chromosome conformation capture (Hi-C) and chromatin interaction analysis by paired-end tag (ChIA-PET), have enabled the exploration...
+---
+An increasing use of vegetable protein is required to support the production of protein-rich foods which can replace animal proteins in the human diet. Amaranth, chia and quinoa seeds contain proteins which have biological and functional properties that provide nutritional benefits due to their reasonably well-balanced aminoacid content. This review analyses these vegetable proteins and focuses...
+---
+During T cell differentiation and activation, specific stimuli, and a network of transcription factors (TFs) are involved in orchestrating chromatin accessibility, establishing enhancer-promoter interactions, and regulating gene expression. Over the past few years, there have been new insights into how chromatin interactions coordinate differentiation during T cell development and how regulator...
+---
+A limited number of adult stem cells (SCs) maintain the homoestasis of different tissues through the lifetime of the individual by generating differentiating daughters and renewing themselves. Errors in the SC division rate or in the fine balance between self-renewal and differentiation might result in tissue overgrowth or depletion, two potentially lethal conditions. A few types of SCs have be...
+---
+Mastic essential oil exhibits anti-bacterial, anti-inflammatory, and anti-oxidant properties. With the growing interest of the use of mastic oil in the food and pharmaceutical industry, systematic in vivo studies are needed to address controlled usage and safety issues. In the present work we evaluated the safety of mastic oil using as a model the zebrafish lateral line system. In addition, we ...
+---
+Purpose: Promoting neurogenesis is a promising strategy to treat neurodegenerative disorders. In the present study, we aimed to evaluate the effect of mastic gum resin from the Pistacia lentiscus var. Chia (Anacardiaceae family) in proliferation capacity and differentiation of embryonic mesenchymal stem cells into a neural lineage. Methods: For this purpose, mastic gum was applied as a neural i...
+---
+Functional dyspepsia (FD) is a prevalent gastrointestinal disorder characterized by chronic upper abdominal symptoms and complex pathophysiology. Conventional therapies show limited efficacy, prompting interest in alternative approaches. Mastiha, is a natural resin with antioxidant, anti-inflammatory and prebiotic properties. Mastiha-water contains water-soluble components and essential oil tra...
+
+
+========== GENE: D3Bwg0562e ==========
+Description: DNA segment, Chr 3, Brigham & Women's Genetics 0562 expressed [Source:MGI Symbol;Acc:MGI:106530]
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (13 papers, 4 tier1) ---
+Lysophosphatidic acid (LPA) is a bioactive phospholipid that participates in critical processes in neural development and adult brain function and is implicated in various pathophysiological conditions. Along with its six well-characterized receptors, atypical regulators of LPA signaling have also been suggested, including phospholipid phosphatase-related proteins (PLPPRs). PLPPRs have been mos...
+---
+Phosphorylation-dephosphorylation is one of the most common and critical cellular activities. It is essential for cell cycle control and leads to large changes in protein conformation, which can alter protein function and coordinate multiple functions such as cell metabolism, gene transcription and translation, signaling, growth, differentiation, and apoptosis. Alterations in the phosphorylated...
+---
+The growth traits are important traits in chickens. Compared to white feather broiler breeds, Chinese local broiler breeds have a slow growth rate. The main genes affecting the growth traits of local chickens in China are still unclear and need to be further explored. This experiment used fast-growth and slow-growth groups of the Jinghai Yellow chicken as the research objects. Three males and t...
+---
+Phospholipid phosphatase related 4 (PLPPR4), a neuron-specific membrane protein located at the postsynaptic density of glutamatergic synapses, is a putative regulator of neuronal plasticity. However, PLPPR4 dysfunction has not been linked to genetic disorders. In this study, we report three unrelated patients with intellectual disability (ID) or autism spectrum disorder (ASD) who harbour a de n...
+---
+The Phospholipid Phosphatase Related 4 gene (PLPPR4, <U+00A0>*607813) encodes the Plasticity-Related-Gene-1 (PRG-1) protein. This cerebral synaptic transmembrane-protein modulates cortical excitatory transmission on glutamatergic neurons. In mice, homozygous Prg-1 deficiency causes juvenile epilepsy. Its epileptogenic potential in humans was unknown. Thus, we screened 18 patients with infantile epilep...
+---
+Diabetic encephalopathy (DE) is considered as one of the complications of diabetes,which is associated with cognitive impairment in the pathological process of development. Up to now, phospholipid phosphatase related 4 (Plppr4), also known as plasticity related gene 1 (PRG-1) has been revealed its important role in neuroplasticity. However, the underlying mechanisms of Plppr4 on the basis of di...
+---
+Opioid use disorder (OUD) is a chronic condition associated with long-lasting molecular and behavioral changes. Animals with prolonged access to opioids develop behaviors similar to human OUD. Identifying associated molecular changes can provide insight to underpinnings that lead to or maintain OUD. In pilot studies, we identified several miRNA targets that are altered by the administration of ...
+---
+Gastric cancer (GC) is a malignant tumor with poor prognosis. The diverse patterns of programmed cell death (PCD) are significantly associated with the pathogenesis and progression of GC, and it has the potential to serve as prognostic and drug sensitivity indicators for GC. The sequencing data and clinical characteristics of GC patients were downloaded from The Cancer Genome Atlas and GEO data...
+
+
+========== GENE: 6430704M03Rik ==========
+Description: RIKEN cDNA 6430704M03 gene [Source:MGI Symbol;Acc:MGI:2442704]
+H3K27me3: 0 | Timing: Late
+
+--- Abstracts (16 papers, 4 tier1) ---
+Toxic proteinaceous deposits and alterations in excitability and activity levels characterize vulnerable neuronal populations in neurodegenerative diseases. Using in<U+00A0>vivo two-photon imaging in behaving spinocerebellar ataxia type 1 (Sca1) mice, wherein Purkinje neurons (PNs) degenerate, we identify an inhibitory circuit element (molecular layer interneurons [MLINs]) that becomes prematurely hyp...
+---
+Ferric Chelate Reductase 1 Like (FRRS1L) protein has been identified as an auxiliary regulatory protein for the <U+03B1>-amino-3-hydroxy-5-methyl-4-isoxazole propionic acid receptor (AMPAR). FRRS1L is highly expressed in the cerebellum and other brain regions associated with the control of motor function. Loss of FRRS1L has been shown to lead to impaired synaptic transmission via AMPARs and to movemen...
+---
+The differential diagnosis of chorea syndromes is complex. It includes inherited forms, the most common of which is autosomal dominant Huntington's disease (HD). In addition, there are disorders mimicking HD, the so-called HD-like (HDL) syndromes. Here we review main clinical, genetic, and pathophysiological characteristics of HD and the rare HD phenocopies in order to familiarize clinicians wi...
+---
+To describe a founder mutation effect and the clinical phenotype of homozygous FRRS1L c.737_739delGAG (p.Gly246del) variant in 15 children of Puerto Rican (Boricua) ancestry presenting with early infantile epileptic encephalopathy (EIEE-37) with prominent movement disorder. EIEE-37 is caused by biallelic loss of function variants in the FRRS1L gene, which is critical for AMPA-receptor function,...
+---
+In the brain, AMPA receptors (AMPARs)-mediated excitatory synaptic transmission is critically regulated by the receptor auxiliary subunits. Recent proteomic studies have identified that Ferric Chelate Reductase 1 Like protein (FRRS1L), whose mutations in human lead to epilepsy, choreoathetosis, and cognitive deficits, is present in native AMPAR complexes in the brain. Here we have characterized...
+---
+Background. Biallelic pathogenic variants in the FRRS1L gene are now known to cause developmental and epileptic encephalopathy-37 (DEE37). It can also be associated with chorea and continuous spikes and waves during sleep (CSWS). CSWS is a rare age-related epileptic encephalopathy syndrome of childhood that is characterized by seizures, neurocognitive regression and electrical status epilepticu...
+---
+Excitatory neurotransmission and its activity-dependent plasticity are largely determined by AMPA-receptors (AMPARs), ion channel complexes whose cell physiology is encoded by their interactome. Here, we delineate the assembly of AMPARs in the endoplasmic reticulum (ER) of native neurons as multi-state production line controlled by distinct interactome constituents: ABHD6 together with porcupin...
+---
+AMPA-type glutamate receptors (AMPARs), key elements in excitatory neurotransmission in the brain, are macromolecular complexes whose properties and cellular functions are determined by the co-assembled constituents of their proteome. Here we identify AMPAR complexes that transiently form in the endoplasmic reticulum (ER) and lack the core-subunits typical for AMPARs in the plasma membrane. Cen...
+
+
+========== GENE: 6330512M04Rik ==========
+Description: RIKEN cDNA 6330512M04 gene [Source:MGI Symbol;Acc:MGI:2444776]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (14 papers, 4 tier1) ---
+Humankind have been struggling with colorectal cancer (CRC) for long period with its rapid progression and invasive metastasis. By hyperactivating IL-6/STAT3 signaling, CRC facilitates the capacity of angiogenesis to plunder massive nutrients and develops gradually under harsh condition. The Cancer Genome Atlas database was analyzed for acquiring interferon-<U+03B3> inducible protein 10 (IFITM10) expr...
+---
+Coronavirus disease 2019 (COVID-19), caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection, has become a global public health crisis. Some patients who have recovered from COVID-19 subsequently test positive again for SARS-CoV-2 RNA after discharge from hospital. How such retest-positive (RTP) patients become infected again is not known. In this study, 30 RTP patients...
+---
+Skeletal muscle metabolic and physical capacities are influenced by both genetics and load status and decline with age. Recent advances in sequencing have detailed cell types at unprecedented detail; yet these approaches do not scale to adequately model human muscle physiological heterogeneity. We produced a powerful resource for ageing studies, including consistent deep transcriptomic profiles...
+---
+Vertebrate interferon-induced transmembrane (IFITM) genes have been demonstrated to have extensive and diverse functions, playing important roles in the evolution of vertebrates. Despite observance of their functionality, the evolutionary dynamics of this gene family are complex and currently unknown. Here, we performed detailed evolutionary analyses to unravel the evolutionary history of the v...
+---
+As a key immune cell in the brain, microglia are essential for protecting the central nervous system (CNS) from viral infections, including HIV. Microglia possess functional Toll-like receptor 3 (TLR3), a key viral sensor for activating interferon (IFN) signaling pathway-mediated antiviral immunity. We, therefore, studied the effect of poly (I:C), a synthetic ligand of TLR3, on the activation o...
+---
+Interferon-induced transmembrane proteins (IFITMs) are a family of proteins which functions mainly include controlling cell proliferation, promoting homotypic cell adhesion, and preventing viral infection. This research study attempts to elucidate the association between IFITM10 expression level and gastric cancer (GC). Transcriptome sequencing and clinical information on GC and normal tissues ...
+---
+Read-through fusion transcripts that result from the splicing of two adjacent genes in the same coding orientation are a recently discovered type of chimeric RNA. We sought to determine if read-through fusion transcripts exist in breast cancer. We performed paired-end RNA-seq of 168 breast samples, including 28 breast cancer cell lines, 42 triple negative breast cancer primary tumors, 42 estrog...
+---
+Human interferon-induced transmembrane protein family (IFITMs) consists of five main proteins. IFITM1, IFITM2, and IFITM3 can be induced by interferon, while IFITM5 and IFITM10 are insensitive to interferon. IFITMs has various functions, including well-researched antiviral effects. As a molecule whose expression is significantly increased by interferon in the immune microenvironment, IFITMs has...
+
+
+========== GENE: Gm5454 ==========
+Description: predicted gene 5454 [Source:MGI Symbol;Acc:MGI:3648286]
+H3K27me3: 0 | Timing: Late
+
+
+========== GENE: A930001N09Rik ==========
+Description: RIKEN cDNA A930001N09 gene [Source:MGI Symbol;Acc:MGI:1924378]
+H3K27me3: 0 | Timing: Late
+
+--- Abstracts (19 papers, 7 tier1) ---
+Obesity is among the strongest risk factors for type 2 diabetes (T2D). The CREBRF missense allele rs373863828 (p. Arg457Gln, p. R457Q) is associated with increased body mass index but reduced risk of T2D in people of Pacific ancestry. To investigate the functional consequences of the CREBRF variant, we introduced the corresponding human mutation R457Q into the porcine genome. The CREBRFR457Q pi...
+---
+Over 40% of Samoans have at least one copy of the minor A allele at rs373863828 in encoding CREB3 regulatory factor (CREBRF), which is associated with increased body mass index (BMI) but decreased odds of type 2 diabetes mellitus. The mechanisms underlying this paradoxical effect remain unknown. We hypothesized that gut microbiota may play a role and examined associations between CREBRF genotyp...
+---
+The cellular heterogeneity and genetic features of stemness of adipose-derived stromal cells (ADSCs) remain unclear. Using single-cell RNA sequencing (scRNA-seq), we investigated the genomic features of the stemness gene in ADSCs with genetic variability. We cultured the ADSCs isolated from the fat waste of a healthy adult volunteers undergoing cosmetic plastic surgery to the third generation, ...
+---
+Aim: Accumulating evidence has indicated that circular RNAs (circRNAs) are involved in cancer biology. However, their roles in acute myeloid leukemia (AML) remain unclear. Therefore, we aimed to define novel circRNAs involved the development and progression of AML. Materials & methods: We used circRNAs microarray to determine the differential expression profile. Quantitative reverse transcripti...
+---
+Autophagy drives drug resistance and drug-induced cancer cell cytotoxicity. Targeting the autophagy process could greatly improve chemotherapy outcomes. The discovery of specific inhibitors or activators has been hindered by challenges with reliably measuring autophagy levels in a clinical setting. We investigated drug-induced autophagy in breast cancer cell lines with differing ER/PR/Her2 rece...
+---
+miRNAs play an important role in regulating normal animal development. Muscle tissue and fat metabolism are important for maintaining energy balance in animals. Yak has important agricultural and economic importance as it provides milk, meat, and hair. It is used for transportation as well. However, the miRNA expression profiles of their muscle and adipose tissue are currently unknown. To explo...
+---
+Triple-negative breast cancer (TNBC) poses challenges in treatment due to its inherent biological characteristics. Endoplasmic reticulum stress (ERS) has been associated with the development of TNBC. Hence, identifying ERS-related prognostic biomarkers is crucial for the early diagnosis and treatment of TNBC. In this study, we retrieved gene expression profiles from TNBC patients using The Canc...
+---
+Luman/CREB3 recruitment factor (LRF), also known as CREBRF, was initially identified as a cellular binding protein of Luman through yeast two-hybrid screening of a human brain cDNA library. CREBRF plays a critical role in various biological processes, with its functions garnering significant attention in the field of oncology. Notably, CREBRF is involved in endoplasmic reticulum (ER) stress and...
+
+
+========== GENE: Lhfp ==========
+Description: lipoma HMGIC fusion partner [Source:MGI Symbol;Acc:MGI:1920048]
+H3K27me3: 1 | Timing: Late
+
+--- Abstracts (20 papers, 6 tier1) ---
+Gliosarcoma is a rare glioblastoma variant characterized by a biphasic tissue pattern with alternating areas that display either glial (glial fibrillary acidic protein-positive) or mesenchymal (reticulin-positive) differentiation. Previous analyses have shown identical genetic alterations in glial and mesenchymal tumor areas, suggesting that gliosarcomas are genetically monoclonal, and mesenchy...
+---
+Bone mineral density (BMD) is a strong predictor of osteoporotic fracture. It is also one of the most heritable disease-associated quantitative traits. As a result, there has been considerable effort focused on dissecting its genetic basis. Here, we performed a genome-wide association study (GWAS) in a panel of inbred strains to identify associations influencing BMD. This analysis identified a ...
+---
+The identification of biomarkers and effective therapeutic targets for gastric cancer (GC), the most common cause of cancer-related deaths around the world, is currently a major focus in research. Here, we examined the utility of LHFPL6 as a prognostic biomarker and therapeutic target for GC. We explored the clinical relevance, function, and molecular role of LHFPL6 in GC using the MethSurv, cB...
+---
+Lipomas are the most common mesenchymal neoplasms in adults, with osteolipomas representing a rare subtype characterised by metaplastic bone formation. The pathogenesis and molecular basis of osteolipomas remain poorly understood. While secondary ossification has been proposed as a potential mechanism, molecular characterisation of these tumours has been limited. We retrospectively analysed 18 ...
+---
+A genome-wide association study was performed to identify genetic factors involved in susceptibility to psoriasis (PS) and psoriatic arthritis (PSA), inflammatory diseases of the skin and joints in humans. 223 PS cases (including 91 with PSA) were genotyped with 311,398 single nucleotide polymorphisms (SNPs), and results were compared with those from 519 Northern European controls. Replications...
+---
+Fatty acids metabolic products determine meat quality in chickens. Identifying genes associated with fatty acids composition could provide valuable information for the complex genetic networks of genes with underlying variations in fatty acids synthesis. RNA sequencing (RNA-Seq) was conducted to explore the chicken transcriptome from the thigh muscle tissue of 6 Huangshan Black Chickens with 3 ...
+---
+A proton-coupled organic cation (H+/OC) antiporter working at the blood-brain barrier (BBB) in humans and rodents is thought to be a promising candidate for the efficient delivery of cationic drugs to the brain. Therefore, it is important to identify the molecular entity that exhibits this activity. Here, for this purpose, we established the Proteomics-based Identification of transporter by Cro...
+---
+The putative proton/organic cation (H+/OC) antiporter has been shown to mediate transport of CNS drug compounds like oxycodone and pyrilamine across the blood-brain barrier (BBB). This transporter has a broad substrate profile and is able to transport substrates against their concentration gradient, making it an interesting target for brain drug delivery. However, the molecular identity of this...
+
+
+========== GENE: Amica1 ==========
+Description: adhesion molecule, interacts with CXADR antigen 1 [Source:MGI Symbol;Acc:MGI:2685484]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (8 papers, 3 tier1) ---
+It has been demonstrated that the traditional Chinese medicine rikkunshito, ameliorates anorexia in several types of human cancer and attenuates lung injury by inhibiting neutrophil infiltration. The current study investigated the clinical and hematological effects of rikkunshito and its underlying mechanisms of action in the treatment of advanced non-small cell lung cancer (NSCLC). The Illumin...
+---
+The heterogeneity in head and neck squamous cell carcinoma (HNSCC) has made reliable stratification extremely challenging. Behavioral risk factors such as smoking and alcohol consumption contribute to this heterogeneity. To help elucidate potential mechanisms of progression in HNSCC, we focused on elucidating patterns of gene interactions associated with tumor progression. We performed de-novo ...
+---
+To detect genes with CpG sites that display methylation patterns that are characteristic of acute lymphoblastic leukemia (ALL) cells, we compared the methylation patterns of cells taken at diagnosis from 20 patients with pediatric ALL to the methylation patterns in mononuclear cells from bone marrow of the same patients during remission and in non-leukemic control cells from bone marrow or bloo...
+---
+Adhesion molecule interacting with CXADR antigen 1 (AMICA1), also known as Junction Adhesion Molecule Like (JAML), a recently identified member of the JAMs family, plays a critical role in mediating cancer development and immune cells transmigration. However, AMICA1 has never been reported to be related to the genesis, development and immunotherapy effect of lung adenocarcinoma (LUAD). In this ...
+---
+Patients with locally/regionally advanced melanoma were treated with neoadjuvant combination immunotherapy with high-dose interferon <U+03B1>-2b (HDI) and ipilimumab in a phase I clinical trial. Tumor specimens were obtained prior to the initiation of neoadjuvant therapy, at the time of surgery and progression if available. In this study, gene expression profiles of tumor specimens (N = 27) were inves...
+---
+In the past decades, messenger RNA (mRNA) biomarkers have been employed to identify the origin of body fluids in forensic medicine. We hypothesized that the polymorphism of mRNA could be applied to identify individuals in mixture samples composed of two body fluids. In this study, we selected five blood-specific mRNA biomarkers of venous blood (SPTB, CD3G, AMICA1, ANK1, and GYPA) that encompass...
+---
+Maternal glycemic dysregulation during pregnancy increases the risk of pregnancy complications and offspring long-term health outcomes, potentially through DNA methylation alterations. To investigate the association between maternal glycemic marker concentration during pregnancy and placental DNA methylation, and to examine whether the methylation changes correlate with neonatal anthropometry. ...
+---
+Periodontitis is considered to be the leading cause of tooth loss in adults, and it interacts with some serious systemic diseases. Periodontal basic therapy is the cornerstone of periodontal disease treatment and long-term maintenance and has a positive impact on the treatment of systemic diseases. To explore the potential gene targets of periodontitis therapies by bioinformatics method. We ana...
+
+
+========== GENE: D8Ertd82e ==========
+Description: DNA segment, Chr 8, ERATO Doi 82, expressed [Source:MGI Symbol;Acc:MGI:1196223]
+H3K27me3: 0 | Timing: Late
+
+--- Abstracts (11 papers, 2 tier1) ---
+MicroRNAs (miRNAs) are critical for brain development; however, if, when, and how miRNAs drive neuronal subtype specification remains poorly understood. To address this, we engineered technologies with vastly improved spatiotemporal resolution that allow the dissection of cell-type-specific miRNA-target networks. Fast and reversible miRNA loss of function showed that miRNAs are necessary for Pu...
+---
+Recent discoveries suggest links between abnormalities in cell morphogenesis in the brain and the functional deficiency of molecules controlling signal transduction in glial cells such as oligodendroglia. Rnd2 is one such molecule and one of the Rho family monomeric GTP-binding proteins. Despite the currently known functions of Rnd2, its precise roles as it relates to cell morphogenesis and dis...
+---
+Peak1-related, kinase-activating pseudokinase 1 (PRAG1), a member of the pseudopodium-enriched atypical kinase (PEAK) family of pseudokinases, has been reported to play a role in regulating cell morphology. However, the molecular mechanism for this function remains elusive. In this study, we demonstrate that PRAG1 forms dynamic condensates in cells mediated by its <U+03B1>N and <U+03B1>J helices. Importantly...
+---
+The PEAK family pseudokinases are essential components of tyrosine kinase (TK) pathways that regulate cell growth and adhesion; however, their role in human cancer remains unclear. Here, we report an oncogenic activity of the pseudokinase PEAK2 in colorectal cancer (CRC). Notably, high PRAG1 expression, which encodes PEAK2, was associated with a bad prognosis in CRC patients. Functionally, PEAK...
+---
+We recently reported a deviation of local ancestry on the chromosome (ch) 8p23.1, which led to positive selection signals in a Brazilian population sample. The deviation suggested that the genetic variability of candidate genes located on ch 8p23.1 may have been evolutionarily advantageous in the early stages of the admixture process. In the present work, we aim to extend the previous work by s...
+---
+Biliary atresia (BA) is a severe pediatric liver disease in which progressive liver fibrosis (LF) significantly affects the prognosis. Epithelial-mesenchymal transition (EMT) is considered a key factor in the development and progression of LF. This study aimed to investigate the role and mechanism of PEAK1-related kinase activating pseudokinase 1 (PRAG1) in the EMT-related LF process in BA. We ...
+---
+The association between genetic polymorphisms and early cardiac allograft vasculopathy (CAV) development is relatively unexplored. Identification of genes involved in the CAV process may offer new insights into pathophysiology and lead to a wider range of therapeutic options. This prospective study of 109 patients investigated 44 single nucleotide polymorphisms (SNPs) within the susceptibility ...
+---
+IgA nephropathy (IgAN) is an autoimmune disorder which is believed to be non-monogenic. We performed an exome-wide association study of 70 children with IgAN and 637 healthy donors. The HLA allele frequencies were compared between the patients and healthy donors from the bone marrow registry of the Pirogov University. We tested 78,020 gene markers for association and performed functional enrich...
+
+
+========== GENE: 9930013L23Rik ==========
+Description: RIKEN cDNA 9930013L23 gene [Source:MGI Symbol;Acc:MGI:2443629]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (20 papers, 20 tier1) ---
+An increasing number of studies have characterized the bone as an endocrine organ, and that bone secreted factors may not only regulate local bone remodeling, but also other tissues and whole-body metabolic functions. The precise nature of these regulatory factors and their roles at bridging the bone, bone marrow adipose tissue, extramedullary body fat and whole-body energy homeostasis are bein...
+---
+Growing evidence supports pathogenic roles for chronically elevated hyaluronidase activity in numerous conditions. Elevated expression of one such hyaluronidase, the Cell Migration Inducing and hyaluronan binding Protein (CEMIP), has been implicated in the pathogenesis and progression of several cancers as well as demyelinating diseases in the central nervous system (CNS). Developing effective ...
+---
+To study the impact of myofibroblast differentiation (MD) on hyaluronan (HA) turnover in orbital fibroblasts (OFs) focusing on the expression of its key enzymes and their potential implications in the pathogenesis of thyroid eye disease (TED). Primary cultures of OFs were established from tissue samples (TED OFs, n = 4; non-TED OFs, n = 5). MD was induced by TGF-<U+03B2>1 (5 ng/mL). Measurements were ...
+---
+Cerebral cavernous malformations (CCMs) are vascular abnormalities associated with deregulated angiogenesis. Their pathogenesis and optimal treatment remain unclear. This study aims to investigate the molecular signatures of cuproptosis, a newly identified type of cell death, associated with CCMs development. Bulk RNA sequencing (RNA-seq) from 15 CCM and 6 control samples were performed with co...
+---
+The biological activity of hyaluronan (HA), a major component of the extracellular matrix in vertebrate tissues, depends on its molecular weight, and thus its degradation is a critical process for HA biological functions. Here, we review the characteristics of newly discovered proteins essential for HA degradation, hyaluronan-binding protein involved in hyaluronan depolymerization (HYBID), also...
+---
+Staphylococcus aureus is a major human bacterial pathogen responsible for deep tissue skin infections. Recent observations have suggested that rapid, localized digestion of hyaluronic acid in the extracellular matrix (ECM) of the dermis may influence bacterial invasion and tissue inflammation. In this study we find that cell migration-inducing protein (Cemip) is the major inducible gene respons...
+---
+Central nervous system (CNS) demyelination occurs in numerous conditions including multiple sclerosis (MS). CNS remyelination involves recruitment and maturation of oligodendrocyte progenitor cells (OPCs). Remyelination often fails in part due to the inhibition of OPC maturation into myelinating oligodendrocytes (OLs). Digestion products of the glycosaminoglycan hyaluronan (HA), generated by hy...
+---
+Medulloblastoma (MB) is one of the most common pediatric brain tumors and it is estimated that one-third of patients will not achieve long-term survival. Conventional prognostic parameters have limited and unreliable correlations with MB outcome, presenting a major challenge for patients' clinical improvement. Acknowledging this issue, our aim was to build a gene signature and evaluate its pote...
+
+
+========== GENE: Gm9899 ==========
+Description: NA
+H3K27me3: 1 | Timing: Mid
+
+
+========== GENE: H2-Q5 ==========
+Description: NA
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (1 papers, 0 tier1) ---
+Although the human nonclassical class Ib major histocompatibility complex (Mhc) locus, HLA-G, is known to act as an immune suppressor in immune-privileged sites, little is currently known regarding participation of the rodent class Ib Mhc in similar pathways. Here, we investigated the expression properties of the mouse nonclassical Mhc H2-Q5(k) gene, previously detected in tumors and tissues as...
+
+
+========== GENE: 1700022P22Rik ==========
+Description: RIKEN cDNA 1700022P22 gene [Source:MGI Symbol;Acc:MGI:1922808]
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (2 papers, 0 tier1) ---
+T cell acute lymphoblastic leukemia (T-ALL) defines a group of hematological malignancies with heterogeneous aggressiveness and highly variable outcome, making therapeutic decisions a challenging task. We tried to discover new predictive model for T-ALL before treatment by using a specific pipeline designed to discover aberrantly active gene. The expression of 18 genes was significantly associa...
+---
+More than 1200 genes have been shown in the database to be expressed predominantly in the mouse testes. Advances in genome editing technologies such as the CRISPR/Cas9 system have made it possible to create genetically engineered mice more rapidly and efficiently than with conventional methods, which can be utilized to screen genes essential for male fertility by knocking out testis-enriched ge...
+
+
+========== GENE: 9630041A04Rik ==========
+Description: RIKEN cDNA 9630041A04 gene [Source:MGI Symbol;Acc:MGI:3045242]
+H3K27me3: 0 | Timing: Mid
+
+
+========== GENE: 9630013D21Rik ==========
+Description: NA
+H3K27me3: 1 | Timing: Mid
+
+
+========== GENE: Mfsd4 ==========
+Description: major facilitator superfamily domain containing 4 [Source:MGI Symbol;Acc:MGI:2442786]
+H3K27me3: 1 | Timing: Late
+
+--- Abstracts (16 papers, 5 tier1) ---
+Genomic instability (GI) is an effective prognostic marker of cancer. Thus, in this work, we aimed to explore the impact of GI derived signature on prognosis in non-small cell lung cancer (NSCLC) patients using bioinformatics methods. The data of NSCLC patients were collected from The Cancer Genome Atlas. Totally 1794 immune related genes were downloaded from immport database. The optimal progn...
+---
+Gastric cancer (GC) with hepatic metastasis remains a fatal disease. Global expression profiling was conducted using tissues from patients who had GC with synchronous hepatic metastasis, and major facilitator superfamily domain containing 4 (MFSD4) was identified as a candidate biomarker for hepatic metastasis in GC. Functional and expression analyses of this molecule in GC cell lines and clini...
+---
+SRSF3 (SRp20) is an essential splicing factor. We discovered Srsf3 plays an oncogenic role in breast cancer and Srsf3 knockout (KO) in mammary glands delays the development of breast cancer in an Erbb2 mouse model. In contrast, Srsf3 is tumor-suppressive in mouse liver tissues. Srsf3 KO in hepatocytes enhances DEN-induced liver cancer and disrupts the sex disparity in DEN-induced liver cancer. ...
+---
+The experimental autoimmune encephalomyelitis (EAE) is an autoimmune disease of the central nervous system commonly used to study multiple sclerosis (MS). We combined clinical EAE phenotypes with genome-wide expression profiling in spleens from 150 backcross rats between susceptible DA and resistant PVG rat strains during the chronic EAE phase. This enabled correlation of transcripts with genot...
+---
+Background/Objectives:SLC13A5 encodes a sodium-citrate cotransporter implicated in early-onset epileptic encephalopathy and metabolic brain dysfunction, yet its developmental regulation and molecular context in the human brain remain incompletely defined. Methods: Leveraging human developmental transcriptomes from the Evo-Devo resource, we delineated tissue trajectories and network context for ...
+---
+Out of the 430 known solute carriers (SLC) in humans, 30% are still orphan transporters regarding structure, distribution or function. Approximately one third of all SLCs belong to the evolutionary conserved and functionally diverse Major Facilitator Superfamily (MFS). Here, we studied the orphan proteins, MFSD4A and MFSD9, which are atypical SLCs of MFS type. Hidden Markov Models were used to ...
+---
+ELK transcription factors are known to be expressed in a number of regions in the nervous system. We show by RT-PCR that the previously described Elk1, Elk3/Elk3b/Elk3c and Elk4 mRNAs are expressed in adult dorsal root ganglia (DRG), together with the novel alternatively spliced isoforms Elk1b, Elk3d and Elk4c/Elk4d/Elk4e. These isoforms are also expressed in brain, heart, kidney and testis. In...
+---
+As the most frequently occurred tumor in biliary tract, cholangiocarcinoma (CCA) is mainly characterized by its late diagnosis and poor outcome. It is therefore urgent to identify specific genes and pathways associated with its progression and prognosis. The differentially expressed genes in The Cancer Genome Atlas were analyzed to build the co-expression network by Weighted gene co-expression ...
+
+
+========== GENE: Olfr767 ==========
+Description: olfactory receptor 767 [Source:MGI Symbol;Acc:MGI:3030601]
+H3K27me3: 0 | Timing: Late
+
+--- Abstracts (4 papers, 0 tier1) ---
+High Grade Prostatic Intraepithelial Neoplasia (HGPIN) is the putative precursor lesion to prostatic adenocarcinoma (PCa), but the precise relationship between HGPIN and PCa remains unclear. We performed a molecular case study in which we studied mutation profiles of six tumor-associated HGPIN lesions in a single case of TMPRSS2:ERG fusion positive Gleason score 7 PCa that we had previously map...
+---
+Meat yield and quality are important economic traits of livestock. Herein, longissimus dorsi (LD) muscles of Leizhou black goats aged 0, 3, and 6 months were used to identify differentially expressed messenger RNAs (mRNAs) and long non-coding RNAs (lncRNAs) by high-throughput RNA sequencing. Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) analyses were used to analyze diff...
+---
+In the present study, GeneSeek GGP-LDv4 33k single nucleotide polymorphism chip was used to detect runs of homozygosity (ROH) in eight Italian beef cattle breeds, six breeds with distribution limited to Tuscany (Calvana, Mucca Pisana, Pontremolese) or Sardinia (Sarda, Sardo Bruna and Sardo Modicana) and two cosmopolitan breeds (Charolais and Limousine). ROH detection analyses were used to estim...
+---
+The semen quality of stallions including sperm motility is an important target of selection as it has a high level of individual variability. However, effects of the molecular architecture of the genome on the mechanisms of sperm formation and their preservation after thawing have been poorly investigated. Here, we conducted a genome-wide association study (GWAS) for the sperm motility of cryop...
+
+
+========== GENE: Gm10118 ==========
+Description: predicted gene 10118 [Source:MGI Symbol;Acc:MGI:3642340]
+H3K27me3: 0 | Timing: Mid
+
+
+========== GENE: 3830431G21Rik ==========
+Description: RIKEN cDNA 3830431G21 gene [Source:MGI Symbol;Acc:MGI:3036228]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (3 papers, 1 tier1) ---
+Chimeric genes can be caused by structural genomic rearrangements that fuse together portions of two different genes to create a novel gene. We hypothesize that brain-expressed chimeras may contribute to schizophrenia. Individuals with schizophrenia and control individuals were screened genome wide for copy-number variants (CNVs) that disrupted two genes on the same DNA strand. Candidate events...
+---
+Alterations in DNA, such as DNA methylation, may be key molecular events involved in the development of major depressive disorder (MDD). We sought to clarify correlations between DNA methylation profiles and symptom heterogeneity among patients with MDD. We conducted a genome-wide DNA methylation analysis of blood samples from patients with MDD and controls, using the Infinium MethylationEPIC B...
+---
+Interstitial deletions of chromosome band 14q24.1q24.3 are apparently very rare. We report on three unrelated patients with overlapping de novo deletions of sizes 5.4, 2.8, and 2.3<U+2009>Mb in this region. While some clinical problems such as intestinal malrotation, cryptorchidism, and ectopic kidney were only observed in single patients, all three patients had mild intellectual disability, congenita...
+
+
+========== GENE: 1700084C01Rik ==========
+Description: RIKEN cDNA 1700084C01 gene [Source:MGI Symbol;Acc:MGI:1925715]
+H3K27me3: 1 | Timing: Mid
+
+
+========== GENE: Fam189a2 ==========
+Description: family with sequence similarity 189, member A2 [Source:MGI Symbol;Acc:MGI:2685813]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (18 papers, 6 tier1) ---
+Transposable elements (TEs), constituting half of the human genome, are essential for development and diseases. While the regulation of TE activity by cellular intrinsic mechanisms is well documented, their response to microenvironmental signals, particularly mechanical cues involving numerous biological processes, remains unknown. Here we show that various TE families, notably LTR7, undergo tr...
+---
+Lung cancer remains the leading cause of cancer-related mortality. Single-cell RNA sequencing (scRNA-seq) enables high-resolution mapping of tumor microenvironment, but how malignant cell states connect to patient outcomes and therapeutic vulnerabilities is not fully understood. We analyzed scRNA-seq profiles from 13 primary lung tumors and matched normal lung tissues (48,149 cells). Malignant ...
+---
+Crotonylation is an emerging lysine acylation modification implicated in various diseases, yet its role in esophageal squamous cell cancer (ESCC) is unexplored. This study aimed to investigate the role of crotonylation-related genes (CRGs) in ESCC using bioinformatics approaches. We included three ESCC datasets and 24 CRGs. Differentially expressed genes (DEGs) from TCGA-ESCA were intersected w...
+---
+Distinguishing between follicular thyroid cancer (FTC) and follicular thyroid adenoma (FTA) constitutes a long-standing diagnostic problem resulting in equivocal histopathological diagnoses. There is therefore a need for additional molecular markers. To identify molecular differences between FTC and FTA, we analyzed the gene expression microarray data of 52 follicular neoplasms. We also perform...
+---
+Primed epiblast stem cells (EpiSCs) can be reverted to a pluripotent embryonic stem cell (ESC)-like state by expression of single reprogramming factor. We used CRISPR activation to perform a genome-scale, reprogramming screen in EpiSCs and identified 142 candidate genes. Our screen validated a total of 50 genes, previously not known to contribute to reprogramming, of which we chose Sall1 for fu...
+---
+Critical illness-related corticosteroid insufficiency (CIRCI) can cause hemodynamic instability in neonates after congenital heart surgery with manifestations that increase morbidity and potential mortality. We retrospectively reviewed neonates who underwent cardiac surgery between August 2018 and July 2020 at a freestanding children's hospital, had next-generation sequencing performed, and had...
+---
+Transmembrane proteins play key roles in the development of lung cancer. The family with sequence similarity 189 member A2 (FAM189A2) gene encodes a transmembrane structural protein, yet its involvement in lung adenocarcinoma remains largely unexplored. This study elucidated its role in lung adenocarcinoma and its possible molecular mechanism. Our findings revealed diminished expression levels ...
+---
+The HECT-type ubiquitin E3 ligases including ITCH regulate many aspects of cellular function through ubiquitinating various substrates. These ligases are known to be allosterically autoinhibited and to require an activator protein to fully achieve the ubiquitination of their substrates. Here we demonstrate that FAM189A2, a downregulated gene in breast cancer, encodes a new type of ITCH activato...
+
+
+========== GENE: Gm7276 ==========
+Description: predicted gene 7276 [Source:MGI Symbol;Acc:MGI:3646549]
+H3K27me3: 1 | Timing: Late
+
+
+========== GENE: Gm5859 ==========
+Description: NA
+H3K27me3: 0 | Timing: Mid
+
+
+========== GENE: Gm1332 ==========
+Description: predicted gene 1332 [Source:MGI Symbol;Acc:MGI:2686178]
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (5 papers, 2 tier1) ---
+Fish often encounters exposures to acute environmental hypoxia either spatially or temporally. Gill organ plays important roles in response to hypoxic stress in fish. Few studies focus on the molecular regulation mechanisms of gills under hypoxic stress. In this study, we investigated the transcriptomic response to 12-h acute hypoxia in gill of a hypoxia tolerant fish, Nile tilapia Oreochromis ...
+---
+Intercalated cells (ICs) are acid-base regulatory cells in the kidney collecting duct that excrete either acid or base into the urine in response to systemic cues. A-ICs deliver protons into the tubule lumen via an apical proton pump (V-ATPase) and reabsorb base (bicarbonate) using the anion exchanger 1 (AE1) anion exchanger. B-ICs function in the opposite direction. They have basolateral V-ATP...
+---
+Cutaneous leishmaniasis (CL), caused by Leishmania (L.) species, remains a neglected tropical disease in many developing countries. We and others have shown that different Leishmania species can alter the gene expression profile of human host cells. Long non-coding RNAs (lncRNAs) have been found to play a role in the pathogenesis of leishmaniasis through dysregulation of transcriptome signature...
+---
+Proteins that contain a highly conserved TLDc domain (Tre2/Bub2/Cdc16 LysM domain catalytic) offer protection against oxidative stress and are widely implicated in neurological health and disease. How this family of proteins exerts their function, however, is poorly understood. We have recently found that the yeast TLDc protein, Oxr1p, inhibits the proton pumping vacuolar ATPase (V-ATPase) by i...
+---
+We recently found that nuclear receptor coactivator 7 (Ncoa7) and Oxr1 interact with the proton-pumping V-ATPase. Ncoa7 and Oxr1 belong to a group of proteins playing a role in the oxidative stress response, that contain the conserved "TLDc" domain. Here we asked if the three other proteins in this family, i.e., Tbc1d24, Tldc1 and Tldc2 also interact with the V-ATPase and if the TLDc domains ar...
+
+
+========== GENE: B930041F14Rik ==========
+Description: RIKEN cDNA B930041F14 gene [Source:MGI Symbol;Acc:MGI:2444790]
+H3K27me3: 0 | Timing: Late
+
+
+========== GENE: E530001K10Rik ==========
+Description: NA
+H3K27me3: 1 | Timing: Late
+
+
+========== GENE: Scn2a1 ==========
+Description: sodium channel, voltage-gated, type II, alpha 1 [Source:MGI Symbol;Acc:MGI:98248]
+H3K27me3: 0 | Timing: Late
+
+--- Abstracts (20 papers, 20 tier1) ---
+Episodic ataxia (EA), characterized by recurrent attacks of cerebellar dysfunction, is the manifestation of a group of rare autosomal dominant inherited disorders. EA1 and EA2 are most frequently encountered, caused by mutations in KCNA1 and CACNA1A. EA3-8 are reported in rare families. Advances in genetic testing have broadened the KCNA1 and CACNA1A phenotypes, and detected EA as an unusual pr...
+---
+Autism spectrum disorder (ASD) has a major impact on the development and social integration of affected individuals and is the most heritable of psychiatric disorders. An increase in the incidence of ASD cases has prompted a surge in research efforts on the underlying neuropathologic processes. We present an overview of current findings in neuropathology studies of ASD using two investigational...
+---
+Children diagnosed with autism spectrum disorder (ASD) commonly present with sensory hypersensitivity or abnormally strong reactions to sensory stimuli. Such hypersensitivity can be overwhelming, causing high levels of distress that contribute markedly to the negative aspects of the disorder. Here, we identify a mechanism that underlies hypersensitivity in a sensorimotor reflex found to be alte...
+---
+Ion channels and transporters are potential markers and therapeutic targets for several cancers. However, their expression during hepatocellular carcinoma (HCC) development remains unclear. To investigate the mRNA expression of Na(+), K(+) and Ca(2+) channels and ABC transporters during rat HCC development, as well as Abcc3 protein in human liver biopsies. Wistar rats were treated with diethyln...
+---
+Epigenetic modifications play a pivotal role in the process of neurogenesis. Among these modifications, reversible acetylation fine-tunes gene expression for both embryonic and adult neurogenesis. The CBP/KAT3A and its paralogue p300/KAT3B are well-known lysine acetyltransferases with transcriptional coactivation ability that engage in neural plasticity and memory. The exclusive role of their K...
+---
+SCN2A is an autism spectrum disorder (ASD) risk gene and encodes a voltage-gated sodium channel. However, the impact of ASD-associated SCN2A de novo variants on human neuron development is unknown. We studied SCN2A using isogenic SCN2A-/- induced pluripotent stem cells (iPSCs), and patient-derived iPSCs harboring a de novo R607* truncating variant. We used Neurogenin2 to generate excitatory (gl...
+---
+SCN2A-related disorders secondary to altered function in the voltage-gated sodium channel Nav1.2 are rare, with clinically heterogeneous expressions that include epilepsy, autism and multiple severe to profound impairments and other conditions. To advance understanding of the clinical phenotypes and their relationship to channel function, 81 patients (36 female, 44%, median age 5.4 years) with ...
+---
+The term Episodic Ataxias (EA) was originally used for a few autosomal dominant diseases, characterized by attacks of cerebellar dysfunction of variable duration and frequency, often accompanied by other ictal and interictal signs. The original group subsequently grew to include other very rare EAs, frequently reported in single families, for some of which no responsible gene was found. The cli...
+
+
+========== GENE: 6330403L08Rik ==========
+Description: RIKEN cDNA 6330403L08 gene [Source:MGI Symbol;Acc:MGI:1917994]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (1 papers, 0 tier1) ---
+Long non-coding RNA (lncRNA) are transcripts that do not typically code for protein but have essential roles in the regulation of transcription and translation in health and disease. The objective of this study was to identify potential lncRNAs that could play a role in the pathophysiology of hypertrophic cardiomyopathy (HCM). We analyzed RNA-Seq data for lncRNA expression from a mouse model of...
+
+
+========== GENE: Trav3-1 ==========
+Description: NA
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (2 papers, 0 tier1) ---
+Epstein-Barr virus (EBV) is one of the most common viruses in humans, capable of causing life-threatening infections and cancers in immunocompromised individuals. Although CD8+ T cells provide key protection against EBV, the persistence and dynamics of specific T-cell receptor (TCR) clones during immunosuppression in transplant patients is largely unknown. For the first time, we used a novel si...
+---
+Metal allergy is usually diagnosed by patch testing, however, the results do not necessarily reflect the clinical symptoms because of cross-reactivity between different metals. In this study, we established the novel mouse model of cross-reactive metal allergy, and aimed to elucidate the immune response in terms of T-cell receptor repertoire. This model was classified into two groups: the sensi...
+
+
+========== GENE: Gm4070 ==========
+Description: predicted gene 4070 [Source:MGI Symbol;Acc:MGI:3782245]
+H3K27me3: 0 | Timing: Mid
+
+
+========== GENE: Gm12394 ==========
+Description: predicted gene 12394 [Source:MGI Symbol;Acc:MGI:3649790]
+H3K27me3: 0 | Timing: Mid
+
+--- Abstracts (3 papers, 1 tier1) ---
+Male infertility is a multifactorial reproductive health problem with complex causes. Non-obstructive azoospermia (NOA) is characterized by failure of spermatogenesis, leading to the absence of spermatozoa in ejaculates. The molecular mechanism underlying the NOA is still not well understood. This study aims to identify the key genes involved in male infertility that could be a potential biomar...
+---
+Acral lentiginous melanoma (ALM) is the most common subtype of acral melanoma. Even though recent genetic studies are reported in acral melanomas, the genetic differences between in-situ and invasive ALM remain unclear. We aimed to analyze specific genetic changes in ALM and compare genetic differences between in-situ and invasive lesions to identify genetic changes associated with the pathogen...
+---
+Given that substantial genetic components have been shown in ischemic stroke, intracerebral hemorrhage (ICH), and subarachnoid hemorrhage (SAH), heritability may be higher in early-onset than late-onset individuals with these conditions. Although genome-wide association studies (GWASs) have identified various genes and loci significantly associated with ischemic stroke, ICH, or intracranial ane...
+
+
+========== GENE: Prkcc ==========
+Description: protein kinase C, gamma [Source:MGI Symbol;Acc:MGI:97597]
+H3K27me3: 1 | Timing: Mid
+
+--- Abstracts (19 papers, 20 tier1) ---
+Spinocerebellar ataxia type 14 (SCA14) is an autosomal dominant disorder characterized by progressive cerebellar dysfunction and neurodegeneration. To date, it is rarely reported in China. SCA14 is caused by mutations in the PRKCG gene, which encodes protein kinase C gamma (PKC<U+03B3>). Although nearly eighty distinct mutations of PRKCG gene have been identified, the pathological mechanisms of SCA14 ...
+---
+Acute Mountain Sickness (AMS) is one of the diseases that predispose to sudden ascent to high altitudes above 2500<U+00A0>m. Among the many studies on the occurrence and development of AMS, there are few studies on the severity of AMS. Some unidentified phenotypes or genes that determine the severity of AMS may be vital to elucidating the mechanisms of AMS. This study aims to explore the underlying ge...
+---
+Postural control is integrated in all facets of motor commands. The role of cortico-subcortical pathways underlying postural control, including cerebellum and its afferents (climbing, mossy, and noradrenergic fibers), basal ganglia, motor thalamus, and parieto-frontal neocortex has been identified in animal models, notably through the brain lesion technique in rats and in mice with spontaneous ...
+---
+Introduction:PRKCG mutations have been implicated in the pathogenesis of spinocerebellar ataxia type 14 (SCA14), which is a rare autosomal dominant disease marked by cerebellar degeneration, dysarthria, and nystagmus. Until now, there has never been a report of patients with mutations of c.1232G>C worldwide. Case description: We report a case of a 30-year-old Chinese man with episodic dystaxia,...
+---
+The changes in the protein kinase C gamma gene (PRKCG) expression are associated with both coding and non-coding variants. No studies have specifically established the association between PRKCG 3'UTR, 5'UTR, donor and acceptor splice variants with post-transcriptional changes through utilizing in-silico tools. The current study intends to uncover this linkage. In total, 419 3' and 5'UTR variant...
+---
+Spinocerebellar ataxias (SCAs) are a group of cerebellar diseases characterized by progressive ataxia and cerebellar atrophy. Several forms of SCAs are caused by missense mutations or deletions in genes related to calcium signaling in Purkinje cells. Among them, spinocerebellar ataxia type 14 (SCA14) is caused by missense mutations in PRKCG gene which encodes protein kinase C gamma (PKC<U+03B3>). It i...
+---
+Spinocerebellar ataxia type 14 (SCA14) is an autosomal dominant SCA caused by variants of the PRKCG encoding protein kinase C gamma (PKC<U+03B3>). Although the toxic gain-of-function mechanism is the main cause of SCA14, its molecular pathophysiology remains unclear. To elucidate the molecular pathogenesis of SCA14, we analyzed two families with the variants in PRKCG. Clinical symptoms and neurologica...
+---
+Cerebellar ataxias with autosomal dominant transmission are rare, but identification of the associated genes has provided insight into the mechanisms that could underlie other forms of genetic or non-genetic ataxias. In many instances, the phenotype is not restricted to cerebellar dysfunction but includes complex multisystemic neurological deficits. The designation of the loci, SCA for spinocer...
+
+
+========== GENE: 2210403K04Rik ==========
+Description: NA
+H3K27me3: 0 | Timing: Mid
+
+
+========== GENE: 6720401G13Rik ==========
+Description: NA
+H3K27me3: 0 | Timing: Mid
+
+
+========== GENE:  ==========
+Description: NA
+H3K27me3: 0 | Timing: Late
+
+
+========== GENE: A530084C06Rik ==========
+Description: RIKEN cDNA A530084C06 gene [Source:MGI Symbol;Acc:MGI:3704402]
+H3K27me3: 1 | Timing: Mid
+
+

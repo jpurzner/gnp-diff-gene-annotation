@@ -1,0 +1,949 @@
+# Batch 12 — 34 genes
+# Clusters: 5
+
+========== GENE: Sema4f ==========
+Description: sema domain, immunoglobulin domain (Ig), TM domain, and short cytoplasmic domain [Source:MGI Symbol;Acc:MGI:1340055]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+Probable cell surface receptor that regulates oligodendroglial precursor cell migration (PubMed:21945643). Might also regulate differentiation of oligodendroglial precursor cells (By similarity). Has growth cone collapse activity against retinal ganglion-cell axons (By similarity). .
+
+--- MGI Knockout Phenotypes ---
+decreased bone mineral density | decreased leukocyte cell number | decreased bone mineral content
+
+--- Abstracts (20 papers, 7 tier1) ---
+Clinical outcomes in neuroblastoma (NB) are closely linked to its differentiation status, making the reversal of differentiation arrest a highly promising therapeutic objective. However, the mechanisms that govern neuronal differentiation in NB remain unclear. In this study, we identify TRIM59 as a key regulator of RNA splicing that drives NB differentiation via an SFPQ-dependent mechanism. To ...
+---
+The transition of differentiated Schwann cells to support of nerve repair after injury is accompanied by remodeling of the Schwann cell epigenome. The EED-containing polycomb repressive complex 2 (PRC2) catalyzes histone H3K27 methylation and represses key nerve repair genes such as Shh, Gdnf, and Bdnf, and their activation is accompanied by loss of H3K27 methylation. Analysis of nerve injury i...
+---
+Semaphorins are secreted or membrane-anchored proteins that play critical roles in neural development and adult brain plasticity. Sema4F is a transmembrane semaphorin found on glutamatergic synapses, in which it is attached to the PSD-95-scaffolding protein. Here we further examined the expression of Sema4F by raising specific antibodies. We show that Sema4F protein is widely expressed by neuro...
+---
+Childhood medulloblastoma is a malignant form of brain tumor that is widely classified into four subgroups based on molecular and genetic characteristics. Accurate classification of these subgroups is crucial for appropriate treatment, monitoring plans, and targeted therapies. However, misclassification between groups 3 and 4 is common. To address this issue, an AI-based R package called MBMeth...
+---
+Skin-derived precursors (SKPs) display the characteristics of self-renewal and multilineage differentiation. The study aimed to explore the molecular mechanisms of mouse SKPs differentiation into SKP-derived fibroblasts (SFBs). We compared the microRNA (miRNA) profile in mouse SKPs and SFBs by RNA sequenc-ing. Real-time quantitative reverse transcription PCR (qRT-PCR) was performed to validate ...
+---
+Background: Glioblastoma (GBM) is the most common and malignant type of brain tumor. A large number of studies have shown that the immunotherapy of tumors is effective, but the immunotherapy effect of GBM is not poor. Thus, further research on the immune-related hub genes of GBM is extremely important. Methods: The GBM highly correlated gene clusters were screened out by differential expression...
+---
+Cachexia is an extrapulmonary manifestation of Chronic Obstructive Pulmonary Disease (COPD) characterized by weight loss and muscle wasting. Transcriptomic profiling of vastus lateralis biopsies enables profiling of COPD-cachexia relevant dysregulation. As obtaining muscle biopsies is invasive and yields limited tissue, human muscle derived cultures (HMDC) may enable mechanistic research into c...
+---
+The tumour microenvironment plays an essential role in malignancy, and neurons have emerged as a key component of the tumour microenvironment that promotes tumourigenesis across a host of cancers1,2. Recent studies on glioblastoma (GBM) highlight bidirectional signalling between tumours and neurons that propagates a vicious cycle of proliferation, synaptic integration and brain hyperactivity3-8...
+
+
+========== GENE: Tiam1 ==========
+Description: T cell lymphoma invasion and metastasis 1 [Source:MGI Symbol;Acc:MGI:103306]
+H3K27me3: 0 | Timing: Late
+
+--- UniProt Function ---
+Guanyl-nucleotide exchange factor that activates RHO-like proteins and connects extracellular signals to cytoskeletal activities. Activates RAC1, CDC42, and to a lesser extent RHOA and their downstream signaling to regulate processes like cell adhesion and cell migration. .
+
+--- MGI Knockout Phenotypes ---
+abnormal apoptosis | decreased cell proliferation | increased malignant tumor incidence | increased squamous cell carcinoma incidence | decreased incidence of tumors by chemical induction | anencephaly | exencephaly | abnormal forebrain morphology | abnormal diencephalon morphology | decreased locomotor activity | decreased exploration in new environment | increased cornea thickness
+
+--- Abstracts (20 papers, 20 tier1) ---
+Axon and dendrite development require the cooperation of actin and microtubule cytoskeletons. Microtubules form a well-organized network to direct polarized trafficking and support neuronal processes formation with distinct actin structures. However, it is largely unknown how cytoskeleton regulators differentially regulate microtubule organization in axon and dendrite development. Here, we char...
+---
+Glucose-stimulated insulin secretion [GSIS] from the islet <U+03B2>-cell involves a well-orchestrated interplay between metabolic and cationic events. It is well established that intracellular generation of adenine and guanine nucleotide triphosphates [e.g., ATP and GTP] represents one of the requisite signaling steps in GSIS. The small molecular mass GTP-binding proteins [G-proteins; e.g., Rac1 and C...
+---
+Signaling via the Rho GTPases provides crucial regulation of numerous cell polarization events, including apicobasal (AB) polarity, polarized cell migration, polarized cell division and neuronal polarity. Here we review the relationships between the Rho family GTPases and epithelial AB polarization events, focusing on the 3 best-characterized members: Rho, Rac and Cdc42. We discuss a multitude ...
+---
+The differentiation of fibroblasts to myofibroblasts is critical for the development of idiopathic pulmonary fibrosis (IPF). T-cell lymphoma invasion and metastasis 1 (TIAM1) is known to be associated with amyotrophic lateral sclerosis 1 and colorectal cancer; however, its role in IPF is unclear. The aim of the present study was to investigate the expression and roles of TIAM1 in lung fibroblas...
+---
+Rab23 was a member of Ras-related small GTPase family, which played a key role in the regulation of Shh signaling pathway. However, the function and regulatory mechanism of Rab23 in cutaneous squamous cell carcinoma was unknown. In this study, we found that the expression level of Rab23 was higher in moderately to poorly tumor differentiation tissue and non-exposed positions, and no statistical...
+---
+The histone H3 lysine 27 (H3K27) demethylase Kdm6b (Jmjd3) can promote cellular differentiation, however its physiological functions in neurons remain to be fully determined. We studied the expression and function of Kdm6b in differentiating granule neurons of the developing postnatal mouse cerebellum. At postnatal day 7, Kdm6b is expressed throughout the layers of the developing cerebellar cor...
+---
+Pericytes are multipotent mesenchymal precursor cells that demonstrate tissue-specific properties. In this study, by comparing human adipose tissue- and periosteum-derived pericyte microarrays, we identified T cell lymphoma invasion and metastasis 1 (TIAM1) as a key regulator of cell morphology and differentiation decisions. TIAM1 represented a tissue-specific determinant between predisposition...
+---
+With a high rate of metastasis and recurrence, gastric cancer (GC), a common malignant tumor, often has a poor prognosis. GC tissues have abnormal expressions of the Sry-related HMG-box family of transcription factors (SOX9), T-lymphoma invasion and metastasis-inducing factor 1 (Tiam1), and phosphatase and tensin homolog deleted on chromosome ten (PTEN). Meanwhile, vascular endothelial growth f...
+
+
+========== GENE: Calb2 ==========
+Description: calbindin 2 [Source:MGI Symbol;Acc:MGI:101914]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Calcium-binding protein involved in calcium homeostasis and signal transduction. It plays a critical role in buffering intracellular calcium levels and modulating calcium-dependent signaling pathways. Predominantly expressed in specific neuronal populations, influences synaptic plasticity and neuronal excitability, contributing to learning and memory (PubMed:10220453, PubMed:35165172). During embryonic development, it facilitates neuronal differentiation and maturation (By similarity). .
+
+--- MGI Knockout Phenotypes ---
+impaired coordination | abnormal nervous system electrophysiology | abnormal long-term potentiation | no abnormal phenotype detected | reduced long-term potentiation
+
+--- Abstracts (20 papers, 20 tier1) ---
+Tumor-associated macrophages mainly differentiate into M2 phenotypes, which secrete cytokines that reshape the tumor microenvironment and promote tumor progression. This study was to explore the mechanism of CALB2 in M2 polarization and pancreatic adenocarcinoma (PAAD). Clinical tissue samples of PAAD were collected, followed by detection of WTAP, FOSL1, and CALB2 expression. The correlation be...
+---
+Illuminating the mechanisms of odontoblast differentiation of human dental pulp stem cells (hDPSCs) is the key to find therapeutic clues to promote odontogenesis. LncRNAs play a regulatory role in odontoblast differentiation. Here, we identified a novel lncRNA, named lncRNA CALB2. It was up-regulated in odontoblast-differentiated hDPSCs and potentially interacted with miR-30b-3p and RUNX2. Via ...
+---
+The association between anal fistula patients and colorectal cancer, as well as the potential pathophysiological mechanisms, remains unclear. To explore the relationship between anal fistula and colorectal cancer and its potential mechanisms. Analysis of GEO and TCGA databases. Disease-related genes were also referenced from Coremine Medical, GeneCard and OMIM. Core hub genes were identified th...
+---
+Spinal cord injury (SCI) leads to significant destruction of nerve tissue, causing the degeneration of axons and the formation of cystic cavities. This study aimed to examine the characteristics of human umbilical cord-derived mesenchymal stem cells (HUCMSCs) cultured in a serum-free conditioned medium (CM) and assess their effectiveness in a well-established hemitransection SCI model. In this ...
+---
+This study explores the cell fate reprogrammability of H3K27M-mutant pediatric high-grade gliomas (pHGG) using neuronal transdifferentiation as a potential targeted therapy. We treated the BT245 patient-derived glioma cell line with pharmacological combinations targeting neuronal differentiation pathways and performed bulk RNA sequencing to characterize gene expression patterns driving cell fat...
+---
+Poststroke cognitive impairment (PSCI) often occurs during the stroke recovery period and greatly increases the difficulty of rehabilitation. Activation of neuroinflammation and long-term changes in gene expression patterns in the hippocampus could be essential in the development of PSCI. Therefore, this study aimed to identify neuroinflammation and changes in gene expression patterns in the hi...
+---
+Invasiveness of pituitary adenoma is the main cause of its poor prognosis, mechanism of which remains largely unknown. In this study, the differential proteins between invasive and non-invasive pituitary tumors (IPA and NIPA) were identified by TMT labeled quantitative proteomics. The differential metabolites in venous bloods from patients with IPA and NIPA were analyzed by untargeted metabolom...
+---
+Despite the disease relevance, understanding of human retinal development lags behind that of other species. We compared the kinetics of gene silencing or induction during ganglion cell development in human and murine retina. Induction of POU4F2 (BRN3B) marks ganglion cell commitment, and we detected this factor in S-phase progenitors that had already silenced Cyclin D1 and VSX2 (CHX10). This f...
+
+
+========== GENE: Syn2 ==========
+Description: synapsin II [Source:MGI Symbol;Acc:MGI:103020]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Neuronal phosphoprotein that coats synaptic vesicles, binds to the cytoskeleton, and is believed to function in the regulation of neurotransmitter release. May play a role in noradrenaline secretion by sympathetic neurons. .
+
+--- MGI Knockout Phenotypes ---
+convulsive seizures | abnormal CNS synaptic transmission | decreased post-tetanic potentiation | increased synaptic depression | seizures | abnormal brain morphology | decreased brain weight | abnormal neuron morphology | delayed CNS synapse formation | abnormal excitatory postsynaptic potential | decreased synaptic depression | abnormal miniature excitatory postsynaptic currents | abnormal synaptic vesicle number | abnormal hippocampus physiology | abnormal emotion/affect behavior | abnormal...
+
+--- Abstracts (20 papers, 20 tier1) ---
+Multisystem inflammatory syndrome in children (MIS-C) is a postinfectious sequela of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), with some clinical features overlapping with Kawasaki disease (KD). Our research group and others have highlighted that the spike protein of SARS-CoV-2 can trigger the activation of human endogenous retroviruses (HERVs), which in turn induces inflamm...
+---
+Alzheimer's disease (AD) is one of the most prevalent forms of dementia globally and remains an incurable condition that often leads to death. PANoptosis represents an emerging paradigm in programmed cell death, integrating three critical processes: pyroptosis, apoptosis, and necroptosis. Studies have shown that apoptosis, necroptosis, and pyroptosis play important roles in AD development. Ther...
+---
+Syncytiotrophoblasts (STs) are multinucleated cells formed by the fusion of trophoblasts and play critical roles in placental development and function. Retrovirus-derived fusogenic proteins, known as syncytins, regulate trophoblast fusion by interacting with specific receptors. In humans, two syncytins, Syncytin-1 (Syn1) and Syncytin-2 (Syn2), have been identified. Although both are considered ...
+---
+The cerebellum contains a circadian clock, generating internal temporal signals. The daily oscillations of cerebellar proteins were investigated in mice using a large-scale two-dimensional difference in gel electrophoresis (2D-DIGE). Analysis of 2D-DIGE gels highlighted the rhythmic variation in the intensity of 27/588 protein spots (5%) over 24 h based on cosinor regression. Notably, the rhyth...
+---
+Human endogenous retroviruses (HERVs) are relics of ancestral infections and represent 8% of the human genome. They are no longer infectious, but their activation has been associated with several disorders, including neuropsychiatric conditions. Enhanced expression of HERV-K and HERV-H envelope genes has been found in the blood of autism spectrum disorder (ASD) patients, but no information is a...
+---
+Glioblastoma (GBM) is a common and aggressive primary brain tumor, and the prognosis for GBM patients remains poor. This study aimed to identify the key genes associated with the development of GBM and provide new diagnostic and therapies for GBM. Three microarray datasets (GSE111260, GSE103227, and GSE104267) were selected from Gene Expression Omnibus (GEO) database for integrated analysis. Th...
+---
+Syndecans (syn-1, -2, -3, -4) and glypican-1 are proteoglycans expressed during development in association with changes in tissue organization and differentiation. They participate in the modulation of growth factor actions and in cell-cell and cell-matrix adhesion. The expression of syn-1, -2, -3, -4, and glypican-1 has been studied in normal human placenta and in gestational trophoblastic dis...
+---
+Objective <U+2003>The retroviral genes encoding Syncytin-1 ( SYN1 ) and Syncytin-2 ( SYN2 ) are epigenetically regulated, uniquely expressed in the placenta and critical to placental function. We sought to determine if placental expression and methylation patterns of SYN1 and SYN2 from pregnancies complicated by fetal growth restriction (FGR) differed from physiologic small for gestational age (SGA) a...
+
+
+========== GENE: Rnf112 ==========
+Description: ring finger protein 112 [Source:MGI Symbol;Acc:MGI:106611]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+E3 ubiquitin-protein ligase that plays an important role in neuronal differentiation, including neurogenesis and gliogenesis, during brain development. During embryonic development initiates neuronal differentiation by inducing cell cycle arrest at the G0/G1 phase through up-regulation of cell-cycle regulatory proteins (PubMed:21566658, PubMed:28684796). Plays a role not only in the fetal period during the development of the nervous system, but also in the adult brain, where it is involved in the maintenance of neural functions and protection of the nervous tissue cells from oxidative stress-induced damage (PubMed:26792191, PubMed:26951452, PubMed:27918959). Exhibits GTPase and E3 ubiquitin-protein ligase activities. Regulates dendritic spine density and synaptic neurotransmission; its ability to hydrolyze GTP is involved in the maintenance of dendritic spine density (PubMed:26212327). .
+
+--- MGI Knockout Phenotypes ---
+abnormal reproductive system physiology | decreased brain size | decreased paired-pulse facilitation | abnormal miniature excitatory postsynaptic currents | decreased dendritic spine number | hyperactivity | increased vertical activity
+
+--- Abstracts (16 papers, 8 tier1) ---
+Major depressive disorder (MDD) is a common disease affecting 300 million people worldwide. The existing drugs are ineffective for approximately 30% of patients, so it is urgent to develop new antidepressant drugs with novel mechanisms. Here, we found that norisoboldine (NOR) showed an antidepressant efficacy in the chronic social defeat stress (CSDS) depression model in the tail suspension, fo...
+---
+To identify the prognostic markers of oral squamous cell carcinoma (OSCC), the genetic heterogeneity of the pathological stages was investigated. The data of 295 patients with primary OSCC obtained from the Cancer Genome Atlas were studied. The genetic prognostic landscape of the pathological stages was systematically analyzed by Cox regressions, Fisher's exact tests, and Gene Ontology (GO) enr...
+---
+Rnf112 is a member of the RING finger protein family. The expression of Rnf112 is abundant in the brain and is regulated during brain development. Our previous study has revealed that Rnf112 can promote neuronal differentiation by inhibiting the progression of the cell cycle in cell models. In this study, we further revealed the important functions of Rnf112 in embryo development and in adult b...
+---
+A single, severe episode of stress can bring about myriad responses amongst individuals, ranging from cognitive enhancement to debilitating and persistent anxiety; however, the biological mechanisms that contribute to resilience versus susceptibility to stress are poorly understood. The dentate gyrus (DG) of the hippocampus and the basolateral nucleus of the amygdala (BLA) are key limbic region...
+---
+Ganoderic Acid A (GAA), a primary bioactive component in Ganoderma, has demonstrated ameliorative effects on depressive-like behaviors in a Chronic Social Defeat Stress (CSDS) mouse model. This study aims to elucidate the underlying molecular mechanisms through proteomic analysis. C57BL/6<U+00A0>J mice were allocated into control (CON), chronic social defeat stress (CSDS), GAA, and imipramine (IMI) gr...
+---
+The protein autoubiquitination has emerged as a significant focus in pan-cancer genetic research due to its potential impact on cancer progression and treatment. Protein autoubiquitination regulates the stability, activity, and localization of involved proteins, playing a crucial role in various cellular processes, including signal transduction, protein quality control, and immune response regu...
+---
+Zinc finger protein 179 (Znf179), also known as ring finger protein 112 (Rnf112), is a member of the RING finger protein family and plays an important role in neuronal differentiation. To investigate novel mechanisms of Znf179 regulation and function, we performed a yeast two-hybrid screen to identify Znf179-interacting proteins. Using a yeast two-hybrid screen, we have identified promyelocytic...
+---
+Intracerebral hemorrhage (ICH) is reported as a common and often fatal type of stroke accompanied with high morbidity and mortality, and it frequently results in long-lasting neurological dysfunctions. However, the pathogenesis that contributes to ICH has not been fully understood. Rnf112, also known as Znf179, is a member of the RING finger protein family. The expression of Rnf112 is abundant ...
+
+
+========== GENE: Prrt1 ==========
+Description: proline-rich transmembrane protein 1 [Source:MGI Symbol;Acc:MGI:1932118]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Required to maintain a pool of extrasynaptic AMPA-regulated glutamate receptors (AMPAR) which is necessary for synapse development and function (PubMed:29490264). Regulates AMPAR function and synaptic transmission during development but is dispensable at mature hippocampal synapses (PubMed:29490264, PubMed:31216424). Plays a role in regulating basal phosphorylation levels of glutamate receptor GRIA1 and promotes GRIA1 and GRIA2 cell surface expression (PubMed:31216424). .
+
+--- MGI Knockout Phenotypes ---
+reduced long-term potentiation | abnormal miniature excitatory postsynaptic currents | abnormal object recognition memory | increased exploration in new environment | impaired spatial learning
+
+--- Abstracts (20 papers, 11 tier1) ---
+The AMPA glutamate receptor (AMPAR) is the major type of synaptic excitatory ionotropic receptor in the brain. AMPARs have four different subunits, GluA1-4 (each encoded by different genes, Gria1, Gria2, Gria3 and Gria4), that can form distinct tetrameric assemblies. The most abundant AMPAR subtypes in the hippocampus are GluA1/2 and GluA2/3 heterotetramers. Each subtype contributes differentia...
+---
+AMPA-type glutamate receptors (AMPAR) are one of the principal mediators of fast excitatory synaptic transmission in the brain. These receptors associate with multiple integral membrane proteins which influence their trafficking and channel properties. Proline-rich transmembrane protein 1 (PRRT1) is a membrane protein and an understudied component of native AMPAR complexes. In order to understa...
+---
+The dispanins are a family of 15 transmembrane proteins that have diverse and often unclear physiological functions. Many dispanins, including synapse differentiation induced gene 1 (SynDIG1), proline-rich transmembrane protein 1 (PRRT1)/SynDIG4, and PRRT2, are expressed in the central nervous system (CNS), where they are involved in the development of synapses, regulation of neurotransmitter r...
+---
+The transmembrane protein Synapse Differentiation Induced Gene 4 (SynDIG4) functions as an auxiliary factor of AMPA receptors (AMPARs) and plays a critical role in excitatory synapse plasticity as well as hippocampal-dependent learning and memory. Mice lacking SynDIG4 have reduced surface expression of GluA1 and GluA2 and are impaired in single tetanus-induced long-term potentiation and NMDA re...
+---
+Altering AMPA receptor (AMPAR) content at synapses is a key mechanism underlying the regulation of synaptic strength during learning and memory. Previous work demonstrated that SynDIG1 (synapse differentiation-induced gene 1) encodes a transmembrane AMPAR-associated protein that regulates excitatory synapse strength and number. Here we show that the related protein SynDIG4 (also known as Prrt1)...
+---
+The transmembrane protein Synapse Differentiation Induced Gene 4 (SynDIG4) functions as an auxiliary factor of AMPA receptors (AMPARs) and plays a critical role in excitatory synaptic plasticity as well as hippocampal-dependent learning and memory. Mice lacking SynDIG4 have reduced surface expression of GluA1 and GluA2 and are impaired in single tetanus-induced long-term potentiation and NMDA r...
+---
+Regulation of <U+03B1>-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid (AMPA)-type glutamate receptors (AMPARs) at synapses is a predominant mechanism for regulating synaptic strength. We identified the transmembrane protein synapse differentiation-induced gene 1 (SynDIG1; SD1) as an AMPAR interacting protein that regulates excitatory synaptic strength and AMPAR number both in vitro and in vivo. Th...
+---
+Epigenetic processes have been suggested as key mechanisms in the etiology of neurodevelopmental disorders. This systematic review summarizes the current evidence for an association between epigenetics and Autism Spectrum Disorder (ASD) and Attention/Deficit-Hyperactivity Disorder (ADHD). Six databases were searched until the 24th of October 2017. Of the 2169 retrieved articles, 29 met our incl...
+
+
+========== GENE: Lin7a ==========
+Description: lin-7 homolog A (C. elegans) [Source:MGI Symbol;Acc:MGI:2135609]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Plays a role in establishing and maintaining the asymmetric distribution of channels and receptors at the plasma membrane of polarized cells. Forms membrane-associated multiprotein complexes that may regulate delivery and recycling of proteins to the correct membrane domains. The tripartite complex composed of LIN7 (LIN7A, LIN7B or LIN7C), CASK and APBA1 associates with the motor protein KIF17 to transport vesicles containing N-methyl-D-aspartate (NMDA) receptor subunit NR2B along microtubules (PubMed:10846156). This complex may have the potential to couple synaptic vesicle exocytosis to cell adhesion in brain. Ensures the proper localization of GRIN2B (subunit 2B of the NMDA receptor) to neuronal postsynaptic density and may function in localizing synaptic vesicles at synapses where it is recruited by beta-catenin and cadherin. Required to localize Kir2 channels, GABA transporter (SLC6A12) and EGFR/ERBB1, ERBB2, ERBB3 and ERBB4 to the basolateral membrane of epithelial cells. .
+
+--- MGI Knockout Phenotypes ---
+no abnormal phenotype detected
+
+--- Abstracts (20 papers, 10 tier1) ---
+The underlying molecular pathways of idiopathic pulmonary fibrosis (IPF), a progressive lung condition with a high death rate, are still mostly unknown. By using microarray datasets, this study aims to identify new genetic targets for IPF and provide light on the genetic factors that contribute to the development of IPF. We conducted a comprehensive analysis of three independent IPF datasets fr...
+---
+Bone non-union is a common fracture complication that can severely impact patient outcomes, yet its mechanism is not fully understood. This study used differential analysis and weighted co-expression network analysis (WGCNA) to identify susceptibility modules and hub genes associated with fracture healing. Two datasets, GSE125289 and GSE213891, were downloaded from the GEO website, and differen...
+---
+The present study aimed to investigate the molecular mechanisms underlying glioblastoma multiform (GBM) and its biomarkers. The differentially expressed genes (DEGs) were diagnosed using the limma software package. The ToppGene (ToppFun) was used to perform pathway and Gene Ontology (GO) enrichment analysis of the DEGs. Protein-protein interaction (PPI) networks, extracted modules, miRNA-target...
+---
+The mechanisms regulating cuproptosis in severe influenza are still unknown. We aimed to identify the molecular subtypes of cuproptosis and immunological characteristics associated with severe influenza in patients requiring invasive mechanical ventilation (IMV). The expression of cuproptosis modulatory factors and immunological characteristics of these patients were analyzed using the public d...
+---
+The vertebrate retina develops from an undifferentiated sheet of neuroepithelial cells, whose differentiation requires the generation and maintenance of the correct cellular polarity. To examine the role of cell polarity in retinal development, we cloned three zebrafish lin7 genes (lin7a, lin7b, and lin7c), which each encodes a protein candidate that is required for generation/maintenance of ne...
+---
+Periodontitis is an immuno-inflammatory disease caused by dental plaque biofilms and inflammations. The regeneration of bone tissue in inflammatory environment is of great significance for the treatment of periodontal disease, but the specific molecular mechanism of bone formation in periodontitis still needs further exploration. The objective of this study was to identify key osteogenesis-rela...
+---
+Since some of the clinical examinations are not suitable for patients with severe spinal cord injury (SCI), blood biomarkers have been reported to reflect the severity of SCI. The objective of this study was to screen out the potential biomarkers associated with the diagnosis of SCI by bioinformatics analysis. The microarray expression profiles of SCI were obtained from the Gene Expression Omni...
+---
+Sporadic early-onset Alzheimer's disease (EOAD) and autosomal dominant Alzheimer's disease (ADAD) provide the opportunity to investigate the physiopathological mechanisms in the absence of aging, present in late-onset forms. Frontotemporal dementia (FTD) causes early-onset dementia associated to tau or TDP43 protein deposits. A 15% of FTD cases are caused by mutations in C9orf72, GRN, or MAPT g...
+
+
+========== GENE: Adcy1 ==========
+Description: adenylate cyclase 1 [Source:MGI Symbol;Acc:MGI:99677]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Catalyzes the formation of the signaling molecule cAMP in response to G-protein signaling. Mediates responses to increased cellular Ca(2+)/calmodulin levels (PubMed:7816821, PubMed:9662407). May be involved in regulatory processes in the central nervous system (PubMed:9662407). May play a role in memory and learning (PubMed:7816821). Plays a role in the regulation of the circadian rhythm of daytime contrast sensitivity probably by modulating the rhythmic synthesis of cyclic AMP in the retina (PubMed:24048828). .
+
+--- MGI Knockout Phenotypes ---
+abnormal spatial learning | abnormal excitatory postsynaptic potential | abnormal enzyme/coenzyme activity | hyporesponsive to tactile stimuli | increased chemical nociceptive threshold | abnormal somatosensory cortex physiology | absent barrels in primary somatosensory cortex | disorganized barrel cortex | impaired synaptic plasticity | abnormal excitatory postsynaptic currents | abnormal CNS synaptic transmission | abnormal thalamus morphology | abnormal coat/hair pigmentation | abnormal lo...
+
+--- Abstracts (20 papers, 20 tier1) ---
+Methamphetamine is a highly abused psychostimulant that substantially impacts public health. Prenatal and postnatal methamphetamine exposure alters gene expression, brain development, and behavior in the offspring, although the underlying mechanisms are not fully defined. To assess these adverse outcomes in the offspring, we employed a mouse model of prenatal and postnatal methamphetamine expos...
+---
+Adult T-cell leukemia/lymphoma (ATLL) is a poor prognosis malignancy of peripheral T-cells caused by human T-cell leukemia virus type 1 (HTLV-1). The low survival rates observed in the patients are the result of the lack of sufficient knowledge about the disease pathogenesis. In the present study, we first identified differentially expressed genes in ATLL patients and the cellular signaling pat...
+---
+Herein we hypothesized that DPP10-AS1 could affect the development of colon cancer via the interaction with miR-127-3p and adenylate cyclase 1 (ADCY1). After sorting of CD133 positive cells, sphere formation, colony formation, proliferation, invasion, migration, and apoptosis were detected to explore the involvement of DPP10-AS1 and miR-127-3p in the colon cancer stem cell (CCSC) properties thr...
+---
+Gotland sheep, a breed native to Gotland, Sweden (an island in the Baltic Sea), split from the Gute sheep breed approximately 100 years ago, and since, has probably been crossed with other breeds. This breed has recently gained popularity, due to its pelt quality. This study estimates the shared ancestors and identifies recent selection signatures in Gotland sheep using 600 K single nucleotide ...
+---
+SYNGAP1 is a Ras GTPase-activating protein that plays a crucial role during brain development and in synaptic plasticity. Sporadic heterozygous mutations in SYNGAP1 affect social and emotional behaviour observed in intellectual disability (ID) and autism spectrum disorder (ASD). Although neurophysiological deficits have been extensively studied, the epigenetic landscape of SYNGAP1 mutation-medi...
+---
+Alcohol dependence (AD) is often accompanied by comorbid depression. Recent clinical evidence supports the benefit of subtype-specific pharmacotherapy in treating the population of alcohol-dependent subjects with comorbid major depressive disorder (MDD). However, in many alcohol-dependent subjects, depression is a reactive response to chronic alcohol use and withdrawal and abates with a period ...
+---
+Schizophrenia (SCZ) is a chronic debilitating neuropsychiatric disorder with multiple risk factors involving numerous complex genetic influences. We examined and updated a master list of clinically relevant and susceptibility genes associated with SCZ reported in the literature and genomic databases dedicated to gene discovery for characterization of SCZ genes. We used the commercially availabl...
+---
+: Detection of selection footprints provides insight into the evolution process and the underlying mechanisms controlling the phenotypic diversity of traits that have been exposed to selection. Selection focused on certain characters, mapping certain genomic regions often shows a loss of genetic diversity with an increased level of homozygosity. Therefore, the runs of homozygosity (ROHs), homoz...
+
+
+========== GENE: Gpld1 ==========
+Description: glycosylphosphatidylinositol specific phospholipase D1 [Source:MGI Symbol;Acc:MGI:106604]
+H3K27me3: 0 | Timing: Late
+
+--- UniProt Function ---
+Hydrolyzes the inositol phosphate linkage of glycosylphosphatidylinositol (GPI)-anchored membrane proteins, thereby releasing them from the cell surface. Cleaves on the inositol side of the anchor, leaving the phosphate group attached to the membrane (PubMed:17720976). This release of GPI-anchored proteins can modulate diverse biological processes, including the activation of signaling pathways (PubMed:17720976). .
+
+--- MGI Knockout Phenotypes ---
+abnormal kidney morphology | abnormal heart morphology | abnormal testis morphology | small testis | enlarged heart | increased brain weight | decreased circulating cholesterol level | increased heart weight | increased circulating alkaline phosphatase level | enlarged kidney | increased kidney weight | increased lean body mass | increased spleen weight | decreased total body fat amount | preweaning lethality, incomplete penetrance
+
+--- Abstracts (19 papers, 9 tier1) ---
+Reversing brain aging may be possible through systemic interventions such as exercise. We found that administration of circulating blood factors in plasma from exercised aged mice transferred the effects of exercise on adult neurogenesis and cognition to sedentary aged mice. Plasma concentrations of glycosylphosphatidylinositol (GPI)-specific phospholipase D1 (Gpld1), a GPI-degrading enzyme der...
+---
+We have sequenced the whole genomes of eight proven Holstein bulls from the four half-sib or full-sib families with extremely high and low estimated breeding values (EBV) for milk protein percentage (PP) and fat percentage (FP) using Illumina re-sequencing technology. Consequently, 2.3 billion raw reads were obtained with an average effective depth of 8.1<U+00D7>. After single nucleotide variant (SNV)...
+---
+Deletion of pregnancy-associated plasma protein-A (PAPP-A), a protease that cleaves some but not all IGF1 binding proteins, postpones late-life diseases and extends lifespan in mice, but the mechanism of this effect is unknown. Here we show that PAPP-A knockout (PKO) mice display a set of changes, in multiple tissues, that are characteristic of other varieties of slow-aging mice with alteration...
+---
+Hypertrophic cardiomyopathy (HCM) is a prevalent cardiovascular disorder affecting populations worldwide, characterized by abnormal thickening of the heart muscle.(Supporting S1) The development of HCM is influenced by multiple factors, including genetic mutations, geographical conditions, lifestyle, and environmental exposures. The availability of extensive genomic datasets in public repositor...
+---
+Although our knowledge regarding oocyte quality and development has improved significantly, the molecular mechanisms that regulate and determine oocyte developmental competence are still unclear. Therefore, the objective of this study was to identify and analyze the transcriptome profiles of porcine oocytes derived from large or small follicles using RNA high-throughput sequencing technology. R...
+---
+Lipid droplets (LDs) hypertrophy in adipocytes is the main cause of energy metabolic system dysfunction, obesity and its afflictions such as T2D. However, the role of adipocytes in linking energy metabolic disorders with insulin regulation is unknown in humans. Human adipocytes constitutively synthesize and secrete insulin, which is biologically functional. Insulin concentrations and release ar...
+---
+Selective androgen receptor (AR) modulators (SARMs) are potent anabolic agents with a high potential of misuse in horseracing and equestrian sports. In this study, we applied label-free proteomics to discover plasma protein biomarkers in geldings (castrated horses) after administration with a popular SARM named RAD140. Tryptic peptides were prepared from plasma samples and analyzed by nano-flow...
+---
+Protein S deficiency (PSD) is an autosomal dominant disorder characterized by congenital thrombophilia. Studies on PSD are limited yet, resulting in a lack of clarity about molecular changes during abnormal coagulation. Proteomics and metabolomics analyses were conducted on the plasma of PSD patients based on liquid and gas chromatography-mass spectrometry (LC- and GC-MS). Differential proteins...
+
+
+========== GENE: Sema4d ==========
+Description: sema domain, immunoglobulin domain (Ig), transmembrane domain (TM) and short cytoplasmic domain, (semaphorin) 4D [Source:MGI Symbol;Acc:MGI:109244]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Cell surface receptor for PLXNB1 and PLXNB2 that plays an important role in cell-cell signaling (By similarity). Regulates GABAergic synapse development (PubMed:23699507, PubMed:29981480). Promotes the development of inhibitory synapses in a PLXNB1-dependent manner (PubMed:23699507, PubMed:29981480). Modulates the complexity and arborization of developing neurites in hippocampal neurons by activating PLXNB1 and interaction with PLXNB1 mediates activation of RHOA (By similarity). Promotes the migration of cerebellar granule cells (PubMed:17554007). Plays a role in the immune system; induces B-cells to aggregate and improves their viability (in vitro) (By similarity). Induces endothelial cell migration through the activation of PTK2B/PYK2, SRC, and the phosphatidylinositol 3-kinase-AKT pathway (By similarity). .
+
+--- MGI Knockout Phenotypes ---
+abnormal immunoglobulin level | decreased T cell number | increased B cell number | decreased B cell proliferation | abnormal B-1 B cell morphology | decreased CD4-positive, alpha-beta T cell number | decreased B-1a cell number | decreased spleen germinal center size | cataract | enlarged heart | enlarged spleen | increased circulating alkaline phosphatase level | increased total body fat amount | decreased bone mineral content
+
+--- Abstracts (20 papers, 20 tier1) ---
+Bone remodeling is tightly regulated by a cross-talk between bone-forming osteoblasts and bone-resorbing osteoclasts. Osteoblasts and osteoclasts communicate with each other to regulate cellular behavior, survival and differentiation through direct cell-to-cell contact or through secretory proteins. A direct interaction between osteoblasts and osteoclasts allows bidirectional transduction of ac...
+---
+The skeleton is a dynamic organ that is constantly remodeled. Proteins secreted from bone cells, namely osteoblasts, osteocytes, and osteoclasts exert regulation on osteoblastogenesis, osteclastogenesis, and angiogenesis in a paracrine manner. Osteoblasts secrete a range of different molecules including RANKL/OPG, M-CSF, SEMA3A, WNT5A, and WNT16 that regulate osteoclastogenesis. Osteoblasts als...
+---
+Most lung cancer bone metastasis are characterized by osteolytic destruction and osteoblastic activity is significantly decreased, suggesting that hypoxia may play a critical role in the process, but the underlying mechanisms remain unknown. Semaphorin 4D (Sema4D) is a recently discovered osteogenic inhibitory factor that is expressed at high levels in lung cancers. Here, CoCl2-induced hypoxia ...
+---
+Osteopetrosis is an inherited metabolic disease, characterized by increased bone density and narrow marrow cavity. Patients with severe osteopetrosis exhibit abnormal bone brittleness, anemia, and infection complications, which commonly cause death within the first decade of life. Pathologically, osteopetrosis impairs not only the skeletal system, but also the hemopoietic and immune systems dur...
+---
+Contemporary osteoporosis treatment often neglects the intricate interactions among immune cells, signaling proteins, and cytokines within the osteoporotic microenvironment. Here, we developed core-shell nanocapsules composed of a cationized lactoferrin core and an alendronate polymer shell. By tuning the size of these nanocapsules and leveraging the alendronate shell, we enabled precise delive...
+---
+Semaphorin 4D (SEMA4D or CD100) is a member of the semaphorin family of proteins and an important mediator of the movement and differentiation of multiple cell types, including those of the immune, vascular, and nervous systems. Blocking the binding of SEMA4D to its receptors can result in physiologic changes that may have implications in cancer, autoimmune, and neurological disease. To study t...
+---
+Semaphorin 4D (Sema4D) is a glycoprotein that is expressed by several tumors and immune cells. It can function as a membrane bound protein or as a cleaved soluble protein (sSema4D). We sought to investigate the translational potential of plasma sSema4D as an immune marker in plasma of patients with head and neck squamous cell carcinoma (HNSCC). Paired peripheral blood and tumor tissue samples o...
+---
+Inducing of dental pulp stem cells (DPSCs) into endothelial cells (ECs) to prevascularize pulp tissue constructs may offer a novel and viable approach for enhancing pulp regeneration. However, there are numerous challenges in current methods for the acquisition of sufficient translational ECs. It was known that Sema4D/PlexinB1 signaling exerts profound effects on enhancing vascular endothelial ...
+
+
+========== GENE: Adcy8 ==========
+Description: adenylate cyclase 8 [Source:MGI Symbol;Acc:MGI:1341110]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Catalyzes the formation of cAMP in response to calcium entry leadings to cAMP signaling activation that affect processes suche as synaptic plasticity and insulin secretion (PubMed:10482244, PubMed:10864938, PubMed:14585998, PubMed:18448650, PubMed:25403481). Plays a role in many brain functions, such as learning, memory, drug addiction, and anxiety modulation through regulation of synaptic plasticity by modulating long-term memory and long-term potentiation (LTP) through CREB transcription factor activity modulation (PubMed:10482244, PubMed:10864938, PubMed:12441059, PubMed:14585998, PubMed:18222416, PubMed:18448650, PubMed:20638449, PubMed:27234425). Plays a central role in insulin secretion by controlling glucose homeostasis through glucagon-like peptide 1 and glucose signaling pathway and maintains insulin secretion through calcium-dependent PKA activation leading to vesicle pool replenishment (PubMed:25403481). Also, allows PTGER3 to induce potentiation of PTGER4-mediated PLA2 secr
+
+--- MGI Knockout Phenotypes ---
+decreased anxiety-related response | decreased body size | absent long-term depression | abnormal corticosterone level | decreased brain enzyme/coenzyme activity | increased chemical nociceptive threshold | abnormal single cell response
+
+--- Abstracts (20 papers, 18 tier1) ---
+Pulmonary arterial hypertension (PAH) is a kind of pulmonary vascular lesion characterized by vasoconstriction and reshaping of small pulmonary arteries, ultimately resulting in increased pulmonary artery pressure and pulmonary vascular resistance, and eventually leading to right ventricular failure and death. This study was aimed to construct a platelet-derived growth factor BB (PDGF-BB)-induc...
+---
+The retinoic acid-related orphan receptor alpha (ROR<U+03B1>) is well-known for its role in cerebellar development and maturation as revealed in staggerer mice. However, its potential involvement in the development of other brain regions has hardly been assessed. Here, we describe a new role of ROR<U+03B1> in the development of primary somatosensory maps. Staggerer mice showed a complete disruption of barrel...
+---
+Wanbei pig (WBP) is one of the indigenous pig resources in China and has many germplasm characteristics. However, research on its genome is lacking. To assess the genomic variation, population structure, and selection signatures, we resequenced 18 WBP for the first time and performed a comprehensive analysis with resequenced data of 10 Asian wild boars. In total, 590.03 Gb of data and approxima...
+---
+Alcohol dependence (AD) is often accompanied by comorbid depression. Recent clinical evidence supports the benefit of subtype-specific pharmacotherapy in treating the population of alcohol-dependent subjects with comorbid major depressive disorder (MDD). However, in many alcohol-dependent subjects, depression is a reactive response to chronic alcohol use and withdrawal and abates with a period ...
+---
+To reveal the potential time-sequential molecular mechanism in the hippocampus of ischemia-reperfusion mice, so as to provide pertinent evidence for differential treatment during different phases after cerebral ischemia-reperfusion injury. Methods Seventy-five male Kunming mice were randomly divided into four groups: sham, ischemia and reperfusion for 3h, 12h, and 24h, respectively. A cDNA micr...
+---
+Sperm mobility (SM) is an objective index for measuring sperm motility; however, the mechanisms underlying its regulation in geese remain unclear. The present study sought to elucidate the genetic mechanism underlying SM traits in Zi geese (Anser cygnoides L.). To this end, three successive experiments were performed. In Experiment I, SM was determined in 40 ganders; the 3 ganders with the high...
+---
+Ocular squamous cell carcinoma and infectious keratoconjunctivitis are common ocular pathologies in Hereford cattle with considerable economic impact. Both pathologies have been associated with low eyelid pigmentation, and thus, genetic selection for higher eyelid pigmentation could reduce their incidence. The objective of the present study was to reveal the genetic basis of eyelid pigmentation...
+---
+Differences in skin and hair phenotypes between the scapular and ventral regions of yaks (Bos grunniens) are obvious and become more prominent with age. However, the genetic mechanism that causes differences in yak skin at different ages has not been reported. In this study, we investigated the transcriptomic profile of yak skin across different ages (0.5 years, 2.5 years, and 4.5 years) and bo...
+
+
+========== GENE: Syngr1 ==========
+Description: synaptogyrin 1 [Source:MGI Symbol;Acc:MGI:1328323]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+May play a role in regulated exocytosis. Modulates the localization of synaptophysin/SYP into synaptic-like microvesicles and may therefore play a role in synaptic-like microvesicle formation and/or maturation (By similarity). Involved in the regulation of short-term and long-term synaptic plasticity (PubMed:10595519). .
+
+--- MGI Knockout Phenotypes ---
+impaired synaptic plasticity | decreased post-tetanic potentiation | abnormal lymph node morphology | abnormal spleen morphology | abnormal thymus morphology | abnormal skeletal muscle morphology | abnormal uterus morphology | enlarged lymph nodes | enlarged spleen | enlarged thymus | enlarged uterus
+
+--- Abstracts (20 papers, 6 tier1) ---
+Social anxiety disorder is a common psychiatric condition that severely affects quality of life of individuals and is a significant societal burden. Although many risk factors for social anxiety exist, it is currently unknown how social fear sensitivity manifests biologically. Furthermore, since some individuals are resilient and others are susceptible to social fear, it is important to interro...
+---
+Synaptogyrin-3 (SYNGR3) is a synaptic vesicular membrane protein. Amongst four homologues (SYNGR1 to 4), SYNGR1 and 3 are especially abundant in the brain. SYNGR3 interacts with the dopamine transporter (DAT) to facilitate dopamine (DA) uptake and synaptic DA turnover in dopaminergic transmission. Perturbed SYNGR3 expression is observed in Parkinson's disease (PD). The regulatory elements which...
+---
+To generate novel insights and hypotheses in keloid development from potential master regulators. Prospective cohort. Six fresh keloid and six normal skin samples from 12 anonymous donors were used in a prospective cohort study. Genome-wide profiling was done previously on the cohort using the Infinium HumanMethylation450 BeadChip (Illumina, San Diego, CA). The 190 statistically significant CpG...
+---
+The plastic changes in the auditory cortex after bilateral cochlear ablation are related to the immediate early genes as well as the neural plasticity-related genes. In addition, cross-modal plasticity may play an important role in the early changes in the auditory cortex after bilateral cochlear ablation. The purpose of this study was to identify candidate genes involved in the normal developm...
+---
+The pathogenesis of oral lichen planus (OLP) may be related to mental factors. In this study, we investigated the molecular mechanism of mental factors in the development of OLP. The normal control group and OLP patients were tested and evaluated by Zung self-rating anxiety scale and self-rating depression scale. Secondly, Agilent human LncRNA chip technology was used to detect differential gen...
+---
+Genetic factors underlying susceptibility to rheumatoid arthritis (RA) are largely unknown. The aim of this study was to identify potential genes for RA. We conducted summary statistic data-based Mendelian randomization (SMR) analysis to detect potential causal genes for RA. Further, we performed additional bioinformatics analysis to show the potential relevance of the identified genes to RA. W...
+---
+Glioblastoma (GBM) is the most common and aggressive glioma subtype in adults, characterized by disrupted lipid homeostasis. The accumulation of lipid droplets (LDs) is involved in the actin cytoskeleton remodeling in different types of cells, the intracellular fibroblast growth factor 1 (FGF1) plays an important role in this process. The stability of cytoskeleton is crucial for the proliferati...
+---
+Major depressive disorder is a severe mental health condition characterized by persistent depressed mood and loss of interest. Current first-line pharmacotherapies often exhibit limited therapeutic performance and adverse side effects. Transcutaneous auricular vagus nerve stimulation (taVNS) is a promising, safe, and noninvasive alternative intervention with demonstrated neuromodulatory efficac...
+
+
+========== GENE: Ache ==========
+Description: acetylcholinesterase [Source:MGI Symbol;Acc:MGI:87876]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Terminates signal transduction at the neuromuscular junction by rapid hydrolysis of the acetylcholine released into the synaptic cleft.
+
+--- MGI Knockout Phenotypes ---
+abnormal posture | decreased body weight | tremors | abnormal gait | impaired righting response | circling | delayed ear emergence | eyelids fail to open | abnormal cerebral hemisphere morphology | postnatal lethality, complete penetrance | prenatal lethality, incomplete penetrance | muscle weakness | abnormal platelet physiology | premature death | abnormal body temperature homeostasis | decreased white adipose tissue amount | decreased body temperature | abnormal sympathetic nervous system ...
+
+--- Abstracts (20 papers, 20 tier1) ---
+Cholinergic transmission is critical to high-order brain functions such as memory, learning, and attention. Alzheimer's disease (AD) is characterized by cognitive decline associated with a specific degeneration of cholinergic neurons. No effective treatment to prevent or reverse the symptoms is known. Part of this might be due to the lack of in vitro models that effectively mimic the relevant f...
+---
+We have studied the source and ultrastructural characteristics of ChAT-immunoreactive fibers in the cerebellum of the rat, and the distribution of muscarinic and nicotinic receptors in the cerebellum of the rat, rabbit, cat and monkey, in order to define which of the cerebellar afferents may use ACh as a neurotransmitter, what target structures are they, and which cholinergic receptor mediate t...
+---
+Human dental pulp stem cells (hDPSCs) have increasingly gained interest as a potential therapy for nerve regeneration in medicine and dentistry, however their neurogenic potential remains a matter of debate. This study aimed to characterize hDPSC neuronal differentiation in comparison with the human SH-SY5Y neuronal stem cell differentiation model. Both hDPSCs and SH-SY5Y could be differentiate...
+---
+There is ample evidence that cholinergic actions affect the health status of bones in vertebrates including man. Nicotine smoking, but also exposure to pesticides or medical drugs point to the significance of cholinergic effects on bone status, as reviewed here in Introduction. Then, we outline processes of endochondral ossification, and review respective cholinergic actions. In Results, we bri...
+---
+Basal cell carcinoma (BCC) is the most common type of malignant tumor in the periocular region. BCCs with neuroendocrine differentiation in the periocular region, however, have not been described in the literature.We present a retrospective case review of a patient with an eyelid BCC with neuroendocrine differentiation. Demographical, clinical, radiological, surgical, histological, and follow-u...
+---
+Acetylcholinesterase (AChE) is a most remarkable protein, not only because it is one of the fastest enzymes in nature, but also since it appears in many molecular forms and is regulated by elaborate genetic networks. As revealed by sensitive histochemical procedures, AChE is expressed specifically in many tissues during development and in many mature organisms, as well as in healthy and disease...
+---
+Here we examine differentiation of the intestinal cell line Caco-2 following exposure to sodium butyrate (NaBT), using alkaline phosphatase (ALP) activity and carcinoembryonic antigen (CEA) levels as markers of differentiation. We show that acetylcholinesterase (AChE) activity and RNA levels increase during differentiation. Treatment with AChE inhibitors or knockdown of AChE levels by shRNA mar...
+---
+Acetylcholinesterase (AChE) inhibition has been described as the main mechanism of organophosphate (OP)-evoked toxicity. OPs represent a human health threat, because chronic exposure to low doses can damage the developing brain, and acute exposure can produce long-lasting damage to adult brains, despite post-exposure medical countermeasures. Although the main mechanism of OP toxicity is AChE in...
+
+
+========== GENE: Tnfrsf12a ==========
+Description: tumor necrosis factor receptor superfamily, member 12a [Source:MGI Symbol;Acc:MGI:1351484]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Receptor for TNFSF12/TWEAK (By similarity). Weak inducer of apoptosis in some cell types. Promotes angiogenesis and the proliferation of endothelial cells. May modulate cellular adhesion to matrix proteins. .
+
+--- MGI Knockout Phenotypes ---
+abnormal chemokine secretion | abnormal oval cell physiology
+
+--- Abstracts (20 papers, 20 tier1) ---
+Liver cirrhosis is a major cause of death worldwide and is characterized by extensive fibrosis. There are currently no effective antifibrotic therapies available. To obtain a better understanding of the cellular and molecular mechanisms involved in disease pathogenesis and enable the discovery of therapeutic targets, here we profile the transcriptomes of more than 100,000 single human cells, yi...
+---
+The distal lung contains terminal bronchioles and alveoli that facilitate gas exchange. Three-dimensional in vitro human distal lung culture systems would strongly facilitate the investigation of pathologies such as interstitial lung disease, cancer and coronavirus disease 2019 (COVID-19) pneumonia caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). Here we describe the deve...
+---
+Osteoarthritis (OA) is a chronic joint condition that causes pain, limited mobility, and reduced quality of life, posing a threat to healthy aging. Early detection is crucial for improving prognosis. Recent research has focused on the role of ubiquitination-related genes (URGs) in early OA prediction. This study aims to integrate URG expression data with machine learning (ML) to identify biomar...
+---
+We elucidated the molecular mechanism of cancer-associated fibroblast (CAF)-associated gene insulin-like growth factor binding protein-2 (IGFBP2)-induced M2 macrophage polarization in the tumor microenvironment involved in glioma progression. The Cancer Genome Atlas (TCGA) and Chinese Glioma Genome Atlas (CGGA) provided bulk RNA-sequencing datasets, ESTIMATE scores for glioma stromal cells, and...
+---
+The aim of this study was to identify the key regulatory mechanisms of cartilage injury and osteoporosis through bioinformatics methods, and to provide a new theoretical basis and molecular targets for the diagnosis and treatment of the disease. Microarray data for cartilage injury (GSE129147) and osteoporosis (GSE230665) were first downloaded from the GEO database. Differential expression anal...
+---
+Diabetic foot ulcer (DFU) is one of the most common and complex complications of diabetes, but the underlying pathophysiology remains unclear. Single-cell RNA sequencing (scRNA-seq) has been conducted to explore novel cell types or molecular profiles of DFU from various perspectives. This study aimed to comprehensively analyze the potential mechanisms underlying impaired re-epithelization of DF...
+---
+Aplastic anemia (AA) is a bone marrow (BM) failure syndrome mediated by hyperactivated T-cells with heterogeneous pathogenic factors. The onset of BM failure cannot be accurately determined in humans; therefore, exact pathogenesis remains unclear. In this study, a cellular atlas and microenvironment interactions is established using unbiased single-cell RNA-seq, along with multi-omics analyses ...
+---
+To identify specific novel genes that could be used as diagnostic and prognostic factors in papillary thyroid carcinoma (PTC). Screening of differential genes by RNA sequencing (RNA-Seq) in normal thyroid, Hashimoto's thyroiditis, PTC combined with Hashimoto's thyroiditis and PTC tissues. The genes QPCT, SCEL and TNFRSF12A were selected by qRT-PCR and immunohistochemical pre-experiments. The GE...
+
+
+========== GENE: Nrxn1 ==========
+Description: neurexin I [Source:MGI Symbol;Acc:MGI:1096391]
+H3K27me3: 0 | Timing: Late
+
+--- UniProt Function ---
+Neuronal cell surface protein involved in cell recognition and cell adhesion by forming intracellular junctions through binding to neuroligins (By similarity). Plays a role in formation of synaptic junctions (PubMed:30100184). Functions as part of a trans-synaptic complex by binding to cerebellins and postsynaptic GRID1. This interaction helps regulate the activity of NMDA and AMPA receptors at hippocampal synapses without affecting synapse formation. NRXN1B-CBLN2-GRID1 complex transduce presynaptic signals into postsynaptic NMDAR response (PubMed:34135511). .
+
+--- MGI Knockout Phenotypes ---
+decreased synaptic glutamate release | abnormal brain physiology | no abnormal phenotype detected | abnormal nest building behavior | increased grooming behavior | abnormal motor learning | abnormal excitatory postsynaptic currents | abnormal miniature excitatory postsynaptic currents | decreased prepulse inhibition | tremors | decreased circulating HDL cholesterol level | increased monocyte cell number | increased neutrophil cell number | decreased lymphocyte cell number | decreased circulat...
+
+--- Abstracts (20 papers, 20 tier1) ---
+Autism spectrum disorder (ASD) has a major impact on the development and social integration of affected individuals and is the most heritable of psychiatric disorders. An increase in the incidence of ASD cases has prompted a surge in research efforts on the underlying neuropathologic processes. We present an overview of current findings in neuropathology studies of ASD using two investigational...
+---
+At CA1<U+2192>subiculum synapses, alternatively spliced neurexin-1 (Nrxn1SS4+) and neurexin-3 (Nrxn3SS4+) enhance NMDA-receptors and suppress AMPA-receptors, respectively, without affecting synapse formation. Nrxn1SS4+ and Nrxn3SS4+ act by binding to secreted cerebellin-2 (Cbln2) that in turn activates postsynaptic GluD1 receptors. Whether neurexin-Cbln2-GluD1 signaling has additional functions beside...
+---
+NRXN1 undergoes extensive alternative splicing that generates a highly diverse repertoire of isoforms, diversifying protein-protein interactions, shaping synaptic specialization, and contributing to neuropsychiatric disease when disrupted. However, the splicing landscape of NRXN1 across distinct human brain cell types remains poorly defined. Because NRXN1 expression level is relatively low in a...
+---
+The NRXN1 locus is a hotspot for non-recurrent copy number variants and exon-disrupting NRXN1 deletions have been associated with increased risk of neurodevelopmental disorders in case-control studies. However, corresponding population-based estimates of prevalence and disease-associated risk are currently lacking. Also, most studies have not differentiated between deletions affecting exons of ...
+---
+Strategically altering tumor cell fate is a promising treatment for suppressing the malignant phenotype and improving glioma prognosis. This study reveals the favorable impact of the enrichment of neuronal differentiation-related genes on glioma prognosis. A substantial negative correlation was observed between neuronal and mesenchyme-related biological features within gliomas. Neuron-like tumo...
+---
+Cerebellins (Cbln1-4) are secreted adaptor proteins that connect presynaptic neurexins (Nrxn1-3) to postsynaptic ligands (GluD1/2 for Cbln1-3 vs. DCC and Neogenin-1 for Cbln4). Classical studies demonstrated that neurexin-Cbln1-GluD2 complexes organize cerebellar parallel-fiber synapses, but the role of cerebellins outside of the cerebellum has only recently been clarified. In synapses of the h...
+---
+Growing genetic evidence is converging in favor of common pathogenic mechanisms for autism spectrum disorders (ASD), intellectual disability (ID or mental retardation) and schizophrenia (SCZ), three neurodevelopmental disorders affecting cognition and behavior. Copy number variations and deleterious mutations in synaptic organizing proteins including NRXN1 have been associated with these neurod...
+---
+Schizophrenia is a highly polygenic and clinically heterogeneous disorder. In this paper, we first review layer-specific evidence across genetics, epigenetics, transcriptomics, proteomics, and patient-derived induced pluripotent stem cell (iPSC) models, then integrate cross-layer findings. Genetics research identifies widespread risk architecture. Hundreds of loci from common, rare, and CNV ana...
+
+
+========== GENE: Syt7 ==========
+Description: synaptotagmin VII [Source:MGI Symbol;Acc:MGI:1859545]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Ca(2+) sensor involved in Ca(2+)-dependent exocytosis of secretory and synaptic vesicles through Ca(2+) and phospholipid binding to the C2 domain. Ca(2+) induces binding of the C2-domains to phospholipid membranes and to assembled SNARE-complexes; both actions contribute to triggering exocytosis. SYT7 binds Ca(2+) with high affinity and slow kinetics compared to other synaptotagmins (PubMed:26738595). Involved in Ca(2+)-triggered lysosomal exocytosis, a major component of the plasma membrane repair (By similarity). Ca(2+)-regulated delivery of lysosomal membranes to the cell surface is also involved in the phagocytic uptake of particles by macrophages (PubMed:16982801, PubMed:21041449). Ca(2+)-triggered lysosomal exocytosis also plays a role in bone remodeling by regulating secretory pathways in osteoclasts and osteoblasts (PubMed:18539119). Involved in cholesterol transport from lysosome to peroxisome by promoting membrane contacts between lysosomes and peroxisomes: probably acts by p
+
+--- MGI Knockout Phenotypes ---
+abnormal fertility/fecundity | increased inflammatory response | abnormal skeletal muscle morphology | increased susceptibility to autoimmune disorder | abnormal cell physiology | skeletal muscle interstitial fibrosis | myositis | increased anti-nuclear antigen antibody level | skin fibrosis | decreased grip strength | no abnormal phenotype detected | decreased locomotor activity | decreased circulating phosphate level
+
+--- Abstracts (20 papers, 20 tier1) ---
+Granules of cytotoxic T lymphocytes (CTL) are derived from the lysosomal compartment. Synaptotagmin7 (Syt7) appears to be the calcium sensor triggering fusion of lysosomes in fibroblasts. Syt7 has been proposed to control cytotoxic granule (CG) fusion in lymphocytes and mice lacking Syt7 have reduced ability to clear infections. However, fusion of CG persists in the absence of Syt7. To clarify ...
+---
+Neurotransmitter release consists of rapid synchronous release followed by longer-lasting asynchronous release (AR). Although the presynaptic proteins that trigger synchronous release are well understood, the mechanisms for AR remain unclear. AR is sustained by low concentrations of intracellular Ca2+ and Sr2+, suggesting the involvement of sensors with high affinities for both ions. Synaptotag...
+---
+Head and neck squamous cell carcinoma (HNSCC) are one of the most common types of head and neck cancer, and it is urgent to find effective treatment for advanced patients. Exploring developing and progressing mechanisms of HNSCC could provide a theoretical basis to find new therapeutic targets. In our research, we performed a whole-gene expression profile microarray analysis to identify differe...
+---
+Synaptotagmin 7 (SYT7) can encode a single-pass 46-kDa transmembrane protein which located on human chromosome 11q12.2. It has been reported to be dysregulated in several cancers; however, there are few reports on the role of SYT7 in non-small cell lung carcinoma (NSCLC). The purpose of our study was to investigate the expression of SYT7 in NSCLC and its relationship with the prognosis of NSCLC...
+---
+When an action potential invades a presynaptic terminal it evokes large, brief Ca2+ signals that trigger vesicle fusion within milliseconds that is followed by a small residual Ca2+ (Cares) signal. At many synapses Cares produces synaptic facilitation that lasts up to hundreds of milliseconds and, although less common, Cares can also evoke asynchronous release (AR) that persists for tens of mil...
+---
+Granule-plasma membrane docking and fusion can only occur when proteins that enable these reactions are present at the granule-plasma membrane contact. Thus, the mobility of granule membrane proteins may influence docking and membrane fusion. We measured the mobility of vesicle associated membrane protein 2 (VAMP2), synaptotagmin 1 (Syt1), and synaptotagmin 7 (Syt7) in chromaffin granule membra...
+---
+Insulin secreted by pancreatic <U+03B2> cells is essential for maintaining blood glucose levels. Diabetes is caused primarily by a loss of <U+03B2> cells or impairment of <U+03B2>-cell function. A previous whole-transcriptome analysis of islets from a type 2 diabetes group and a control group showed that a splicing disorder occurred in approximately 25% of splicing events. Breast carcinoma amplified sequence 2 (BCA...
+---
+Munc13 proteins are priming factors for SNARE-dependent exocytosis, which are activated by diacylglycerol (DAG)-binding to their C1-domain. Several Munc13 paralogs exist, but their differential roles are not well understood. We studied the interdependence of phorbolesters (DAG mimics) with Munc13-1 and ubMunc13-2 in mouse adrenal chromaffin cells. Although expression of either Munc13-1 or ubMun...
+
+
+========== GENE: Nptx1 ==========
+Description: neuronal pentraxin 1 [Source:MGI Symbol;Acc:MGI:107811]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+May be involved in mediating uptake of synaptic material during synapse remodeling or in mediating the synaptic clustering of AMPA glutamate receptors at a subset of excitatory synapses. .
+
+--- MGI Knockout Phenotypes ---
+abnormal innervation
+
+--- Abstracts (18 papers, 20 tier1) ---
+Dominantly inherited spinocerebellar ataxias (SCAs) are associated with phenotypes that range from pure cerebellar to multisystemic. The list of implicated genes has lengthened in the past 5 years with the inclusion of SCA37/DAB1, SCA45/FAT2, SCA46/PLD3, SCA47/PUM1, SCA48/STUB1, SCA50/NPTX1, SCA25/PNPT1, SCA49/SAM9DL, and SCA27B/FGF14. In some patients, co-occurrence of multiple potentially pat...
+---
+The two major genomic alterations in pediatric pilocytic astrocytoma (PA) are NF1 loss and KIAA1549:BRAF rearrangement. Although these molecular changes result in increased MEK activity and tumor growth, it is not clear exactly how MEK controls human neuroglial cell proliferation. Leveraging human-induced pluripotent stem cells harboring these PA-associated alterations, we used a combination of...
+---
+With more than 40 causative genes identified so far, autosomal dominant cerebellar ataxias exhibit a remarkable genetic heterogeneity. Yet, half the patients are lacking a molecular diagnosis. In a large family with nine sampled affected members, we performed exome sequencing combined with whole-genome linkage analysis. We identified a missense variant in NPTX1, NM_002522.3:c.1165G>A: p.G389R, ...
+---
+Autologous adipose tissue is an ideal material for soft tissue filling and transplantation; however, high volumes of fat absorption over time lead to a relatively low overall survival percentage. The survival and differentiation of adipose-derived stem cells (ADSCs) in the transplanted microenvironment might improve adipose graft survival. Adipocytes have been reported to affect ADSC activation...
+---
+Parkinson's disease (PD) affects a significant proportion of the population over the age of 60<U+2009>years, and its prevalence is increasing. While symptomatic treatment is available for motor symptoms of PD, non-motor complications such as dementia result in diminished life quality for patients and are far more difficult to treat. In this study, we analyzed PD-associated alterations in the hippocamp...
+---
+To initially investigate the function of neuronal pentraxin 1 (NPTX1) gene on osteogenic differentiation of human bone marrow mesenchymal stem cells (hBMSCs). hBMSCs were induced to undergo osteogenic differentiation, and then RNA was collected at different time points, namely 0, 3, 7, 10 and 14 d. The mRNA expression levels of key genes related with osteogenic differentiation, including runt-r...
+---
+A defining feature of neurodegenerative diseases is the abnormal and excessive loss of neurons. One molecule that is particularly important in promoting neuronal death in a variety of cell culture and in vivo models of neurodegeneration is histone deacetylase-3 (HDAC3), a member of the histone deacetylase family of proteins. As a step towards understanding how HDAC3 promotes neuronal death, we ...
+---
+Thymomas are the most common primary malignant tumors of anterior mediastinal. However, there are no specific laboratory indicator for the diagnosis the diagnosis of thymoma. The aim of this study was to screen out a tumor marker for diagnosis of thymoma by mRNA microarray analysis and confirmed it. By mRNA microarray analysis of 31 thymomas and peritumoral thymic tissues, we found that the tra...
+
+
+========== GENE: Prkar1b ==========
+Description: protein kinase, cAMP dependent regulatory, type I beta [Source:MGI Symbol;Acc:MGI:97759]
+H3K27me3: 0 | Timing: Late
+
+--- UniProt Function ---
+Regulatory subunit of the cAMP-dependent protein kinases involved in cAMP signaling in cells. .
+
+--- MGI Knockout Phenotypes ---
+reduced long-term depression | reduced long-term potentiation | decreased inflammatory response | increased thermal nociceptive threshold | abnormal nociception after inflammation
+
+--- Abstracts (18 papers, 2 tier1) ---
+Adrenal cortex steroids are essential for body homeostasis, and adrenal insufficiency is a life-threatening condition. Adrenal endocrine activity is maintained through recruitment of subcapsular progenitor cells that follow a unidirectional differentiation path from zona glomerulosa to zona fasciculata (zF). Here, we show that this unidirectionality is ensured by the histone methyltransferase E...
+---
+Primary duck hepatocytes (PDH) displays differential susceptibility to duck hepatitis B virus when maintained in the media supplemented with fetal bovine serum or dimethyl sulfoxide (DMSO) which has been widely used for the maintenance of hepatocytes, and prolonging susceptibility to hepadnavirus. However the mechanism underlying maintenance of susceptibility to hepadnavirus by DMSO treatment r...
+---
+Protein kinase A (PKA) neuronal function is controlled by the interaction of a regulatory (R) subunit dimer with two catalytic subunits. Recently, the L50R variant in the gene encoding the RI<U+03B2> subunit was identified in individuals with a novel neurodegenerative disease. However, the mechanisms driving the disease phenotype remained unknown. In this study, we generated a mouse model carrying the...
+---
+We characterize the clinical and molecular phenotypes of six unrelated individuals with intellectual disability and autism spectrum disorder who carry heterozygous missense variants of the PRKAR1B gene, which encodes the R1<U+03B2> subunit of the cyclic AMP-dependent protein kinase A (PKA). Variants of PRKAR1B were identified by single- or trio-exome analysis. We contacted the families and physicians ...
+---
+Protein kinase A (PKA) is a crucial signaling enzyme in neurons, with its dysregulation being implicated in neurodegenerative diseases. Assembly of the PKA holoenzyme, comprising a dimer of heterodimers of regulatory (R) and catalytic (C) subunits, ensures allosteric regulation and functional specificity. Recently, we defined the RI<U+03B2>-L50R variant as a causative mutation that triggers protein ag...
+---
+The complex and not yet fully understood etiology of Alzheimer's disease (AD) shows important proteopathic signs which are unlikely to be linked to a single protein. However, protein subsets from deep proteomic datasets can be useful in stratifying patient risk, identifying stage dependent disease markers, and suggesting possible disease mechanisms. The objective was to identify protein subsets...
+---
+The RI<U+03B2> subunit of cAMP-dependent protein kinase (PKA), encoded by Prkar1b, is a neuronal isoform of the type I regulatory subunit of PKA. Mice lacking the RI<U+03B2> subunit exhibit normal long-term potentiation (LTP) in the Schaffer collateral pathway of the hippocampus and normal behavior in the open-field and fear conditioning tests. Here, we combined genetic, electrophysiological, and behavioral ...
+---
+Aberrant alternative splicing and abnormal alternative splicing events (ASEs) in glioblastoma multiforme (GBM) remain largely elusive. The prognostic-associated ASEs in GBM were identified and summarized into 123 genes using GBM and LGG datasets from ASCancer Atlas and TCGA. The eleven genes (C2, COL3A1, CTSL, EIF3L, FKBP9, FN1, HPCAL1, HSPB1, IGFBP4, MANBA, PRKAR1B) were screened to develop an...
+
+
+========== GENE: Ptprn ==========
+Description: protein tyrosine phosphatase, receptor type, N [Source:MGI Symbol;Acc:MGI:102765]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Plays a role in vesicle-mediated secretory processes (PubMed:21732083). Required for normal accumulation of secretory vesicles in hippocampus, pituitary and pancreatic islets. Required for the accumulation of normal levels of insulin-containing vesicles and preventing their degradation (PubMed:15939893, PubMed:21732083). Plays a role in insulin secretion in response to glucose stimuli (PubMed:12031972, PubMed:21732083). Required for normal accumulation of the neurotransmitters norepinephrine, dopamine and serotonin in the brain (PubMed:16269463). In females, but not in males, required for normal accumulation and secretion of pituitary hormones, such as luteinizing hormone (LH) and follicle-stimulating hormone (FSH) (PubMed:16269463). Seems to lack intrinsic enzyme activity (PubMed:7980563, PubMed:8878556). Required to maintain normal levels of renin expression and renin release (PubMed:19019914). May regulate catalytic active protein-tyrosine phosphatases such as PTPRA through dimeriza
+
+--- MGI Knockout Phenotypes ---
+insulitis | increased susceptibility to autoimmune diabetes | impaired glucose tolerance
+
+--- Abstracts (20 papers, 20 tier1) ---
+Intrinsic plasticity, a fundamental process enabling neurons to modify their intrinsic properties, plays a crucial role in shaping neuronal input-output function and is implicated in various neurological and psychiatric disorders. Despite its importance, the underlying molecular mechanisms of intrinsic plasticity remain poorly understood. In this study, a new ubiquitin ligase adaptor, protein t...
+---
+The insulin granule was previously thought of as merely a container, but accumulating evidence suggests that it also acts as a signaling node. Regulatory pathways intersect at but also originate from the insulin granule membrane. Examples include the small G-proteins Rab3a and Rab27a, which influence granule movement, and the transmembrane proteins (tyrosine phosphatase receptors type N) PTPRN ...
+---
+ICA512/PTPRN is a receptor tyrosine-like phosphatase implicated in the biogenesis and turnover of the insulin secretory granules (SGs) in pancreatic islet beta cells. Previously we found biophysical evidence that its luminal RESP18 homology domain (RESP18HD) forms a biomolecular condensate and interacts with insulin in vitro at close-to-neutral pH, that is, in conditions resembling those presen...
+---
+The ever-increasing prevalence of diabetes and associated comorbidities serves to highlight the necessity of biologically relevant small-animal models to investigate its etiology, pathology and treatment. Although the C57BL/6<U+2009>J model is amongst the most widely used mouse model due to its susceptibility to diet-induced obesity (DIO), there are a number of limitations namely [1] that unambiguous ...
+---
+ICA512 (or IA-2/PTPRN) is a transmembrane protein-tyrosine phosphatase located in secretory granules of neuroendocrine cells. Previous studies implied its involvement in generation, cargo storage, traffic, exocytosis and recycling of insulin secretory granules, as well as in <U+03B2>-cell proliferation. While several ICA512 domains have been characterized, the function and structure of a large portion...
+---
+Glioblastoma (GBM) is the most common and deadly primary brain tumor in adults. Diagnostic and therapeutic challenges have been raised because of poor prognosis. Gene expression profiles of GBM and normal brain tissue samples from GSE68848, GSE16011, GSE7696, and The Cancer Genome Atlas (TCGA) were downloaded. We identified differentially expressed genes (DEGs) by differential expression analys...
+---
+Differentiating the aetiology of thrombocytosis is limited yet crucial in patients with essential thrombocythaemia (ET). MicroRNAs (miRNAs) regulate haematopoiesis and lineage commitment; aberrant expression of miRNAs plays an important role in myeloproliferative neoplasms. However, the miRNA profile has been poorly explored in ET patients compared to patients with reactive thrombocytosis (RT)....
+---
+The main challenge in cancer research is the identification of different omic variables that present a prognostic value and personalised diagnosis for each tumour. The fact that the diagnosis is personalised opens the doors to the design and discovery of new specific treatments for each patient. In this context, this work offers new ways to reuse existing databases and work to create added valu...
+
+
+========== GENE: Tnn ==========
+Description: tenascin N [Source:MGI Symbol;Acc:MGI:2665790]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+Extracellular matrix protein that seems to be a ligand for ITGA8:ITGB1, ITGAV:ITGB1 and ITGA4:ITGB1 (By similarity) (PubMed:14709716). Involved in neurite outgrowth and cell migration in hippocampal explants (PubMed:12812753). During endochondral bone formation, inhibits proliferation and differentiation of proteoblasts mediated by canonical WNT signaling (PubMed:17395156). In tumors, stimulates angiogenesis by elongation, migration and sprouting of endothelial cells (By similarity). Expressed in most mammary tumors, may facilitate tumorigenesis by supporting the migratory behavior of breast cancer cells (PubMed:15592496). .
+
+--- MGI Knockout Phenotypes ---
+premature death | abnormal mandible morphology | decreased body weight | weight loss | abnormal tooth development | abnormal tooth eruption | abnormal enamel morphology | abnormal gonadal fat pad morphology | abnormal dentin morphology | abnormal periodontal ligament morphology | abnormal alveolar process morphology | increased alkaline phosphatase activity | decreased food intake | abnormal dental pulp morphology | abnormal periodontium morphology | abnormal lower incisor morphology | abnorm...
+
+--- Abstracts (20 papers, 20 tier1) ---
+Antlers, as the only fully regenerable bone tissue in mammals, serve as an exceptional model for investigating bone growth, mineralization, articular cartilage repair, and the pathophysiology of osteoporosis. Nevertheless, the exact molecular mechanisms governing osteogenesis, particularly the dynamic cellular interactions and signaling pathways coordinating these processes, remain poorly chara...
+---
+Rationale: Total hip arthroplasty (THA) and total knee arthroplasty (TKA) are effective interventions for end-stage osteoarthritis; however, periprosthetic infection is a devastating complication of arthroplasty. To safely prevent periprosthetic infection and enhance osteointegration, the surface modification strategy was utilized to kill bacteria, modulate the osteoimmune microenvironment, and...
+---
+Micro-/nano-tubes (TNTs) and micro-/nano-nets (TNNs) are the common and sensible choice in the first step of combined modifications of titanium surface for further functionalization in the purpose of extended indications and therapeutic effect. It is important to recognize the respective biologic reactions of these two substrates for guiding a biologically based first-step selection. TNTs were ...
+---
+Pre-pregnancy obesity (ppOB) is linked to pregnancy complications and abnormal fetal growth through placental mechanisms, and long non-coding RNAs (lncRNAs) may play an epigenetic role in these processes. We investigated overall and sex-specific associations of pre-pregnancy body mass index (ppBMI), ppOB, and birthweight with placental lncRNA transcripts in two birth cohorts. Study participants...
+---
+Osteoarthritis (OA) is a degenerative joint disease with an increasing incidence associated with increased life expectancy. The application of traditional Chinese medicine in the treatment of OA has become a research hotspot. This study investigated the effects of XGS externally applied to osteoarthritic joints and analyze its effect on pain in monosodium iodoacetate (MIA)-induced OA rats. This...
+---
+Lung cancer is typically classified based on morphological characteristics and immunoprofile. When histologic differentiation is difficult, immunohistochemical staining serves as a valuable diagnostic tool. Although most cases show distinct marker expression patterns, rare instances exhibit co-expression of both TTF-1 and p40. Moreover, for this particular subtype of non-small cell lung cancer ...
+---
+Breast carcinoma (BRCA) has resulted in a huge health burden globally. N1-methyladenosine (m1A) RNA methylation has been proven to play key roles in tumorigenesis. Nevertheless, the function of m1A RNA methylation-related genes in BRCA is indistinct. The RNA sequencing (RNA-seq), copy-number variation (CNV), single-nucleotide variant (SNV), and clinical data of BRCA were acquired via The Cancer...
+---
+The muscle tissue of dairy cows is a site of <U+03B2>-hydroxybutyrate (BHBA) metabolism. The mechanisms underlying the changes in proteins and metabolites in the muscle tissue of cows with ketosis remain unclear. To elucidate the metabolic and physiological molecular adaptation mechanisms in the muscle tissue of cows with ketosis through metabolomics and proteomics. Six cows diagnosed with ketosis (CK...
+
+
+========== GENE: Acvr1c ==========
+Description: activin A receptor, type IC [Source:MGI Symbol;Acc:MGI:2661081]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Serine/threonine protein kinase which forms a receptor complex on ligand binding. The receptor complex consists of 2 type II and 2 type I transmembrane serine/threonine kinases. Type II receptors phosphorylate and activate type I receptors which autophosphorylate, then bind and activate SMAD transcriptional regulators, SMAD2 and SMAD3. Receptor for activin AB, activin B, activin E and NODAL. Upon NODAL binding, activation results in increased apoptosis and reduced proliferation through suppression of AKT signaling and the activation of Smad2-dependent signaling pathway in pancreatic beta-cells, trophoblasts, epithelial or neuronal cells (PubMed:18480258, PubMed:36403856). Acts as a positive regulator for macrophage activation partially through down-regulation of PPARG expression (PubMed:32641645). .
+
+--- MGI Knockout Phenotypes ---
+no abnormal phenotype detected | decreased locomotor activity | increased heart weight | decreased total body fat amount
+
+--- Abstracts (20 papers, 18 tier1) ---
+Investigating the genetic factors influencing human birth weight may lead to biological insights into fetal growth and long-term health. We report analyses of rare variants that impact birth weight when carried by either fetus or mother, using whole exome sequencing data in up to 234,675 participants. Rare protein-truncating and deleterious missense variants are collapsed to perform gene burden...
+---
+Activin A receptor type 1C (ACVR1C), a type I transforming growth factor-<U+03B2> (TGF-<U+03B2>) receptor, has been implicated in sensitive skin and psoriasis and is involved in the regulation of metabolic homeostasis as well as cell proliferation and differentiation. In this study, we identified a novel role of ACVR1C in the ultraviolet (UV)-irradiation-induced reduction of epidermal lipogenesis in human sk...
+---
+Leptin exerts its effects on energy balance by inhibiting food intake and increasing energy expenditure via leptin receptors in the hypothalamus. While LepR neurons in the arcuate nucleus of the hypothalamus, the primary target of leptin, have been extensively studied, LepR neurons in other hypothalamic nuclei remain understudied. LepR neurons in the lateral hypothalamus contribute to leptin's ...
+---
+The t(12;21)(p13;q22) translocation is found in 20 to 25% of cases of childhood B-lineage acute lymphoblastic leukemia (B-ALL). This rearrangement results in the fusion of ETV6 (TEL) and RUNX1 (AML1) genes and defines a relatively uniform category, although only some patients suffer very late relapse. TEL/AML1-positive patients are thus an interesting subgroup to study, and such studies should ...
+---
+Women are more vulnerable than men to the neurotoxicity and severe brain damage caused by chronic heavy alcohol use. In addition, brain damage due to chronic heavy alcohol use may be associated with sex-dependent epigenetic modifications. This study aimed to identify microRNAs (miRNAs) and their target genes that are differentially expressed in the hippocampi of male and female animal models in...
+---
+Bone morphogenetic protein 15 (BMP15) and growth and differentiation factor 9 (GDF9) are secreted by the mammalian oocyte and are essential for ovarian follicular development, ovulation, and fertility. However, the secreted forms of the BMP15 and GDF9 proteins and the nature of cooperative molecular interactions between BMP15 and GDF9 previously reported have not been fully characterized. In th...
+---
+Investigating the genetic factors influencing human birth weight may lead to biological insights into fetal growth and long-term health. Genome-wide association studies of birth weight have highlighted associated variants in more than 200 regions of the genome, but the causal genes are mostly unknown. Rare genetic variants with robust evidence of association are more likely to point to causal g...
+---
+ALK7 (Activin receptor-like kinase 7) is a member of the TGF-<U+03B2> receptor superfamily predominantly expressed by cells and tissues involved in endocrine functions, such as neurons of the hypothalamus and pituitary, pancreatic <U+03B2>-cells and adipocytes. Recent studies have begun to delineate the processes regulated by ALK7 in these tissues and how these become integrated with the homeostatic regulati...
+
+
+========== GENE: Itpka ==========
+Description: inositol 1,4,5-trisphosphate 3-kinase A [Source:MGI Symbol;Acc:MGI:1333822]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Catalyzes the phosphorylation of 1D-myo-inositol 1,4,5-trisphosphate (InsP3) into 1D-myo-inositol 1,3,4,5-tetrakisphosphate and participates to the regulation of calcium homeostasis. .
+
+--- MGI Knockout Phenotypes ---
+enhanced long-term potentiation
+
+--- Abstracts (20 papers, 10 tier1) ---
+The accumulation of epicardial adipose tissue (EAT) is associated with cardiometabolic risks and adverse outcomes in heart failure with preserved ejection fraction (HFpEF) and atrial fibrillation (AF). This study aims to identify genes secreted by EAT that contribute to the shared pathogenesis of HFpEF and AF, potentially serving as biomarkers for diagnosis. Data sets from the GEO database for ...
+---
+Inositol-1,4,5-trisphosphate 3-kinase-A (itpka) accumulates in dendritic spines and seems to be critically involved in synaptic plasticity. The protein possesses two functional activities: it phosphorylates inositol-1,4,5-trisphosphate (Ins(1,4,5)P(3)) and regulates actin dynamics by its F-actin bundling activity. To assess the relevance of these activities for neuronal physiology, we examined ...
+---
+Spinocerebellar ataxia type 2 (SCA2) is caused by polyglutamine expansion in Ataxin-2 (ATXN2). This factor binds RNA/proteins to modify metabolism after stress, and to control calcium (Ca2+) homeostasis after stimuli. Cerebellar ataxias and corticospinal motor neuron degeneration are determined by gain/loss in ATXN2 function, so we aimed to identify key molecules in this atrophic process, as po...
+---
+Functional proteomics is a useful method to explore changes in protein expression in human diseases, including carcinomas. To identify tumor-associated proteins as biomarkers or molecular targets of human oral squamous cell carcinomas (OSCCs), we performed two-dimensional polyacrylamide gel electrophoresis and matrix-assisted laser desorption/ionization-time of flight mass spectrometry. Compari...
+---
+The yak, a livestock breed native to Qinghai Province in China. However, the low intramuscular fat (IMF) content of yak meat negatively impacts its taste and flavor, reducing its relative economic value. The experiment was conducted by inhibiting the expression of miR-127 and miR-375 in yak precursor adipocytes. To explore its effect on the proliferation and differentiation of yak adipocyte pre...
+---
+Human embryonic stem cells (hESCs) are of great hope for regenerative medicine due to their dual pluripotency and self-renewal properties. We report a comparison of inositol phosphate (InsP(s)) production in undifferentiated, differentiated hESCs and in two cancer cell lines, Ntera2 cells, a human embryonal carcinoma cell (hECC) line and HeLa cells. To evaluate the potential impact of InsP(s) i...
+---
+Currently, there is an urgent need for prognostic prediction models for renal clear cell carcinoma (ccRCC). This study aims to establish a prognostic prediction model based on differential genes associated with TNM staging and validate it through both in vitro and in vivo experiments. Through the cross-analysis of the differential genes between T1-2 and T3-4 stages, N1 and N2 stages, as well as...
+---
+Huntington disease (HD) is a fatal neurodegenerative disorder without a cure that is caused by an aberrant expansion of CAG repeats in exon 1 of the huntingtin (HTT) gene. Although a negative correlation between the number of CAG repeats and the age of disease onset is established, additional factors may contribute to the high heterogeneity of the complex manifestation of symptoms among patient...
+
+
+========== GENE: Sh3gl2 ==========
+Description: SH3-domain GRB2-like 2 [Source:MGI Symbol;Acc:MGI:700009]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+Implicated in synaptic vesicle endocytosis. May recruit other proteins to membranes with high curvature. Required for BDNF-dependent dendrite outgrowth (PubMed:21849472). Cooperates with SH3GL2 to mediate BDNF-NTRK2 early endocytic trafficking and signaling from early endosomes (PubMed:21849472). .
+
+--- MGI Knockout Phenotypes ---
+no abnormal phenotype detected | decreased exploration in new environment | decreased bone mineral density | increased circulating aspartate transaminase level | increased circulating alanine transaminase level | decreased grip strength | decreased bone mineral content
+
+--- Abstracts (20 papers, 20 tier1) ---
+Triple negative breast cancer (TNBC) originates from a less differentiated ductal cell of breast, which is less sensitive to chemotherapy. The chemotolerance mechanism of TNBC has not yet been studied in detail. For this reason, molecular profiles (expression/genetic/epigenetic) of Y654-p-<U+03B2>-catenin (active) and its kinase epidermal growth factor receptor (EGFR) along with SH3GL2 (regulator of E...
+---
+This study attempted to examine the methylation status of SH3GL2 gene in different types of human vulvar lesions and its correlation with clinicopathological parameters. Immunohistochemical analysis was used to identify the expression status of SH3GL2 in vulvar squamous cell carcinoma (VSCC), vulvar intraepithelial neoplasia (VIN) and benign vulvar squamous epithelium tissues. Bisulfite genomic...
+---
+Shared genetic vulnerability between schizophrenia (SCZ) and bipolar disorder (BP) was demonstrated, but the genetic underpinnings of specific symptom domains are unclear. This study investigated which genes and gene sets may modulate specific psychopathological domains and if genome-wide significant loci previously associated with SCZ or BP may play a role. Genome-wide data were available in p...
+---
+Pediatric medulloblastoma is the leading cause of cancer-related death in children. However, few studies have reported gene expression profiles of pediatric medulloblastoma and the molecular mechanism underlying this disease is unclear. To identify essential genes in pediatric medulloblastoma, we analyzed three microarray data sets from the Gene Expression Omnibus (GEO). We identified 1798 diff...
+---
+Medulloblastoma (MB) is the most common intracranial malignant tumor in children. The genes and pathways involved in the pathogenesis of MB are relatively unknown. We aimed to identify potential biomarkers and small-molecule drugs for MB. Gene expression profile data sets were obtained from the Gene Expression Omnibus (GEO) database and the differentially expressed genes (DEGs) were identified ...
+---
+Mutations in LRRK2 are the most frequent cause of familial Parkinson's disease (PD), with common LRRK2 non-coding variants also acting as risk factors for idiopathic PD. Currently, therapeutic agents targeting LRRK2 are undergoing advanced clinical trials in humans, however, it is important to understand the wider implications of LRRK2 targeted treatments given that LRRK2 is expressed in divers...
+---
+Our study investigates the molecular link between COVID-19 and Alzheimer's disease (AD). We<U+00A0>aim to elucidate the mechanisms by which COVID-19 may influence the onset or progression of AD. Using bioinformatic tools, we analyzed gene expression datasets from the Gene Expression Omnibus (GEO) database, including GSE147507, GSE12685, and GSE26927. Intersection analysis was utilized to identify comm...
+---
+Using bioinformatics machine learning methods, our research aims to identify the potential key genes associated with Lung adenocarcinoma (LUAD). We obtained two gene expression profiling microarrays (GSE68571 and GSE74706) from the public Gene Expression Omnibus (GEO) database at the National Centre for Biotechnology Information (NCBI). The purpose was to identify Differentially Expressed Genes...
+
+
+========== GENE: Dab1 ==========
+Description: disabled homolog 1 (Drosophila) [Source:MGI Symbol;Acc:MGI:108554]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Signaling adapter of the reelin-mediated signaling pathway, which regulates the migration and differentiation of postmitotic neurons during brain development (PubMed:12526739, PubMed:9009273, PubMed:9338784, PubMed:9338785). Mediates intracellular transduction of Reelin signaling following reelin (RELN)-binding to its receptor: acts by docking proteins through its phosphotyrosine residues and PID domain (PubMed:12526739, PubMed:9009273, PubMed:9338784, PubMed:9338785). .
+
+--- MGI Knockout Phenotypes ---
+no abnormal phenotype detected | abnormal cortical marginal zone morphology | abnormal cerebral cortex morphology | premature death | abnormal brain morphology | ataxia | abnormal tail movements | impaired balance | abnormal dentate gyrus morphology | abnormal cerebellar granule layer morphology | abnormal cerebellar Purkinje cell layer | absent cerebellar foliation | small cerebellum | abnormal hippocampus CA2 region morphology | abnormal postnatal subventricular zone morphology | abnormal r...
+
+--- Abstracts (20 papers, 20 tier1) ---
+Dominantly inherited spinocerebellar ataxias (SCAs) are associated with phenotypes that range from pure cerebellar to multisystemic. The list of implicated genes has lengthened in the past 5 years with the inclusion of SCA37/DAB1, SCA45/FAT2, SCA46/PLD3, SCA47/PUM1, SCA48/STUB1, SCA50/NPTX1, SCA25/PNPT1, SCA49/SAM9DL, and SCA27B/FGF14. In some patients, co-occurrence of multiple potentially pat...
+---
+How abnormal neurodevelopment relates to the tumour aggressiveness of medulloblastoma (MB), the most common type of embryonal tumour, remains elusive. Here we uncover a neurodevelopmental epigenomic programme that is hijacked to induce MB metastatic dissemination. Unsupervised analyses of integrated publicly available datasets with our newly generated data reveal that SMARCD3 (also known as BAF...
+---
+It has been repeatedly suggested that integrin is essential for neuronal migration. A new study proposes a link between Disabled-1 (Dab1) phosphorylation and alpha3 integrin signalling that is thought to drive the timely detachment of migrating neurons from the guiding radial glia fibers during early corticogenesis. This proposal however is hardly compatible with time-lapse anatomical investiga...
+---
+We aimed to identify pathogenic variants in a girl with epilepsy, developmental delay, cerebellar ataxia, oral motor difficulty, and structural brain abnormalities with the use of whole-exome sequencing. Whole-exome trio analysis and molecular functional studies were performed in addition to the clinical findings and neuroimaging studies. Brain MRI showed mild pachygyria, hypoplasia of the cere...
+---
+Homozygous Dab1 yotari mutant mice, Dab1yot (yot/yot) mice, have an autosomal recessive mutation of Dab1 and show reeler-like phenotype including histological abnormality of the cerebellum, hippocampus, and cerebral cortex. We here show abnormal hippocampal development of yot/yot mice where granule cells and pyramidal cells fail to form orderly rows but are dispersed diffusely in vague multipli...
+---
+Chance discovery of spontaneous mutants with atrophy of the cerebellar cortex has unearthed genes involved in optimizing motor coordination. Rotorod, stationary beam, and suspended wire tests are useful in delineating behavioral phenotypes of spontaneous mutants with cerebellar atrophy such as Grid2Lc, Grid2ho, Rorasg, Agtpbp1pcd, Relnrl, and Dab1scm. Likewise, transgenic or null mutants servin...
+---
+The reelin and dab1 genes are necessary for appropriate neuronal migration and lamination during brain development. Since these processes are controlled by thyroid hormone, we studied the effect of thyroid hormone deprivation and administration on the expression of reelin and dab1. As shown by Northern analysis, in situ hybridization, and immunohistochemistry studies, hypothyroid rats expressed...
+---
+Genetic and epigenetic changes in components of the Reelin-signaling pathway (RELN, DAB1) are associated with autism spectrum disorder (ASD) risk. Social communication deficits are a key component of the ASD diagnostic criteria, but the underlying neurogenetic mechanisms remain unknown. Reln insufficient mice exhibit ASD-like behavioral phenotypes including altered neonatal vocalization pattern...
+
+
+========== GENE: Rnf6 ==========
+Description: ring finger protein (C3H2C3 type) 6 [Source:MGI Symbol;Acc:MGI:1921382]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+E3 ubiquitin-protein ligase mediating 'Lys-48'-linked polyubiquitination of LIMK1 and its subsequent targeting to the proteasome for degradation (PubMed:16204183). Negatively regulates axonal outgrowth through regulation of the LIMK1 turnover (PubMed:16204183). Mediates 'Lys-6' and 'Lys-27'-linked polyubiquitination of AR/androgen receptor thereby modulating its transcriptional activity (By similarity). May also bind DNA and function as a transcriptional regulator (PubMed:11971979). Mediates polyubiquitination of QKI in macrophages, leading to its degradation (PubMed:36088389). .
+
+--- Abstracts (20 papers, 7 tier1) ---
+Sepsis is a fatal condition commonly caused by Methicillin-resistant Staphylococcus aureus (MRSA) with a high death rate. Macrophages can protect the host from various microbial pathogens by recognizing and eliminating them. Earlier we found that Quaking (QKI), an RNA binding protein (RBP), was involved in differentiation and polarization of macrophages. However, the role of QKI in sepsis cause...
+---
+In mouse Sertoli cells, transcription of the Inha gene encoding the alpha subunit of inhibin, which acts locally as a tumor suppressor, is down-regulated in tumors and in normal cells during aging. Previous studies suggested that regulation of Inha transcription involves the binding of a protein(s) to a repeat of the GGGGC motif in the promoter. Expression screening identified a cDNA encoding a...
+---
+Exploration of the molecular mechanisms of mesenchymal stem cell (MSC) growth has significant clinical benefits. Long non-coding RNAs (lncRNAs) have been reported to play vital roles in the regulation of the osteogenic differentiation of MSCs. However, the mechanism by which lncRNA affects the proliferation and apoptosis of MSCs is unclear. In this study, sequencing analysis revealed that LINC0...
+---
+RING finger proteins are zinc finger proteins containing the RING motifs. They act mainly as E3 ubiquitin ligases, bind the ubiquitin E2 conjugating enzyme and promote degradation of targeted proteins, Many novel genes have been isolated and differentially expressed in human adult and embryo testis by a testis cDNA-array differential display technique. A novel RING finger cDNA is highly express...
+---
+Although chronic hyperandrogenism suppresses antral follicular development, a phenomenon often observed in polycystic ovarian syndrome (PCOS), whether and how deregulation of androgen receptor (AR) signaling is involved, is not well understood. In the present study, we examined the role of ring finger protein 6 (RNF6) in AR ubiquitination and the possible dysregulation in the expression and act...
+---
+Proteostasis regulates key cellular processes such as cell proliferation, differentiation, transcription, and apoptosis. The mechanisms by which proteostasis is regulated are crucial and the deterioration of cellular proteostasis has been significantly associated with tumorigenesis since it specifically targets key oncoproteins and tumor suppressors. Prostate cancer (PCa) is the second most com...
+---
+Androgen receptor (AR) plays a pivotal role in prostate cancer. Regulation of AR transcriptional activity by post-translational modifications, such as phosphorylation by multiple kinases, is well documented. Here, we report that two PIM-1 kinase isoforms which are up-regulated during prostate cancer progression, namely PIM-1S and PIM-1L, modulate AR stability and transcriptional activity throug...
+---
+Traumatic brain injury (TBI) has ranked as one of the leading causes of disability and death in the world. The neuroinflammation mediated by signal transducer and activator of transcription 3 (STAT3) signaling during the progression of TBI leads to long-term neurodegeneration. Ring finger protein 6 (RNF-6) is an E3 ubiquitin ligase and can regulate the activity of STAT3 signaling pathway by tar...
+
+
+========== GENE: Plxna1 ==========
+Description: plexin A1 [Source:MGI Symbol;Acc:MGI:107685]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Coreceptor for SEMA3A, SEMA3C, SEMA3F and SEMA6D. Necessary for signaling by class 3 semaphorins and subsequent remodeling of the cytoskeleton. Plays a role in axon guidance, invasive growth and cell migration. Class 3 semaphorins bind to a complex composed of a neuropilin and a plexin. The plexin modulates the affinity of the complex for specific semaphorins, and its cytoplasmic domain is required for the activation of down-stream signaling events in the cytoplasm. Acts as coreceptor of TREM2 for SEMA6D in dendritic cells and is involved in the generation of immune responses and skeletal homeostasis (PubMed:16715077). .
+
+--- MGI Knockout Phenotypes ---
+abnormal dendritic cell physiology | abnormal CD4-positive, alpha-beta T cell physiology | abnormal long bone morphology | increased trabecular bone mass | abnormal oligodendrocyte morphology | abnormal lymphatic vessel morphology | abnormal lymphatic vessel endothelial cell morphology
+
+--- Abstracts (20 papers, 20 tier1) ---
+Adipocytes are derived from pluripotent mesenchymal stem cells through adipogenesis. Pre-adipocyte differentiation in poultry greatly influences fat deposition and meat quality. Circular RNAs (circRNAs) have an important function in cancer and some differentiation processes. Herein, high-throughput transcriptome sequencing was used to detect circRNAs present in cherry valley duck pre-adipocyte ...
+---
+Plexins are large transmembrane receptors for the semaphorin family of signalling proteins. Semaphorin-plexin signalling controls cellular interactions that are critical during development as well as in adult life stages. Nine plexin genes have been identified in humans, but despite the apparent importance of plexins in development, only biallelic PLXND1 and PLXNA1 variants have so far been ass...
+---
+Neural progenitors produce specific cell types that form the circuits of the nervous system. Extrinsic signals regulate both progenitor proliferation and the production of specific neuron types. Where progenitors reside within a progenitor niche determines to which of these signals they are exposed, and thus likely has important consequences on the progeny they produce. Little is known, however...
+---
+Tumor cells can be recognized through tumor surface antigens by immune cells and antibodies, which therefore can be used as drug targets for chimeric antigen receptor-T (CAR-T) therapies and antibody drug conjugates (ADCs). In this study, we aimed to identify novel tumor-specific antigens as targets for more effective and safer CAR-T cell therapies and ADCs. Here, we performed differential expr...
+---
+Glioblastoma multiforme (GBM) is the most common primary brain tumor in adults, with a median survival of approximately 15 months. Semaphorin 3A (Sema3A), known for its axon guidance and antiangiogenic properties, has been implicated in GBM growth. We hypothesized that Sema3A directly inhibits brain tumor stem cell (BTSC) proliferation and drives invasion via Neuropilin 1 (Nrp1) and Plexin A1 (...
+---
+The semaphorin family of guidance molecules plays a role in many aspects of neural development, and more recently semaphorins have been implicated to contribute to the failure of injured CNS neurons to regenerate. While semaphorin expression patterns after neural injury are partially understood, little is known about the expression of their signal transducing transmembrane receptors, the plexin...
+---
+This study aimed to explore the associations of genetic variants in the semaphorin 3A (SEMA3A) signaling pathway genes, including SEMA3A, NRP1, PLXNA1, PLXNA2 and PLXNA3 with osteoporosis (OP) risk and bone mineral density (BMD) in a Chinese Han older adult population. A two-stage design was adopted. Total of 47.8kb regions in the 5 genes were sequenced using targeted next-generation sequencing...
+---
+Brown adipose tissue is an evolutionary innovation in placental mammals that regulates body temperature through adaptive thermogenesis. Cold exposure activates brown adipose tissue thermogenesis through coordinated induction of brown adipogenesis, angiogenesis, and sympathetic innervation; however, how these processes are coordinated remains unclear. Here, we show that fragments of Slit guidanc...
+
+
+========== GENE: Cntn6 ==========
+Description: contactin 6 [Source:MGI Symbol;Acc:MGI:1858223]
+H3K27me3: 0 | Timing: Late
+
+--- UniProt Function ---
+Contactins mediate cell surface interactions during nervous system development. Participates in oligodendrocytes generation by acting as a ligand of NOTCH1. Its association with NOTCH1 promotes NOTCH1 activation through the released notch intracellular domain (NICD) and subsequent translocation to the nucleus (By similarity). Involved in motor coordination. .
+
+--- MGI Knockout Phenotypes ---
+impaired coordination | abnormal cerebral cortex pyramidal cell morphology
+
+--- Abstracts (20 papers, 14 tier1) ---
+Reeler heterozygous mice (reln+/-) are seemingly normal but haplodeficient in reln, a gene implicated in autism. Structural/neurochemical alterations in the reln+/- brain are subtle and difficult to demonstrate. Therefore, the usefulness of these mice in translational research is still debated. As evidence implicated several synapse-related genes in autism and the cerebellar vermis is structura...
+---
+Contactin-6 (CNTN6), also known as NB-3, is a neural recognition molecule and a member of the contactin subgroup of the immunoglobulin superfamily. Gene encoding CNTN6 is expressed in many regions of the neural system, including the accessory olfactory bulb (AOB) in mice. We aim to determine the effect of CNTN6 deficiency on the function of the accessory olfactory system (AOS). We examined the ...
+---
+Age at depressive onset (AAO) corresponds to unique symptomatology and clinical outcomes. Integration of genome-wide association study (GWAS) results with additional <U+201C>omic<U+201D> measures to evaluate AAO has not been reported and may reveal novel markers of susceptibility and/or resistance to major depressive disorder (MDD). To address this gap, we integrated genomics with metabolomics using data-dri...
+---
+Postural control is integrated in all facets of motor commands. The role of cortico-subcortical pathways underlying postural control, including cerebellum and its afferents (climbing, mossy, and noradrenergic fibers), basal ganglia, motor thalamus, and parieto-frontal neocortex has been identified in animal models, notably through the brain lesion technique in rats and in mice with spontaneous ...
+---
+Copy number variations of the human CNTN6 gene, resulting from megabase-scale microdeletions or microduplications in the 3p26.3 region, are frequently implicated in neurodevelopmental disorders such as intellectual disability and developmental delay. However, duplication of the full-length human CNTN6 gene presents with variable penetrance, resulting in phenotypes that range from neurodevelopme...
+---
+The 3p26.3 microduplication involving the CNTN6 gene cause developmental delay and the intellectual disability. However, the incomplete penetrance is described for this copy number variation (CNV). Here we describe ICAGi002-A line, which is supposed to use as a model for studying of the penetrance of the CNV in 3p26.3. The ICAGi002-A iPSCs line was obtained by the reprogramming of the skin fibr...
+---
+The human induced pluripotent stem cell (iPSC) lines, ICGi009-A, ICGi009-B, ICGi013-A and ICGi013-B, were generated from skin fibroblasts of two siblings with intellectual disability. Both patients were carriers of CNTN6 gene microdeletion (Kashevarova et<U+00A0>al., 2014). iPSC lines have normal karyotype, express pluripotency markers, are able to differentiate in vitro into derivatives of all three ...
+---
+We previously reported on two brothers who carry identical compound heterozygous PRKN mutations yet present with significantly different Parkinson's Disease (PD) clinical phenotypes. Juvenile cases demonstrate that PD is not necessarily an aging-associated disease. Indeed, evidence for a developmental component to PD pathogenesis is accumulating. Thus, we hypothesized that the presence of addit...
+
+
+========== GENE: Syt3 ==========
+Description: synaptotagmin III [Source:MGI Symbol;Acc:MGI:99665]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Ca(2+) sensor involved in Ca(2+)-dependent exocytosis of secretory vesicles through Ca(2+) and phospholipid binding to the C2 domain. Ca(2+) induces binding of the C2-domains to phospholipid membranes and to assembled SNARE-complexes; both actions contribute to triggering exocytosis. Plays a role in dendrite formation by melanocytes. .
+
+--- Abstracts (20 papers, 8 tier1) ---
+Neurotransmitter release consists of rapid synchronous release followed by longer-lasting asynchronous release (AR). Although the presynaptic proteins that trigger synchronous release are well understood, the mechanisms for AR remain unclear. AR is sustained by low concentrations of intracellular Ca2+ and Sr2+, suggesting the involvement of sensors with high affinities for both ions. Synaptotag...
+---
+Extended synaptotagmins are endoplasmic reticulum proteins consisting of an SMP domain and multiple C2 domains that bind phospholipids and Ca2+ . E-Syts create contact junctions between the ER and plasma membrane (PM) to facilitate the exchange of glycerophospholipids between the apposed membranes. We find in the differentiating adipocyte that the E-Syt3 carboxyl domain is cleaved by a multi-st...
+---
+A large proportion of patients with chronic pain experience co-morbid anxiety. The medial prefrontal cortex (mPFC) is proposed to underlie this comorbidity, but the molecular and neuronal mechanisms are not fully understood. Here, we reported that impaired neuronal macroautophagy in the prelimbic cortical (PrL) subregion of the mPFC paralleled the occurrence of anxiety-like behaviors in rats wi...
+---
+Kabuki syndrome is frequently caused by loss-of-function mutations in one allele of histone 3 lysine 4 (H3K4) methyltransferase KMT2D and is associated with problems in neurological, immunological and skeletal system development. We generated heterozygous KMT2D knockout and Kabuki patient-derived cell models to investigate the role of reduced dosage of KMT2D in stem cells. We discovered chromos...
+---
+The synaptotagmins are integral membrane proteins of synaptic vesicles thought to serve as Ca2+ sensors in the process of vesicular trafficking and exocytosis. Results from antibody microinjection and gene-disruption experiments have led to a controversy over whether synaptotagmins are essential for neurotransmission. However, the studies casting doubt on the role of synaptotagmins have assumed...
+---
+We sought to characterize the sixth most common finding in our neuroimmunological laboratory practice (tissue assay-observed unclassified neural antibodies [UNAs]), combining protein microarray and phage immunoprecipitation sequencing (PhIP-Seq). Patient specimens (258; 133 serums; 125 CSF) meeting UNA criteria were profiled; October 2022-September 2023. Top-ranking candidate antigens were vali...
+---
+The ankyrin repeat-rich membrane spanning (ARMS), a transmembrane neuronal scaffold protein, plays a fundamental role in neuronal physiology, including neuronal development, polarity, differentiation, survival and angiogenesis, through interactions with diverse partners. Previous studies have shown that the ARMS negatively regulates brain-derived neurotrophic factor (BDNF) secretion by interact...
+---
+Female fertility is an important trait in dairy cattle. Identifying putative causal variants associated with fertility may help to improve the accuracy of genomic prediction of fertility. Combining expression data (eQTL) of genes, exons, gene splicing and allele specific expression is a promising approach to fine map QTL to get closer to the causal mutations. Another approach is to identify gen...
+
+
+========== GENE: Stx1b ==========
+Description: syntaxin 1B [Source:MGI Symbol;Acc:MGI:1930705]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+Potentially involved in docking of synaptic vesicles at presynaptic active zones (By similarity). May mediate Ca(2+)-regulation of exocytosis acrosomal reaction in sperm. .
+
+--- MGI Knockout Phenotypes ---
+seizures | premature death | ataxia | abnormal CNS synaptic transmission | abnormal excitatory postsynaptic currents | abnormal miniature excitatory postsynaptic currents | abnormal synaptic vesicle recycling | abnormal neuron physiology | abnormal adrenal chromaffin cell morphology | decreased body size | abnormal AMPA-mediated synaptic currents | abnormal GABA-mediated receptor currents | abnormal synaptic vesicle number | abnormal paired-pulse inhibition | abnormal synapse morphology | pos...
+
+--- Abstracts (20 papers, 11 tier1) ---
+The Shiga-like toxins (Stx) are critical virulence factors of enterohaemorrhagic Escherichia coli (EHEC). Stx1B subunit plays important roles in EHEC infection. This work aims to generate and characterize monoclonal antibodies (mAbs) against the Stx1B and to investigate their utility in discrimination ELISA. Two newly identified mAbs (designated 2H8 and 1B10, respectively) against the Stx1B pro...
+---
+Neonatal hypoxic-ischemic encephalopathy (HIE), is a major cause of neurologic disorders in terms of neonates, with the unclear underlying mechanisms. In the study, triphenyl tetrazolium chloride (TTC) staining and Zea-longa score were performed to examine the neurologic damage in hypoxia and ischemia (HI) rats. The results showed that HI induced obviously infarct and serious neurologic impairm...
+---
+The STX1B gene encodes the presynaptic protein syntaxin-1B, which plays a major role in regulating fusion of synaptic vesicles. Mutations in STX1B are known to cause epilepsy syndromes, such as genetic epilepsies with febrile seizures plus (GEFS+). Here, we reprogrammed skin fibroblasts from a female patient affected by GEFS+ to human induced pluripotent stem cells (iPSCs). The patient carries ...
+---
+STX1 is a major neuronal syntaxin protein located at the plasma membrane of the neuronal tissues. Rodent STX1 has two highly similar paralogs, STX1A and STX1B, that are thought to be functionally redundant. Interestingly, some studies have shown that the distribution patterns of STX1A and STX1B at the central and peripheral nervous systems only partially overlapped, implying that there might be...
+---
+Neurotransmitter release requires the formation of soluble N-ethylmaleimide-sensitive factor attachment protein receptor (SNARE) complexes by SNARE proteins syntaxin-1 (Stx1), synaptosomal-associated protein 25 (SNAP-25), and synaptobrevin-2 (Syb2). In mammalian systems, loss of SNAP-25 or Syb2 severely impairs neurotransmitter release; however, complete loss of function studies for Stx1 have b...
+---
+The aim of this study was to evaluate the mobility of copper (Cu) and zinc (Zn) and their impact on the properties of bentonites and unfrozen water content. Limited research in this area necessitates further analysis to prevent the negative effects of metal interactions on bentonite effectiveness. Tests involved American (SWy-3, Stx-1b) and Slovak (BSvk) bentonite samples with Zn or Cu ion exch...
+---
+Although it is widely accepted that alcohol abuse and alcoholism have a significant genetic component of risk, the identities of the genes themselves remain obscure. To illuminate such potential genetic contributions, DNA macroarrays were used to probe for differences in normative cortical gene expression between rat strains genetically selected for alcohol self-administration preference, AA (A...
+---
+Spinocerebellar ataxia type 3 (SCA3/MJD) is a polyQ neurodegenerative disease where the presymptomatic phase of pathogenesis is unknown. Therefore, we investigated the molecular network of transcriptomic and proteomic triggers in young presymptomatic SCA3/MJD brain from Ki91 knock-in mouse. We found that transcriptional dysregulations resulting from mutant ataxin-3 are not occurring in young Ki...
+
+
+========== GENE: Syp ==========
+Description: synaptophysin [Source:MGI Symbol;Acc:MGI:98467]
+H3K27me3: 0 | Timing: Mid
+
+--- UniProt Function ---
+Possibly involved in structural functions as organizing other membrane components or in targeting the vesicles to the plasma membrane (By similarity). Involved in the regulation of short-term and long-term synaptic plasticity. .
+
+--- MGI Knockout Phenotypes ---
+no abnormal phenotype detected | increased vertical activity | abnormal eye posterior chamber depth | abnormal retina blood vessel morphology | preweaning lethality, incomplete penetrance
+
+--- Abstracts (20 papers, 20 tier1) ---
+Insulin-like growth factors (IGFs) bind specifically to the IGF1 receptor on the cell surface of targeted tissues. Ligand binding to the <U+03B1> subunit of the receptor leads to a conformational change in the <U+03B2> subunit, resulting in the activation of receptor tyrosine kinase activity. Activated receptor phosphorylates several substrates, including insulin receptor substrates (IRSs) and Src homology c...
+---
+The assembly of complex neural circuits requires that stem cells generate diverse types of neurons in the correct temporal order. Pioneering work in the Drosophila embryonic ventral nerve cord has shown that neural stem cells are temporally patterned by the sequential expression of rapidly changing transcription factors to generate diversity in their progeny. In recent years, a second temporal ...
+---
+Neuroendocrine prostate cancer (NEPC) tumours are classified by pathology into several distinct subtypes. Gene expression profiling has revealed transcriptional heterogeneity across NEPC, but this is rarely considered in the context of variation between pathologies. Diagnosis typically relies on immunohistochemical markers (CHGA, SYP, NCAM1) and genomic alterations in RB1, PTEN and TP53. We hyp...
+---
+Metastatic prostate cancer is a highly heterogeneous and dynamic disease and practicable tools for patient stratification and resistance monitoring are urgently needed. Liquid biopsy analysis of circulating tumor cells (CTCs) and circulating tumor DNA are promising, however, comprehensive testing is essential due to diverse mechanisms of resistance. Previously, we demonstrated the utility of mR...
+---
+Bexarotene is a retinoid X receptor (RXR) pharmacological agonist that has been demonstrated to treat cutaneous T-cell lymphoma and promising therapeutic potential for neurological diseases. But it still remains unclear whether bexarotene participates in regulation of neuroblastoma. Human neuroblastoma SH-SY5Y cells were used as a model to investigate the neuronal differentiation impact of bexa...
+---
+Temporal patterning of neural progenitors is an evolutionarily conserved mechanism generating neural diversity. In Drosophila, postembryonic neurogenesis requires the RNA binding proteins (RBPs) Imp/IGF2BP and Syp/SYNCRIP. However, how they coachieve their function is not well understood. Here, we elucidate the in vivo temporal RNA interactome landscapes of Imp and Syp during larval brain devel...
+---
+Catalpol, an important compound found in Rehmannia glutinosa (a plant with high nutritional and antidepressant medicinal value), exhibits various biological activities and has the ability to penetrate the blood-brain barrier. Our recent studies revealed a gender difference in the antidepressant activity of Rehmannia glutinosa with females showing better responses than males. Catalpol is likely ...
+---
+Alzheimer's disease (AD) is one of the most prevalent forms of dementia globally and remains an incurable condition that often leads to death. PANoptosis represents an emerging paradigm in programmed cell death, integrating three critical processes: pyroptosis, apoptosis, and necroptosis. Studies have shown that apoptosis, necroptosis, and pyroptosis play important roles in AD development. Ther...
+
+
+========== GENE: Thy1 ==========
+Description: thymus cell antigen 1, theta [Source:MGI Symbol;Acc:MGI:98747]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+May play a role in cell-cell or cell-ligand interactions during synaptogenesis and other events in the brain.
+
+--- MGI Knockout Phenotypes ---
+no abnormal phenotype detected | reduced long-term potentiation | pulmonary fibrosis
+
+--- Abstracts (20 papers, 20 tier1) ---
+The human brain undergoes rapid development at mid-gestation from a pool of neural stem and progenitor cells (NSPCs) that give rise to the neurons, oligodendrocytes, and astrocytes of the mature brain. Functional study of these cell types has been hampered by a lack of precise purification methods. We describe a method for prospectively isolating ten distinct NSPC types from the developing huma...
+---
+Thy-1 is a 25-37<U+00A0>kDa glycophosphatidylinositol (GPI)-anchored cell surface protein that was discovered more than 50 years ago. Recent findings have suggested that Thy-1 is expressed on thymocytes, mesenchymal stem cells (MSCs), cancer stem cells, hematopoietic stem cells, fibroblasts, myofibroblasts, endothelial cells, neuronal smooth muscle cells, and pan T cells. Thy-1 plays vital roles in ce...
+---
+The organizational principles of nephronal segments are based on anatomical and physiological attributes that are linked to the homeostatic functions of the kidney. Recent molecular approaches have uncovered layers of deeper signatures and states in tubular cells that arise at various time points on the disease trajectory. Here, we introduce an analytical pipeline of multiplexed spatial protein...
+---
+Amyotrophic lateral sclerosis (ALS) is a fatal neurodegenerative disorder with heterogeneous aetiology and a complex genetic background. Effective therapies are therefore likely to act on convergent pathways such as dysregulated energy metabolism, linked to multiple neurodegenerative diseases including ALS. Activity of the glycolysis enzyme phosphoglycerate kinase 1 (PGK1) was increased genetic...
+---
+The immortalized RGC-5 cell line has been widely used as a cell culture model to study the neurobiology of retinal ganglion cells (RGCs). The cells were originally introduced as derived from rat RGC showing expression of various neuronal markers, in particular the RGC-characteristic proteins Brn3 and Thy1. Recent data gave rise to concerns regarding the origin and nature of the cells. RGC-5 cel...
+---
+During wound healing, contractile fibroblasts called myofibroblasts regulate the formation and contraction of granulation tissue; however, pathological and persistent myofibroblast activation, which occurs in hypertrophic scars or tissue fibrosis, results in a loss of function. Many reviews outline the cellular and molecular features of myofibroblasts and their roles in a variety of diseases. T...
+---
+The continuation of the spermatogenic process throughout life relies on a proper regulation of self-renewal and differentiation of the spermatogonial stem cells. These are single cells situated on the basal membrane of the seminiferous epithelium. Only 0.03% of all germ cells are spermatogonial stem cells. They are the only cell type that can repopulate and restore fertility to congenitally inf...
+---
+The murine developing epicardium heterogeneously expresses the transcription factors TCF21 and WT1. Here, we show that this cell heterogeneity is conserved in human epicardium, regulated by BNC1 and associated with cell fate and function. Single cell RNA sequencing of epicardium derived from human pluripotent stem cells (hPSC-epi) revealed that distinct epicardial subpopulations are defined by ...
+
+
+========== GENE: Nptn ==========
+Description: neuroplastin [Source:MGI Symbol;Acc:MGI:108077]
+H3K27me3: 0 | Timing: Late
+
+--- UniProt Function ---
+Probable homophilic and heterophilic cell adhesion molecule involved in long term potentiation at hippocampal excitatory synapses through activation of p38MAPK. May also regulate neurite outgrowth by activating the FGFR1 signaling pathway. May play a role in synaptic plasticity (By similarity). Also acts as a chaperone for ATP2B1; stabilizes ATP2B1 and increases its ATPase activity. Promotes localization of XKR8 at the cell membrane (By similarity). .
+
+--- MGI Knockout Phenotypes ---
+abnormal CNS synaptic transmission | abnormal miniature excitatory postsynaptic currents | decreased CNS synapse formation | abnormal miniature inhibitory postsynaptic currents | abnormal dendritic spine morphology | increased miniature inhibitory postsynaptic current amplitude | decreased anxiety-related response | abnormal ear morphology | limb grasping | abnormal startle reflex | tremors | hyperactivity | decreased locomotor activity | abnormal gait | abnormal iris morphology | increased c...
+
+--- Abstracts (20 papers, 11 tier1) ---
+The outcome of T cell activation is determined by mechanisms that balance Ca2+ influx and clearance. Here we report that murine CD4 T cells lacking Neuroplastin (Nptn -/-), an immunoglobulin superfamily protein, display elevated cytosolic Ca2+ and impaired post-stimulation Ca2+ clearance, along with increased nuclear levels of NFAT transcription factor and enhanced T cell receptor-induced cytok...
+---
+Background: Spinal cord injury (SCI) represents one of the recognized difficulties, and its pathological mechanisms remain unclear. Aberrant regulation of the RNA-binding protein (RBP) and selective splicing are associated with SCI. Nonetheless, the mechanisms of RBP regulation and abnormal selective splicing events associated with SCI are unexplored. Methods: The Spinal Cord Injury Group (GSE1...
+---
+Osteosarcoma (OS) is a disease with high mortality in children and adolescents, and metastasis is one of its important clinical features. However, the molecular mechanism of OS occurrence is not completely clear. Thus, we screened potential biomarkers of OS and analyze their prognostic value. The Cancer Genome Atlas (TCGA) datasets were used to analyze the differential lncRNAs in patients with ...
+---
+Previous studies have suggested a potential role for paraptosis-related genes (PRGs) in cancer pathogenesis, yet their prognostic significance and therapeutic efficacy in gastric cancer (GC) remain largely unexplored. This study aims to investigate the function of PRGs in GC and offer valuable insights for clinical assessment of patient prognosis. Single-cell RNA sequencing (scRNA-seq) and the ...
+---
+Despite the recognition that cortical thickness is heritable and correlates with intellectual ability in children and adolescents, the genes contributing to individual differences in these traits remain unknown. We conducted a large-scale association study in 1583 adolescents to identify genes affecting cortical thickness. Single-nucleotide polymorphisms (SNPs; n=54,837) within genes whose expr...
+---
+Current approaches in human embryonic stem cell (hESC) to pancreatic beta cell differentiation have largely been based on knowledge gained from developmental studies of the epithelial pancreas, while the potential roles of other supporting tissue compartments have not been fully explored. One such tissue is the pancreatic mesenchyme that supports epithelial organogenesis throughout embryogenesi...
+---
+Neuroplastin (Nptn) is a member of the Ig superfamily and is expressed in two isoforms, Np55 and Np65. Np65 regulates synaptic transmission but the function of Np55 is unknown. In an N-ethyl-N-nitrosaurea mutagenesis screen, we have now generated a mouse line with an Nptn mutation that causes deafness. We show that Np55 is expressed in stereocilia of outer hair cells (OHCs) but not inner hair c...
+---
+Global gene expression profiling was performed using RNA from human embryonic neural stem cells (hENSC), and adult human olfactory bulb-derived neural stem cells (OBNSCs), to define a gene expression pattern and signaling pathways that are specific for each cell lineage. We have demonstrated large differences in the gene expression profile of human embryonic NSC, and adult human OBNSCs, but les...
+
+
+========== GENE: Bsn ==========
+Description: bassoon [Source:MGI Symbol;Acc:MGI:1277955]
+H3K27me3: 1 | Timing: Late
+
+--- UniProt Function ---
+Scaffold protein of the presynaptic cytomatrix at the active zone (CAZ) which is the place in the synapse where neurotransmitter is released (PubMed:12628168, PubMed:12628169, PubMed:19812333). After synthesis, participates in the formation of Golgi-derived membranous organelles termed Piccolo-Bassoon transport vesicles (PTVs) that are transported along axons to sites of nascent synaptic contacts (By similarity). At the presynaptic active zone, regulates the spatial organization of synaptic vesicle cluster, the protein complexes that execute membrane fusion and compensatory endocytosis (By similarity). Also functions in processes other than assembly such as the regulation of specific presynaptic protein ubiquitination by interacting with SIAH1 or the regulation of presynaptic autophagy by associating with ATG5 (By similarity) (PubMed:28231469). Also mediates synapse to nucleus communication leading to reconfiguration of gene expression by associating with the transcriptional corepresso
+
+--- MGI Knockout Phenotypes ---
+premature death | convulsive seizures | ataxia | impaired righting response | abnormal retina rod cell morphology | abnormal CNS synaptic transmission | abnormal somatic nervous system physiology | increased susceptibility to pharmacologically induced seizures | decreased synaptic depression | myoclonus | abnormal synaptic transmission | clonic seizures | decreased cochlear nerve compound action potential | abnormal cochlear inner hair cell physiology | abnormal inner hair cell synaptic ribbo...
+
+--- Abstracts (18 papers, 20 tier1) ---
+Cancer cachexia is a multifactorial condition that contributes to the death of about 20% of cancer patients. It has the potential to cause weight loss, reduction in muscle mass, and loss of fat tissue, significantly lowering the quality of life. Currently, there are no approved drugs for cancer cachexia. Here, we have explored the possible impact of brassinin (BSN) on cancer cachexia under in v...
+---
+Mutations in the BSN gene, encoding the presynaptic protein Bassoon, are implicated in epilepsy, but their impact on astrocytes remains unclear. Using CRISPR/Cas9, we introduced patient-derived BSN mutations (p.M1903V and c.5672insCG) into human induced pluripotent stem cells (iPSCs) and differentiated them into astrocytes. We found that mutant astrocytes exhibited significant lipid accumulatio...
+---
+Neostriatal abnormalities can be observed in a very large number of neurological conditions clinically dominated by the presence of movement disorders. The neuroradiological picture in some cases has been described as "bilateral striatal necrosis" (BSN). BSN represents a condition histo-pathologically defined by the involvement of the neostriata and characterized by initial swelling of putamina...
+---
+Mental health issues in college students are increasing, and nursing students may experience higher stress and anxiety levels than other college students. Limited data differentiate mental health characteristics of traditional Bachelor of Science in Nursing (BSN) and accelerated Bachelor of Science in Nursing (ABSN) students. This descriptive mixed-methods study compared mental health character...
+---
+BSN-37, a novel antimicrobial peptide (AMP) containing 37 amino acid residues isolated from the bovine spleen, has not only antibacterial activity but also immunomodulatory activity. Recent evidence shows that long non-coding RNAs (lncRNAs) play an important role in regulating the activation and function of immune cells. The purpose of this experiment was to investigate the lncRNA and mRNA expr...
+---
+Proper synaptic function depends on a finely-tuned balance between events such as protein synthesis and structural organization. In particular, the functional loss of just one synaptic-related protein can have a profound impact on overall neuronal network function. To this end, we used a mutant mouse model harboring a mutated form of the presynaptic scaffolding protein Bassoon (Bsn), which is p...
+---
+Endometriosis has a significant impact on the social, psychological, psychosomatic, and physical aspects of women's lives. There is increasing evidence that endometriosis has to be seen as a systemic and complex disorder with a multifactorial etiology, accompanied by numerous other pathologies, such as mental disorders and even cancer. Herein, we analyzed Disability-Adjusted Life Years (DALYs) ...
+---
+The ability to determine severity of encephalopathy is crucial for early neuroprotective therapies and for predicting neurodevelopmental outcome. The objective of this study was to assess a novel brain state of newborn (BSN) trend to distinguish newborns with presence of hypoxic ischemic encephalopathy (HIE) within hours after birth and predict neurodevelopmental outcomes at 2 years of age. Thi...
+
+
+========== GENE: Arap1 ==========
+Description: ArfGAP with RhoGAP domain, ankyrin repeat and PH domain 1 [Source:MGI Symbol;Acc:MGI:1916960]
+H3K27me3: 1 | Timing: Mid
+
+--- UniProt Function ---
+Phosphatidylinositol 3,4,5-trisphosphate-dependent GTPase-activating protein that modulates actin cytoskeleton remodeling by regulating ARF and RHO family members (By similarity). Activated by phosphatidylinositol 3,4,5-trisphosphate (PtdIns(3,4,5)P3) binding and, to a lesser extent, by phosphatidylinositol 3,4-bisphosphate (PtdIns(3,4)P2) binding (By similarity). Has a preference for ARF1 and ARF5 (By similarity). Positively regulates the ring size of circular dorsal ruffles and promotes macropinocytosis (By similarity). Acts as a bridging factor in osteoclasts to control actin and membrane dynamics (PubMed:30240610). Regulates the condensing of osteoclast podosomes into sealing zones which segregate the bone-facing membrane from other membrane domains and are required for osteoclast resorption activity (PubMed:30240610). Also regulates recruitment of the AP-3 complex to endosomal membranes and trafficking of lysosomal membrane proteins to the ruffled membrane border of osteoclasts to
+
+--- MGI Knockout Phenotypes ---
+decreased lean body mass | abnormal vocalization | abnormal retina morphology | short tibia | decreased mean corpuscular hemoglobin | decreased pulmonary respiratory rate
+
+--- Abstracts (20 papers, 7 tier1) ---
+Acquired somatic mutations emerged as important drivers of adverse cardiovascular disease outcomes. Recently, mosaic loss of Y chromosome (LOY) in haematopoietic cells was identified to induce diffuse cardiac fibrosis in male mice. The aim of the present study was to determine the association between LOY and cardiovascular mortality in patients undergoing coronary angiography. LOY was quantifie...
+---
+Obesity is a major risk factor for cardiometabolic diseases. Nevertheless, a substantial proportion of individuals with obesity do not suffer cardiometabolic comorbidities. The mechanisms that uncouple adiposity from its cardiometabolic complications are not fully understood. Here, we identify 62 loci of which the same allele is significantly associated with both higher adiposity and lower card...
+---
+In order to elucidate the epigenetic mechanism and explore new biomarkers for diabetes and diabetic nephropathy, circulating lncRNA and mRNA expression profiles of normal control, diabetes mellitus, and diabetic nephropathy patients were analyzed. Serum samples from diabetic nephropathy patients (DN), diabetes mellitus patients without microalbuminuria (DM), and healthy controls (N) were collec...
+---
+A selective susceptibility of certain individuals to form multiple alloantibodies in response to red cell transfusion is well-recognized in clinical practice, and is a particular problem in persons with sickle cell disease (SCD). The reason for this differential susceptibility is unclear, but inter-individual genetic differences are likely to contribute. We conducted a pilot case-control genome...
+---
+Arf GTPase-activating proteins (Arf GAPs) control the activity of ADP-ribosylation factors (Arfs) by inducing GTP hydrolysis and participate in a diverse array of cellular functions both through mechanisms that are dependent on and independent of their Arf GAP activity. A number of these functions hinge on the remodeling of actin filaments. Accordingly, some of the effects exerted by Arf GAPs i...
+---
+BCR-ABL1 is a fusion tyrosine kinase, which causes multiple types of leukemia. We used an integrated proteomic approach that includes label-free quantitative protein complex and phosphorylation profiling by mass spectrometry to systematically characterize the proximal signaling network of this oncogenic kinase. The proximal BCR-ABL1 signaling network shows a modular and layered organization wit...
+---
+Type 2 diabetes (T2D) is a complex multifactorial disorder with more than 40 loci associated with disease susceptibility. Most of these genome-wide significant loci reside in noncoding regions, it is important to decipher the potential regulatory function of these variants and to differentiate between true and tag signals. Nowadays, databases are being developed to study and predict the functio...
+---
+Arf-GAP with Rho-GAP domain, ANK repeat and PH domain-containing protein 1 (ARAP1), Cbl-interacting protein of 85 kDa (CIN85), and casitas B-lineage lymphoma (Cbl) play important roles in epidermal growth factor receptor (EGFR) internalization and recycling. In previous studies, ARAP1 was found to interact with CIN85, and their interaction attenuated the ubiquitination of EGFR. However, the mol...
+
+
