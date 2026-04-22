@@ -221,11 +221,12 @@ umap_res <- umap(pca$x[, 1:n_use], n_neighbors=15, min_dist=0.15,
   metric="cosine", n_components=2, n_epochs=1000, spread=2.0)
 
 # =============================================================================
-# 5. CLUSTERING (k=10)
+# 5. CLUSTERING (k=13)
 # =============================================================================
-cat("Clustering k=10...\n")
+K_CLUSTERS <- 13
+cat("Clustering k=", K_CLUSTERS, "...\n")
 set.seed(42)
-km <- kmeans(umap_res, centers=10, nstart=50, iter.max=300)
+km <- kmeans(umap_res, centers=K_CLUSTERS, nstart=50, iter.max=300)
 sil <- round(mean(silhouette(km$cluster, dist(umap_res))[,3]), 3)
 cat("Silhouette:", sil, "\n")
 
@@ -300,10 +301,10 @@ centroids <- umap_df %>% dplyr::filter(cluster>0) %>%
   dplyr::group_by(cluster) %>%
   dplyr::summarise(x=median(UMAP1), y=median(UMAP2), n=n(), .groups="drop")
 
-cluster_labels <- character(10)
+cluster_labels <- character(K_CLUSTERS)
 cluster_term_lists <- list()
 
-for (cl in 1:10) {
+for (cl in 1:K_CLUSTERS) {
   cl_genes <- umap_df$gene[umap_df$cluster==cl]
   cl_in <- intersect(cl_genes, rownames(mat_combined))
   n_cl <- length(cl_in)
@@ -366,7 +367,7 @@ plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
 plot_cy <- mean(range(umap_df$UMAP2[umap_df$cluster>0]))
 
 term_annot_list <- list()
-for (cl in 1:10) {
+for (cl in 1:K_CLUSTERS) {
   ct <- centroids[centroids$cluster==cl,]
   terms_df <- cluster_term_lists[[cl]]
   if (is.null(terms_df) || nrow(terms_df)==0) next
@@ -387,8 +388,8 @@ for (cl in 1:10) {
 }
 term_annot <- do.call(rbind, term_annot_list)
 
-pal10 <- scales::hue_pal()(10)
-names(pal10) <- as.character(1:10)
+pal10 <- scales::hue_pal()(K_CLUSTERS)
+names(pal10) <- as.character(1:K_CLUSTERS)
 umap_df$cluster_f <- factor(umap_df$cluster)
 
 # Main UMAP
@@ -411,14 +412,14 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
   coord_cartesian(clip="off") +
   labs(title="Functional landscape of GNP differentiation genes",
     subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
-      " features (database + agent-extracted) | k=10 | sil=", sil)) +
+      " features (database + agent-extracted) | k=", K_CLUSTERS, " | sil=", sil)) +
   theme_void(base_size=14) +
   theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
     plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
     plot.margin=margin(20,90,20,90,"pt"))
 
-ggsave("Fig_gene_umap_agent_k10.pdf", p_main, width=20, height=16)
-cat("Saved: Fig_gene_umap_agent_k10.pdf\n")
+ggsave("Fig_gene_umap_agent_k13.pdf", p_main, width=20, height=16)
+cat("Saved: Fig_gene_umap_agent_k13.pdf\n")
 
 # H3K27me3 overlay
 p_k27 <- ggplot(umap_df, aes(x=UMAP1, y=UMAP2,
@@ -457,7 +458,7 @@ ggsave("Fig_gene_umap_agent_proteinclass.pdf", p_pc, width=14, height=10)
 cat("Saved: Fig_gene_umap_agent_proteinclass.pdf\n")
 
 # Save coordinates
-write.csv(umap_df, "gene_umap_agent_k10_coordinates.csv", row.names=FALSE)
-cat("Saved: gene_umap_agent_k10_coordinates.csv\n")
+write.csv(umap_df, "gene_umap_agent_k13_coordinates.csv", row.names=FALSE)
+cat("Saved: gene_umap_agent_k13_coordinates.csv\n")
 
 cat("\n=== DONE ===\n")
