@@ -223,7 +223,7 @@ umap_res <- umap(pca$x[, 1:n_use], n_neighbors=15, min_dist=0.15,
 # =============================================================================
 # 5. CLUSTERING (k=13)
 # =============================================================================
-K_CLUSTERS <- 13
+K_CLUSTERS <- 11
 cat("Clustering k=", K_CLUSTERS, "...\n")
 set.seed(42)
 km <- kmeans(umap_res, centers=K_CLUSTERS, nstart=50, iter.max=300)
@@ -418,8 +418,8 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
     plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
     plot.margin=margin(20,90,20,90,"pt"))
 
-ggsave("Fig_gene_umap_agent_k13.pdf", p_main, width=20, height=16)
-cat("Saved: Fig_gene_umap_agent_k13.pdf\n")
+ggsave("Fig_gene_umap_agent_k11.pdf", p_main, width=20, height=16)
+cat("Saved: Fig_gene_umap_agent_k11.pdf\n")
 
 # H3K27me3 overlay
 p_k27 <- ggplot(umap_df, aes(x=UMAP1, y=UMAP2,
@@ -458,7 +458,7 @@ ggsave("Fig_gene_umap_agent_proteinclass.pdf", p_pc, width=14, height=10)
 cat("Saved: Fig_gene_umap_agent_proteinclass.pdf\n")
 
 # Save coordinates
-write.csv(umap_df, "gene_umap_agent_k13_coordinates.csv", row.names=FALSE)
-cat("Saved: gene_umap_agent_k13_coordinates.csv\n")
+write.csv(umap_df, "gene_umap_agent_k11_coordinates.csv", row.names=FALSE)
+cat("Saved: gene_umap_agent_k11_coordinates.csv\n")
 
 cat("\n=== DONE ===\n")
