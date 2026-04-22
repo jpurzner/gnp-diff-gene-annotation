@@ -394,38 +394,29 @@ centroids$label <- cluster_labels[centroids$cluster]
 # =============================================================================
 cat("\nGenerating figures...\n")
 
-# Term annotations — ONE BOX PER CLUSTER with terms stacked newline-separated,
-# placed outward from centroid toward plot edge
-plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
-plot_cy <- mean(range(umap_df$UMAP2[umap_df$cluster>0]))
-
+# Term annotations — ONE BOX PER CLUSTER with terms stacked newline-separated
+# Uses ggrepel to auto-position boxes so they don't overlap the data.
 term_annot_list <- list()
 for (cl in 1:K_CLUSTERS) {
   ct <- centroids[centroids$cluster==cl,]
   terms_df <- cluster_term_lists[[cl]]
-  if (is.null(terms_df) || nrow(terms_df)==0) next
 
-  # Stack up to 4 terms in a single multi-line string
-  lines <- character()
-  for (j in 1:min(4, nrow(terms_df))) {
-    d <- terms_df$term_clean[j]
-    if (nchar(d) > 30) d <- paste0(substr(d, 1, 27), "...")
-    lines <- c(lines, paste0(d, " (", terms_df$pct[j], "%)"))
+  # Build label: top 4 enriched terms, or fallback to "Mixed / Other"
+  if (!is.null(terms_df) && nrow(terms_df) > 0) {
+    lines <- character()
+    for (j in 1:min(4, nrow(terms_df))) {
+      d <- terms_df$term_clean[j]
+      if (nchar(d) > 30) d <- paste0(substr(d, 1, 27), "...")
+      lines <- c(lines, paste0(d, " (", terms_df$pct[j], "%)"))
+    }
+    label_txt <- paste(lines, collapse="\n")
+  } else {
+    label_txt <- "Mixed / Other"
   }
-  label_txt <- paste(lines, collapse="\n")
-
-  # Offset outward from plot center
-  dx <- ct$x - plot_cx; dy <- ct$y - plot_cy
-  dist_fc <- sqrt(dx^2 + dy^2)
-  if (dist_fc < 0.01) { dx <- 1; dy <- 0; dist_fc <- 1 }
-  dx_n <- dx / dist_fc; dy_n <- dy / dist_fc
-  offset <- 3.2
 
   term_annot_list[[as.character(cl)]] <- data.frame(
     cluster = cl, label = label_txt,
     x_anchor = ct$x, y_anchor = ct$y,
-    x_label = ct$x + dx_n * offset,
-    y_label = ct$y + dy_n * offset,
     stringsAsFactors = FALSE)
 }
 term_annot <- do.call(rbind, term_annot_list)
@@ -446,13 +437,19 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
     aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
     size=4, fontface="bold", fill=alpha("white",0.85),
     label.size=0.3, color="black", inherit.aes=FALSE) +
-  # Single term box per cluster, terms stacked newline-separated
-  geom_label(data=term_annot,
-    aes(x=x_label, y=y_label, label=label),
+  # Single term box per cluster, auto-repositioned by ggrepel to avoid
+  # overlap with data points. A line connects box back to cluster centroid.
+  geom_label_repel(data=term_annot,
+    aes(x=x_anchor, y=y_anchor, label=label),
     size=2.8, color="grey15", hjust=0.5, vjust=0.5,
-    fontface="italic", fill=alpha("white", 0.9),
-    label.size=0.2, label.padding=unit(0.25, "lines"),
-    inherit.aes=FALSE, lineheight=0.95) +
+    fontface="italic", fill=alpha("white", 0.92),
+    label.size=0.2, label.padding=unit(0.3, "lines"),
+    lineheight=0.95,
+    force=20, force_pull=0.5,
+    box.padding=1.2, point.padding=0.5,
+    min.segment.length=0, segment.color="grey40", segment.size=0.3,
+    max.overlaps=Inf, seed=42,
+    inherit.aes=FALSE) +
   scale_color_manual(values=pal10, guide="none") +
   coord_cartesian(clip="off") +
   {if (SHOW_TITLE)
