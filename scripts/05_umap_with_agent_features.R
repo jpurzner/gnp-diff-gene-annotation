@@ -223,7 +223,8 @@ umap_res <- umap(pca$x[, 1:n_use], n_neighbors=15, min_dist=0.15,
 # =============================================================================
 # 5. CLUSTERING (k=13)
 # =============================================================================
-K_CLUSTERS <- 11
+K_CLUSTERS <- 10
+SHOW_TITLE <- FALSE  # Set TRUE to include title/subtitle in main figure
 cat("Clustering k=", K_CLUSTERS, "...\n")
 set.seed(42)
 km <- kmeans(umap_res, centers=K_CLUSTERS, nstart=50, iter.max=300)
@@ -286,6 +287,7 @@ clean_term <- function(t) {
 }
 
 generic_roots <- tolower(c(
+  # Generic GO roots
   "molecular function","cellular component","biological process",
   "binding","catalytic activity","protein binding","cell","cell part",
   "organelle","intracellular","cytoplasm","membrane","nucleus",
@@ -294,8 +296,30 @@ generic_roots <- tolower(c(
   "ion binding","metal ion binding","cation binding","transferase activity",
   "hydrolase activity","signaling","signal transduction",
   "response to stimulus","developmental process","multicellular organismal process",
-  "extracellular region","extracellular space","other","unknown","none","none known"
+  "extracellular region","extracellular space",
+  # Agent classification labels (not biological terms)
+  "other","unknown","none","none known","viable","subviable",
+  "embryonic lethal","perinatal lethal","postnatal lethal",
+  "biomarker only","oncogene","tumor suppressor",
+  "promotes","inhibits","required for","marker of","associated",
+  "has phenotype","evidence",
+  # Meaningless / overly broad
+  "predicted uncharacterized","positive regulation","negative regulation",
+  "regulation","broad","protein","domain","family","activity",
+  "development","differentiation","process","function"
 ))
+
+# Agent-derived feature columns (one-hot / categorical) — don't use as labels
+is_agent_feature_col <- function(tname) {
+  grepl("^(AgPC:|AgLoc:|AgTiss:|AgCell:|AgPW:|AgKO:|AgCR:|AgDiff:|AgCereb:|AgNeuro:)",
+    tname)
+}
+
+# Pfam IDs (PF00001 etc) — not informative without description (vectorized)
+is_pfam_id_only <- function(tname) {
+  cleaned <- gsub("^PFAM:", "", tname)
+  grepl("^PF[0-9]+$", cleaned) | grepl("^Pf[0-9]+$", cleaned)
+}
 
 centroids <- umap_df %>% dplyr::filter(cluster>0) %>%
   dplyr::group_by(cluster) %>%
@@ -332,11 +356,19 @@ for (cl in 1:K_CLUSTERS) {
     res <- data.frame(term=names(cands), fisher_p=fisher_p, in_cl=in_cl[cands],
       pct=round(100*in_cl[cands]/n_cl,1), stringsAsFactors=FALSE) %>%
       dplyr::mutate(fdr=p.adjust(fisher_p, method="BH"),
-        term_clean=sapply(term, clean_term), term_lower=tolower(term_clean)) %>%
-      dplyr::filter(fdr < 0.05, !term_lower %in% generic_roots) %>%
+        term_clean=sapply(term, clean_term), term_lower=tolower(term_clean),
+        is_ag_feat=is_agent_feature_col(term),
+        is_pfam_only=is_pfam_id_only(term),
+        n_words=sapply(term_clean, function(x) length(strsplit(x," ")[[1]]))) %>%
+      dplyr::filter(fdr < 0.05,
+        !term_lower %in% generic_roots,
+        !is_ag_feat,           # Exclude agent feature columns from labels
+        !is_pfam_only,         # Exclude bare Pfam IDs
+        n_words >= 2,          # Require >=2 words (avoid "Viable", "Other")
+        nchar(term_clean) >= 6) %>%
       dplyr::filter(!duplicated(term_lower)) %>%
       dplyr::arrange(fisher_p)
-    cluster_term_lists[[cl]] <- res %>% dplyr::slice_head(n=5)
+    cluster_term_lists[[cl]] <- res %>% dplyr::slice_head(n=4)
   } else {
     cluster_term_lists[[cl]] <- data.frame()
   }
@@ -362,7 +394,8 @@ centroids$label <- cluster_labels[centroids$cluster]
 # =============================================================================
 cat("\nGenerating figures...\n")
 
-# Term annotations
+# Term annotations — ONE BOX PER CLUSTER with terms stacked newline-separated,
+# placed outward from centroid toward plot edge
 plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
 plot_cy <- mean(range(umap_df$UMAP2[umap_df$cluster>0]))
 
@@ -371,20 +404,29 @@ for (cl in 1:K_CLUSTERS) {
   ct <- centroids[centroids$cluster==cl,]
   terms_df <- cluster_term_lists[[cl]]
   if (is.null(terms_df) || nrow(terms_df)==0) next
-  dx <- ct$x-plot_cx; dy <- ct$y-plot_cy
-  dist_fc <- sqrt(dx^2+dy^2)
-  if (dist_fc < 0.01) { dx<-1; dy<-0; dist_fc<-1 }
-  dx_n <- dx/dist_fc; dy_n <- dy/dist_fc
-  for (j in 1:nrow(terms_df)) {
-    perp <- (j-(nrow(terms_df)+1)/2)*0.9
+
+  # Stack up to 4 terms in a single multi-line string
+  lines <- character()
+  for (j in 1:min(4, nrow(terms_df))) {
     d <- terms_df$term_clean[j]
-    if (nchar(d)>35) d <- paste0(substr(d,1,32),"...")
-    term_annot_list[[paste0(cl,"_",j)]] <- data.frame(
-      cluster=cl, term=paste0(d," (",terms_df$pct[j],"%)"),
-      x_anchor=ct$x, y_anchor=ct$y,
-      x_label=ct$x+dx_n*4-dy_n*perp,
-      y_label=ct$y+dy_n*4+dx_n*perp, stringsAsFactors=FALSE)
+    if (nchar(d) > 30) d <- paste0(substr(d, 1, 27), "...")
+    lines <- c(lines, paste0(d, " (", terms_df$pct[j], "%)"))
   }
+  label_txt <- paste(lines, collapse="\n")
+
+  # Offset outward from plot center
+  dx <- ct$x - plot_cx; dy <- ct$y - plot_cy
+  dist_fc <- sqrt(dx^2 + dy^2)
+  if (dist_fc < 0.01) { dx <- 1; dy <- 0; dist_fc <- 1 }
+  dx_n <- dx / dist_fc; dy_n <- dy / dist_fc
+  offset <- 3.2
+
+  term_annot_list[[as.character(cl)]] <- data.frame(
+    cluster = cl, label = label_txt,
+    x_anchor = ct$x, y_anchor = ct$y,
+    x_label = ct$x + dx_n * offset,
+    y_label = ct$y + dy_n * offset,
+    stringsAsFactors = FALSE)
 }
 term_annot <- do.call(rbind, term_annot_list)
 
@@ -392,34 +434,39 @@ pal10 <- scales::hue_pal()(K_CLUSTERS)
 names(pal10) <- as.character(1:K_CLUSTERS)
 umap_df$cluster_f <- factor(umap_df$cluster)
 
-# Main UMAP
+# Main UMAP — single box per cluster, no radiating lines
 p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
     aes(x=UMAP1, y=UMAP2, color=cluster_f)) +
   geom_point(size=1.6, alpha=0.55) +
   {if(any(umap_df$cluster==0))
     geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
       size=0.8, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
-  geom_label(data=centroids, aes(x=x,y=y,label=paste0(cluster," (n=",n,")")),
-    size=3.5, fontface="bold", fill=alpha("white",0.8),
+  # Cluster number at centroid
+  geom_label(data=centroids,
+    aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
+    size=4, fontface="bold", fill=alpha("white",0.85),
     label.size=0.3, color="black", inherit.aes=FALSE) +
-  geom_segment(data=term_annot,
-    aes(x=x_anchor,y=y_anchor,xend=x_label,yend=y_label),
-    color="grey50", linewidth=0.15, alpha=0.4, inherit.aes=FALSE) +
-  geom_text(data=term_annot, aes(x=x_label,y=y_label,label=term),
-    size=2.6, color="grey20", hjust=0.5, vjust=0.5,
-    fontface="italic", inherit.aes=FALSE) +
+  # Single term box per cluster, terms stacked newline-separated
+  geom_label(data=term_annot,
+    aes(x=x_label, y=y_label, label=label),
+    size=2.8, color="grey15", hjust=0.5, vjust=0.5,
+    fontface="italic", fill=alpha("white", 0.9),
+    label.size=0.2, label.padding=unit(0.25, "lines"),
+    inherit.aes=FALSE, lineheight=0.95) +
   scale_color_manual(values=pal10, guide="none") +
   coord_cartesian(clip="off") +
-  labs(title="Functional landscape of GNP differentiation genes",
-    subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
-      " features (database + agent-extracted) | k=", K_CLUSTERS, " | sil=", sil)) +
+  {if (SHOW_TITLE)
+    labs(title="Functional landscape of GNP differentiation genes",
+      subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
+        " features (database + agent-extracted) | k=", K_CLUSTERS, " | sil=", sil))
+   else labs(title=NULL, subtitle=NULL)} +
   theme_void(base_size=14) +
   theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
     plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
-    plot.margin=margin(20,90,20,90,"pt"))
+    plot.margin=margin(20, 90, 20, 90, "pt"))
 
-ggsave("Fig_gene_umap_agent_k11.pdf", p_main, width=20, height=16)
-cat("Saved: Fig_gene_umap_agent_k11.pdf\n")
+ggsave("Fig_gene_umap_agent_k10.pdf", p_main, width=20, height=16)
+cat("Saved: Fig_gene_umap_agent_k10.pdf\n")
 
 # H3K27me3 overlay
 p_k27 <- ggplot(umap_df, aes(x=UMAP1, y=UMAP2,
@@ -458,7 +505,7 @@ ggsave("Fig_gene_umap_agent_proteinclass.pdf", p_pc, width=14, height=10)
 cat("Saved: Fig_gene_umap_agent_proteinclass.pdf\n")
 
 # Save coordinates
-write.csv(umap_df, "gene_umap_agent_k11_coordinates.csv", row.names=FALSE)
-cat("Saved: gene_umap_agent_k11_coordinates.csv\n")
+write.csv(umap_df, "gene_umap_agent_k10_coordinates.csv", row.names=FALSE)
+cat("Saved: gene_umap_agent_k10_coordinates.csv\n")
 
 cat("\n=== DONE ===\n")
