@@ -8,7 +8,9 @@
 # Large data files
 *.rds
 *.xlsx
-*.pdf
+
+# Keep figures/ PDFs in repo (they're small)
+!figures/*.pdf
 
 # OS
 .DS_Store

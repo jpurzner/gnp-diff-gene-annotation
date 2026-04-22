@@ -14,16 +14,21 @@ The motivation: traditional GO/pathway enrichment captures surface-level keyword
 1. Pull UniProt function descriptions (Swiss-Prot CC FUNCTION field)
             |
             v
-2. Tiered PubMed search per gene (cerebellum/MB/diff > brain > cancer > dev > general)
+2. Tiered PubMed search per gene
+   (cerebellum/MB/diff > brain > cancer > dev > general)
    Up to 20 abstracts per gene, ranked by tier + relevance
             |
             v
 3. Group genes by UMAP cluster, prepare per-batch text bundles
-   (40 genes per batch × 24 batches = 786 genes)
+   (~40 genes per batch × 24 batches = 786 genes)
             |
             v
-4. Run 24 sub-agents in parallel — each reads abstracts + UniProt for its batch
-   and produces structured TSV with 17 fields per gene
+4. Run 24 sub-agents in parallel — each reads abstracts + UniProt
+   for its batch and produces structured TSV with 17 fields per gene
+            |
+            v
+4b. Identify under-annotated genes that had abstracts (>= 5 papers
+    but < 6 filled fields) and reprocess with a rescue agent
             |
             v
 5. Merge results, integrate with database matrix, re-run UMAP
@@ -34,27 +39,37 @@ The motivation: traditional GO/pathway enrichment captures surface-level keyword
 ```
 .
 ├── README.md
+├── LICENSE
 ├── skills/
-│   └── gene_extraction_schema.md      # Schema defining 17 extraction fields
+│   ├── gene_extraction_schema.md    # Schema defining 17 extraction fields
+│   └── agent_prompt_template.md     # Full prompt sent to each sub-agent
 ├── scripts/
-│   ├── 01_parse_uniprot.R             # Parse UniProt function descriptions
-│   ├── 02_fetch_tiered_abstracts.R    # Tiered PubMed search via rentrez
-│   ├── 02b_process_abstracts.R        # Compile per-gene text bundles
-│   ├── 03_prepare_agent_batches.R     # Cluster-grouped batch files
-│   ├── 04_merge_agent_results.R       # Merge agent TSVs + Excel build
-│   ├── 05_umap_with_agent_features.R  # UMAP with agent + database features
-│   ├── umap_semantic_v3.R             # Database-only semantic UMAP
-│   ├── umap_k10_dotplots.R            # Per-cluster enrichment dotplots
-│   ├── enrichment_umap_overlays.R     # Term overlays on UMAP
-│   └── pathway_analysis.R             # GO/KEGG/Reactome enrichment
-├── agent_batches/                     # Sample input + output
-│   ├── batch_02.txt                   # Sample text bundle for one batch
-│   ├── batch_02_results.tsv           # Sample TSV output from agent
+│   ├── 01_parse_uniprot.R               # Parse UniProt function descriptions
+│   ├── 02_fetch_tiered_abstracts.R      # Tiered PubMed search via rentrez
+│   ├── 02b_process_abstracts.R          # Compile per-gene text bundles
+│   ├── 03_prepare_agent_batches.R       # Cluster-grouped batch files
+│   ├── 04_merge_agent_results.R         # Merge agent TSVs (first pass)
+│   ├── 04b_fix_and_reprocess.R          # Lenient re-parse + find under-annotated
+│   ├── 04c_merge_reprocess.R            # Merge rescue agent results
+│   ├── 05_umap_with_agent_features.R    # UMAP with agent + database features
+│   ├── umap_semantic_v3.R               # Database-only semantic UMAP
+│   ├── umap_k10_dotplots.R              # Per-cluster enrichment dotplots
+│   ├── enrichment_umap_overlays.R       # Term overlays on UMAP
+│   └── pathway_analysis.R               # GO/KEGG/Reactome enrichment
+├── agent_batches/                       # Sample input + output
+│   ├── batch_02.txt                     # Sample text bundle (first pass)
+│   ├── batch_02_results.tsv
 │   ├── batch_12.txt
-│   └── batch_12_results.tsv
+│   ├── batch_12_results.tsv
+│   ├── reprocess_batch_01.txt           # Sample rescue batch
+│   └── reprocess_batch_01_results.tsv
+├── figures/                             # Generated figures
+│   ├── Fig_gene_umap_agent_k10.pdf      # Main UMAP with term labels
+│   ├── Fig_gene_umap_agent_k27.pdf      # H3K27me3 overlay
+│   └── Fig_gene_umap_agent_proteinclass.pdf  # Protein class overlay
 └── data_samples/
     ├── agent_extracted_annotations.csv  # Final merged 786-gene table
-    └── differentiation_genes_with_orthologs.csv  # Gene list with human orthologs
+    └── differentiation_genes_with_orthologs.csv
 ```
 
 ## The schema (skills/gene_extraction_schema.md)
@@ -80,27 +95,56 @@ Each gene gets one row with these 17 columns:
 | `differentiation_role` | Promotes / inhibits / required for / marker |
 | `one_line_summary` | Expert single-sentence summary |
 
-## Agent prompt
+## Rescue pass for under-annotated genes
 
-See `skills/agent_prompt_template.md` for the prompt sent to each sub-agent. Key directives:
+The first agent pass correctly identified most RIKEN/Gm-prefixed predicted genes as uncharacterized. But ~9 genes had ≥5 abstracts yet ended up with <6 filled fields — these got a second pass with stronger guidance ("look for aliases, ortholog matches, protein family inference"). This recovered:
 
-- READ and INTERPRET the abstracts — don't keyword match
-- Distinguish bioinformatic mentions ("appears in TCGA screen") from functional studies
-- Use "NA" for unknown — don't speculate
-- Write the one-line summary as if for a biology review paper
+- **ST5** → scaffold/adaptor tumor suppressor causing severe neurodevelopmental syndrome
+- **A230050P20Rik** → mouse ortholog of SHFL, an interferon-stimulated antiviral factor
+- **3110082D06Rik** → mouse ortholog of PTCHD4, a p53-regulated Hedgehog pathway repressor
+- **Mansc1** → candidate tumor suppressor at 12p in myeloid malignancies
+- **D17H6S56E-3** → likely ortholog of VWA7, putative phospholipase C
+- **Chi3l7** → chitinase-3-like family member (inferred function)
+- **1700019D03Rik** → hematopoietic regulator (from MGI KO phenotype)
+- **D630039A03Rik** → mouse ortholog of human C9orf152
+
+The remaining ~25 predicted genes (Gm9899, Gm5454, Gm7276, etc.) are genuinely uncharacterized with no literature and no ortholog hits — they stay labeled "other" and are flagged as such.
 
 ## Coverage achieved (786 differentiation genes)
 
 | Field | Coverage |
 |---|---|
-| Protein class | 100% |
+| One-line summary | 97% |
+| Tissues | 96% |
 | Molecular action | 95% |
-| One-line summary | 96% |
-| KO phenotype | 88% |
-| Cancer role | 75% |
-| Neural phenotype | 62% |
-| Cerebellar evidence | 50% |
-| Differentiation role | 73% |
+| Subcellular | 94% |
+| Cell types | 94% |
+| Pathways | 94% |
+| KO phenotype | 86% |
+| Protein class | 82% |
+| Cancer types | 75% |
+| Cancer role | 71% |
+| Differentiation role | 69% |
+| Neural phenotype | 61% |
+| Neuro disease | 56% |
+| Cerebellar evidence | 45% |
+
+## Final clustering (k=10 UMAP with agent + database features)
+
+Silhouette score: **0.493**
+
+| Cluster | N | %K27+ | Label | Dominant classes |
+|---|---|---|---|---|
+| 1 | 92 | 46% | Predicted/uncharacterized + diverse | other (35), scaffold (10) |
+| 2 | 114 | **69%** | Ion channels & transporters | ion channel (46), transporter (36) |
+| 3 | 60 | **72%** | Signal release / secretion | other (16), GPCR (11) |
+| 4 | 72 | 50% | Kinase / phosphorylation signaling | kinase (25), secreted (11) |
+| 5 | 54 | 52% | Lipid / small molecule metabolism | **enzyme (49/54 = 91%)** |
+| 6 | 64 | **67%** | Cell projection / neuronal morphology | GTPase/reg (18), scaffold (10) |
+| 7 | 71 | 58% | Adhesion / junction proteins | other (15), adhesion (11) |
+| 8 | 56 | 59% | Morphogenesis / structural | structural (10), TF (7) |
+| 9 | 62 | 61% | Transcription regulation | **TF (50/62 = 81%)** |
+| 10 | 63 | **67%** | Neuron-associated / metallopeptidase | other (12), enzyme (10) |
 
 ## How to use
 
@@ -115,10 +159,14 @@ Rscript scripts/02_fetch_tiered_abstracts.R    # ~90 minutes
 Rscript scripts/02b_process_abstracts.R
 Rscript scripts/03_prepare_agent_batches.R     # writes 24 .txt batches
 
-# Run sub-agents (one per batch, in parallel — see prompt template)
+# Run sub-agents (one per batch, in parallel — see skills/agent_prompt_template.md)
 # Each agent reads agent_batches/batch_NN.txt and writes batch_NN_results.tsv
 
-Rscript scripts/04_merge_agent_results.R       # merge TSVs + build Excel
+Rscript scripts/04_merge_agent_results.R       # first-pass merge
+Rscript scripts/04b_fix_and_reprocess.R        # find under-annotated genes
+# Run rescue agent on reprocess_batch_01.txt
+
+Rscript scripts/04c_merge_reprocess.R          # merge rescue results + build Excel
 Rscript scripts/05_umap_with_agent_features.R  # UMAP with agent features
 ```
 
