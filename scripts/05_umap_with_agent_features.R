@@ -395,7 +395,19 @@ centroids$label <- cluster_labels[centroids$cluster]
 cat("\nGenerating figures...\n")
 
 # Term annotations — ONE BOX PER CLUSTER with terms stacked newline-separated
-# Uses ggrepel to auto-position boxes so they don't overlap the data.
+# Labels are pushed RADIALLY outward past the point cloud, then ggrepel only
+# repels boxes from each other (not from data points) to keep them outside.
+
+# Compute plot center and max radial distance from center for clusters
+plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
+plot_cy <- mean(range(umap_df$UMAP2[umap_df$cluster>0]))
+max_radius <- max(sqrt(
+  (umap_df$UMAP1[umap_df$cluster>0] - plot_cx)^2 +
+  (umap_df$UMAP2[umap_df$cluster>0] - plot_cy)^2))
+
+# Labels placed on a ring at radius = max_radius * LABEL_RING_FACTOR
+LABEL_RING_FACTOR <- 1.35
+
 term_annot_list <- list()
 for (cl in 1:K_CLUSTERS) {
   ct <- centroids[centroids$cluster==cl,]
@@ -414,9 +426,19 @@ for (cl in 1:K_CLUSTERS) {
     label_txt <- "Mixed / Other"
   }
 
+  # Seed label position: push radially outward from plot center past all points
+  dx <- ct$x - plot_cx
+  dy <- ct$y - plot_cy
+  d <- sqrt(dx^2 + dy^2)
+  if (d < 0.01) { dx <- 1; dy <- 0; d <- 1 }
+  # Scale direction unit vector out to the label ring radius
+  seed_x <- plot_cx + (dx / d) * max_radius * LABEL_RING_FACTOR
+  seed_y <- plot_cy + (dy / d) * max_radius * LABEL_RING_FACTOR
+
   term_annot_list[[as.character(cl)]] <- data.frame(
     cluster = cl, label = label_txt,
-    x_anchor = ct$x, y_anchor = ct$y,
+    x_anchor = ct$x, y_anchor = ct$y,     # where segment points to (centroid)
+    seed_x = seed_x, seed_y = seed_y,     # seed for ggrepel (radial ring)
     stringsAsFactors = FALSE)
 }
 term_annot <- do.call(rbind, term_annot_list)
@@ -432,23 +454,30 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
   {if(any(umap_df$cluster==0))
     geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
       size=0.8, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
+  # Connecting segment from cluster centroid outward to where label sits on the ring
+  # Drawn FIRST so it sits under the labels and centroid boxes.
+  geom_segment(data=term_annot,
+    aes(x=x_anchor, y=y_anchor, xend=seed_x, yend=seed_y),
+    color="grey55", linewidth=0.3, alpha=0.55,
+    inherit.aes=FALSE) +
   # Cluster number at centroid
   geom_label(data=centroids,
     aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
     size=4, fontface="bold", fill=alpha("white",0.85),
     label.size=0.3, color="black", inherit.aes=FALSE) +
-  # Single term box per cluster, auto-repositioned by ggrepel to avoid
-  # overlap with data points. A line connects box back to cluster centroid.
+  # Labels placed on the outer ring (seed_x, seed_y).
+  # ggrepel only nudges boxes to avoid overlap between OTHER BOXES.
   geom_label_repel(data=term_annot,
-    aes(x=x_anchor, y=y_anchor, label=label),
+    aes(x=seed_x, y=seed_y, label=label),
     size=2.8, color="grey15", hjust=0.5, vjust=0.5,
     fontface="italic", fill=alpha("white", 0.92),
     label.size=0.2, label.padding=unit(0.3, "lines"),
     lineheight=0.95,
-    force=20, force_pull=0.5,
-    box.padding=1.2, point.padding=0.5,
-    min.segment.length=0, segment.color="grey40", segment.size=0.3,
+    force=3, force_pull=0.05,
+    box.padding=0.4, point.padding=0,
+    min.segment.length=Inf,   # no automatic segments — we draw them manually
     max.overlaps=Inf, seed=42,
+    xlim=c(-Inf, Inf), ylim=c(-Inf, Inf),
     inherit.aes=FALSE) +
   scale_color_manual(values=pal10, guide="none") +
   coord_cartesian(clip="off") +
@@ -460,7 +489,7 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
   theme_void(base_size=14) +
   theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
     plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
-    plot.margin=margin(20, 90, 20, 90, "pt"))
+    plot.margin=margin(60, 150, 60, 150, "pt"))
 
 ggsave("Fig_gene_umap_agent_k10.pdf", p_main, width=20, height=16)
 cat("Saved: Fig_gene_umap_agent_k10.pdf\n")
