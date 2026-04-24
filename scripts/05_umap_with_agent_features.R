@@ -545,64 +545,175 @@ umap_df$cluster_f <- factor(umap_df$cluster)
 # Toggle for showing the polygon outline (useful for debugging label placement)
 SHOW_HULL <- FALSE
 
-# Main UMAP — single box per cluster, placed on dilated concave hull
-p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
-    aes(x=UMAP1, y=UMAP2, color=cluster_f)) +
-  geom_point(size=1.8, alpha=0.55) +
-  {if(any(umap_df$cluster==0))
-    geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
-      size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
-  {if (SHOW_HULL)
-    geom_polygon(data=hull_df, aes(x=UMAP1, y=UMAP2),
-      fill=NA, color="grey70", linetype="dashed", linewidth=0.3,
-      inherit.aes=FALSE)} +
-  # Connecting segment from cluster centroid outward to label
-  geom_segment(data=term_annot,
-    aes(x=x_anchor, y=y_anchor, xend=seed_x, yend=seed_y),
-    color="grey55", linewidth=0.4, alpha=0.55,
-    inherit.aes=FALSE) +
-  # Example gene names per cluster — repelled near centroid
-  geom_text_repel(data=examples_df,
-    aes(x=UMAP1, y=UMAP2, label=gene),
-    size=4.0, color="grey15", fontface="bold",
-    bg.color="white", bg.r=0.15,
-    force=3, force_pull=0.5,
-    box.padding=0.2, point.padding=0.1,
-    min.segment.length=Inf,
-    max.overlaps=Inf, seed=42,
-    inherit.aes=FALSE) +
-  # Cluster number at centroid
-  geom_label(data=centroids,
-    aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
-    size=6, fontface="bold", fill=alpha("white",0.85),
-    label.size=0.4, color="black", inherit.aes=FALSE) +
-  # Ontology boxes at ray/hull intersection points
-  geom_label_repel(data=term_annot,
-    aes(x=seed_x, y=seed_y, label=label),
-    size=4.2, color="grey10", hjust=0.5, vjust=0.5,
-    fontface="italic", fill=alpha("white", 0.92),
-    label.size=0.3, label.padding=unit(0.4, "lines"),
-    lineheight=0.95,
-    force=3, force_pull=0.05,
-    box.padding=0.5, point.padding=0,
-    min.segment.length=Inf,
-    max.overlaps=Inf, seed=42,
-    xlim=c(-Inf, Inf), ylim=c(-Inf, Inf),
-    inherit.aes=FALSE) +
-  scale_color_manual(values=pal10, guide="none") +
-  coord_cartesian(clip="off") +
-  {if (SHOW_TITLE)
-    labs(title="Functional landscape of GNP differentiation genes",
-      subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
-        " features (database + agent-extracted) | k=", K_CLUSTERS, " | sil=", sil))
-   else labs(title=NULL, subtitle=NULL)} +
-  theme_void(base_size=14) +
-  theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
-    plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
-    plot.margin=margin(50, 130, 50, 130, "pt"))
+# =============================================================================
+# DOMINANT PROTEIN CLASS PER CLUSTER (for mark-hull coloring mode)
+# =============================================================================
+# Exclude "other" when picking dominant class so fill colors are informative;
+# only fall back to "other" if a cluster literally has no specific-class genes.
+cluster_pc <- umap_df %>%
+  dplyr::filter(cluster > 0) %>%
+  dplyr::select(gene, cluster) %>%
+  dplyr::left_join(agent %>% dplyr::select(gene, protein_class), by="gene") %>%
+  dplyr::filter(!is.na(protein_class), protein_class != "NA") %>%
+  dplyr::group_by(cluster, protein_class) %>%
+  dplyr::summarise(n = n(), .groups="drop")
 
-ggsave("Fig_gene_umap_agent_k10.pdf", p_main, width=20, height=16)
-cat("Saved: Fig_gene_umap_agent_k10.pdf\n")
+cluster_pc <- cluster_pc %>%
+  dplyr::group_by(cluster) %>%
+  dplyr::group_modify(~ {
+    specific <- .x %>% dplyr::filter(protein_class != "other")
+    if (nrow(specific) > 0) {
+      specific %>% dplyr::slice_max(n, n=1, with_ties=FALSE)
+    } else {
+      .x %>% dplyr::slice_max(n, n=1, with_ties=FALSE)
+    }
+  }) %>%
+  dplyr::ungroup() %>%
+  dplyr::rename(dominant_class = protein_class)
+
+cat("\nDominant protein class per cluster:\n")
+for (i in 1:nrow(cluster_pc)) {
+  cat(sprintf("  Cl%d: %s (n=%d)\n",
+    cluster_pc$cluster[i], cluster_pc$dominant_class[i], cluster_pc$n[i]))
+}
+
+# Protein class colors (matching the overlay plot below)
+pc_cols <- c(
+  "ion channel"="#E41A1C","transporter"="#377EB8","GPCR"="#4DAF4A",
+  "receptor"="#984EA3","kinase"="#FF7F00","transcription factor"="#A65628",
+  "enzyme"="#F781BF","structural protein"="#999999","adhesion molecule"="#66C2A5",
+  "scaffold/adaptor"="#FC8D62","secreted factor"="#8DA0CB",
+  "GTPase/regulator"="#E78AC3","channel regulator"="#A6D854",
+  "ECM protein"="#FFD92F","ubiquitin ligase"="#E5C494",
+  "protease"="#B3B3B3","phosphatase"="#FDDAEC","motor protein"="#CBD5E8",
+  "other"="grey80")
+
+# =============================================================================
+# PLOTTING FUNCTION — two label styles supported
+# =============================================================================
+#   label_style = "radial"    -> existing behavior: ontology boxes on a
+#                                dilated concave hull, ray from centroid
+#                                to box, colored by cluster id
+#   label_style = "mark_hull" -> ggforce::geom_mark_hull traces each
+#                                cluster, fills by dominant protein class,
+#                                uses built-in label/description aesthetics
+#                                to point a callout at the hull boundary.
+make_umap_fig <- function(label_style = "radial") {
+
+  # Base layer — points colored by cluster (radial) or dominant class (mark_hull)
+  if (label_style == "mark_hull") {
+    # Attach dominant class to each cluster's points
+    umap_plot_df <- umap_df %>%
+      dplyr::filter(cluster > 0) %>%
+      dplyr::left_join(cluster_pc %>% dplyr::select(cluster, dominant_class),
+        by="cluster")
+    # Build label text for each cluster (top enriched terms)
+    hull_annot <- term_annot %>%
+      dplyr::left_join(cluster_pc %>% dplyr::select(cluster, dominant_class),
+        by="cluster") %>%
+      dplyr::mutate(
+        cluster_id = paste0("Cl", cluster, " (n=", centroids$n[match(cluster, centroids$cluster)], ")"))
+    # Join centroids for label positioning by group
+    umap_plot_df <- umap_plot_df %>%
+      dplyr::left_join(hull_annot %>% dplyr::select(cluster, cluster_id, label),
+        by="cluster")
+
+    p <- ggplot(umap_plot_df, aes(x=UMAP1, y=UMAP2)) +
+      {if(any(umap_df$cluster==0))
+        geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
+          size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
+      # Hull outline + fill by dominant protein class
+      ggforce::geom_mark_hull(
+        aes(fill=dominant_class, group=cluster,
+            label=cluster_id, description=label),
+        colour=NA, alpha=0.3,
+        expand=unit(3, "mm"), radius=unit(3, "mm"),
+        concavity=2,
+        label.fontsize=c(14, 11),
+        label.fontface=c("bold", "italic"),
+        label.margin=margin(2, 3, 2, 3, "mm"),
+        label.colour="grey10",
+        con.colour="grey40", con.size=0.4,
+        con.cap=unit(1.5, "mm")) +
+      geom_point(aes(color=dominant_class), size=1.8, alpha=0.7) +
+      # Example gene names per cluster
+      geom_text_repel(data=examples_df,
+        aes(x=UMAP1, y=UMAP2, label=gene),
+        size=3.8, color="grey10", fontface="bold",
+        bg.color="white", bg.r=0.15,
+        force=3, force_pull=0.5,
+        box.padding=0.2, point.padding=0.1,
+        min.segment.length=Inf, max.overlaps=Inf, seed=42,
+        inherit.aes=FALSE) +
+      scale_fill_manual(values=pc_cols, name="Dominant protein class") +
+      scale_color_manual(values=pc_cols, guide="none")
+
+  } else {
+    # "radial" mode — original concave-hull / ray-intersection placement
+    p <- ggplot(umap_df %>% dplyr::filter(cluster>0),
+        aes(x=UMAP1, y=UMAP2, color=cluster_f)) +
+      geom_point(size=1.8, alpha=0.55) +
+      {if(any(umap_df$cluster==0))
+        geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
+          size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
+      {if (SHOW_HULL)
+        geom_polygon(data=hull_df, aes(x=UMAP1, y=UMAP2),
+          fill=NA, color="grey70", linetype="dashed", linewidth=0.3,
+          inherit.aes=FALSE)} +
+      geom_segment(data=term_annot,
+        aes(x=x_anchor, y=y_anchor, xend=seed_x, yend=seed_y),
+        color="grey55", linewidth=0.4, alpha=0.55,
+        inherit.aes=FALSE) +
+      geom_text_repel(data=examples_df,
+        aes(x=UMAP1, y=UMAP2, label=gene),
+        size=4.0, color="grey15", fontface="bold",
+        bg.color="white", bg.r=0.15,
+        force=3, force_pull=0.5,
+        box.padding=0.2, point.padding=0.1,
+        min.segment.length=Inf, max.overlaps=Inf, seed=42,
+        inherit.aes=FALSE) +
+      geom_label(data=centroids,
+        aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
+        size=6, fontface="bold", fill=alpha("white",0.85),
+        label.size=0.4, color="black", inherit.aes=FALSE) +
+      geom_label_repel(data=term_annot,
+        aes(x=seed_x, y=seed_y, label=label),
+        size=4.2, color="grey10", hjust=0.5, vjust=0.5,
+        fontface="italic", fill=alpha("white", 0.92),
+        label.size=0.3, label.padding=unit(0.4, "lines"),
+        lineheight=0.95,
+        force=3, force_pull=0.05,
+        box.padding=0.5, point.padding=0,
+        min.segment.length=Inf, max.overlaps=Inf, seed=42,
+        xlim=c(-Inf, Inf), ylim=c(-Inf, Inf),
+        inherit.aes=FALSE) +
+      scale_color_manual(values=pal10, guide="none")
+  }
+
+  p +
+    coord_cartesian(clip="off") +
+    {if (SHOW_TITLE)
+      labs(title="Functional landscape of GNP differentiation genes",
+        subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
+          " features | k=", K_CLUSTERS, " | sil=", sil))
+     else labs(title=NULL, subtitle=NULL)} +
+    theme_void(base_size=14) +
+    theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
+      plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
+      plot.margin=margin(50, 130, 50, 130, "pt"),
+      legend.position="right",
+      legend.text=element_text(size=11),
+      legend.title=element_text(size=12, face="bold"))
+}
+
+# Generate both versions
+p_radial <- make_umap_fig("radial")
+ggsave("Fig_gene_umap_agent_k10.pdf", p_radial, width=20, height=16)
+cat("Saved: Fig_gene_umap_agent_k10.pdf (radial)\n")
+
+p_hull <- make_umap_fig("mark_hull")
+ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=22, height=16)
+cat("Saved: Fig_gene_umap_agent_k10_markhull.pdf (geom_mark_hull)\n")
 
 # H3K27me3 overlay
 p_k27 <- ggplot(umap_df, aes(x=UMAP1, y=UMAP2,
