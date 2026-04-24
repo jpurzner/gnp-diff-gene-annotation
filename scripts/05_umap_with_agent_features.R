@@ -666,13 +666,8 @@ make_umap_fig <- function(label_style = "radial") {
         con.cap=unit(1.5, "mm")) +
       # POINTS: colored by protein class
       geom_point(aes(color=protein_class), size=2.2, alpha=0.85) +
-      # HIGHLIGHTED genes: black-outlined marker so they stand out from the cloud
-      {if (nrow(highlight_df) > 0)
-        geom_point(data=highlight_df, aes(x=UMAP1, y=UMAP2),
-          size=4, shape=21, fill=NA, color="black", stroke=1.2,
-          inherit.aes=FALSE)} +
-      # Auto-picked gene names per cluster
-      geom_text_repel(data=examples_df,
+      # Gene names: auto-picked + highlighted rendered in the same style
+      geom_text_repel(data=rbind(examples_df, highlight_df),
         aes(x=UMAP1, y=UMAP2, label=gene),
         size=5.0, color="grey10", fontface="bold",
         bg.color="white", bg.r=0.15,
@@ -680,18 +675,6 @@ make_umap_fig <- function(label_style = "radial") {
         box.padding=0.25, point.padding=0.12,
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         inherit.aes=FALSE) +
-      # HIGHLIGHTED gene names: bolder label box with thin connector to point
-      {if (nrow(highlight_df) > 0)
-        geom_label_repel(data=highlight_df,
-          aes(x=UMAP1, y=UMAP2, label=gene),
-          size=5.5, color="black", fontface="bold.italic",
-          fill="#FFF7BC", label.size=0.4,
-          label.padding=unit(0.3, "lines"),
-          force=8, force_pull=0.3,
-          box.padding=0.6, point.padding=0.2,
-          min.segment.length=0, segment.color="black", segment.size=0.5,
-          max.overlaps=Inf, seed=42,
-          inherit.aes=FALSE)} +
       scale_fill_manual(values=pal10, guide="none") +
       scale_color_manual(values=pc_cols, name="Protein class") +
       guides(color = guide_legend(override.aes = list(size = 5, alpha = 1),
@@ -713,7 +696,7 @@ make_umap_fig <- function(label_style = "radial") {
         aes(x=x_anchor, y=y_anchor, xend=seed_x, yend=seed_y),
         color="grey55", linewidth=0.4, alpha=0.55,
         inherit.aes=FALSE) +
-      geom_text_repel(data=examples_df,
+      geom_text_repel(data=rbind(examples_df, highlight_df),
         aes(x=UMAP1, y=UMAP2, label=gene),
         size=4.0, color="grey15", fontface="bold",
         bg.color="white", bg.r=0.15,
@@ -721,22 +704,6 @@ make_umap_fig <- function(label_style = "radial") {
         box.padding=0.2, point.padding=0.1,
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         inherit.aes=FALSE) +
-      # HIGHLIGHTED genes: black-outlined marker + label box
-      {if (nrow(highlight_df) > 0)
-        geom_point(data=highlight_df, aes(x=UMAP1, y=UMAP2),
-          size=4, shape=21, fill=NA, color="black", stroke=1.2,
-          inherit.aes=FALSE)} +
-      {if (nrow(highlight_df) > 0)
-        geom_label_repel(data=highlight_df,
-          aes(x=UMAP1, y=UMAP2, label=gene),
-          size=4.8, color="black", fontface="bold.italic",
-          fill="#FFF7BC", label.size=0.4,
-          label.padding=unit(0.3, "lines"),
-          force=8, force_pull=0.3,
-          box.padding=0.6, point.padding=0.2,
-          min.segment.length=0, segment.color="black", segment.size=0.5,
-          max.overlaps=Inf, seed=42,
-          inherit.aes=FALSE)} +
       geom_label(data=centroids,
         aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
         size=6, fontface="bold", fill=alpha("white",0.85),
@@ -765,7 +732,7 @@ make_umap_fig <- function(label_style = "radial") {
     theme_void(base_size=16) +
     theme(plot.title=element_text(size=20, face="bold", hjust=0.5),
       plot.subtitle=element_text(size=14, face="italic", hjust=0.5),
-      plot.margin=margin(50, 130, 50, 130, "pt"),
+      plot.margin=margin(80, 180, 80, 180, "pt"),
       legend.position="right",
       legend.text=element_text(size=14),
       legend.title=element_text(size=15, face="bold"),
@@ -774,11 +741,11 @@ make_umap_fig <- function(label_style = "radial") {
 
 # Generate both versions
 p_radial <- make_umap_fig("radial")
-ggsave("Fig_gene_umap_agent_k10.pdf", p_radial, width=20, height=16)
+ggsave("Fig_gene_umap_agent_k10.pdf", p_radial, width=26, height=20)
 cat("Saved: Fig_gene_umap_agent_k10.pdf (radial)\n")
 
 p_hull <- make_umap_fig("mark_hull")
-ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=22, height=16)
+ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=28, height=20)
 cat("Saved: Fig_gene_umap_agent_k10_markhull.pdf (geom_mark_hull)\n")
 
 # H3K27me3 overlay
