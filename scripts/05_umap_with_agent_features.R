@@ -600,33 +600,36 @@ pc_cols <- c(
 #                                to point a callout at the hull boundary.
 make_umap_fig <- function(label_style = "radial") {
 
-  # Base layer — points colored by cluster (radial) or dominant class (mark_hull)
+  # Base layer — points colored by protein class, hull by cluster
   if (label_style == "mark_hull") {
-    # Attach dominant class to each cluster's points
+    # Attach protein class to each point (for point coloring)
     umap_plot_df <- umap_df %>%
       dplyr::filter(cluster > 0) %>%
-      dplyr::left_join(cluster_pc %>% dplyr::select(cluster, dominant_class),
-        by="cluster")
+      dplyr::select(-any_of("protein_class")) %>%
+      dplyr::left_join(agent %>% dplyr::select(gene, protein_class), by="gene") %>%
+      dplyr::mutate(
+        protein_class = ifelse(is.na(protein_class) | protein_class == "NA",
+          "other", protein_class))
     # Build label text for each cluster (top enriched terms)
     hull_annot <- term_annot %>%
-      dplyr::left_join(cluster_pc %>% dplyr::select(cluster, dominant_class),
-        by="cluster") %>%
       dplyr::mutate(
-        cluster_id = paste0("Cl", cluster, " (n=", centroids$n[match(cluster, centroids$cluster)], ")"))
-    # Join centroids for label positioning by group
+        cluster_id = paste0("Cl", cluster, " (n=",
+          centroids$n[match(cluster, centroids$cluster)], ")"))
+    # Join cluster-level label onto every point for geom_mark_hull grouping
     umap_plot_df <- umap_plot_df %>%
       dplyr::left_join(hull_annot %>% dplyr::select(cluster, cluster_id, label),
-        by="cluster")
+        by="cluster") %>%
+      dplyr::mutate(cluster_f = factor(cluster))
 
     p <- ggplot(umap_plot_df, aes(x=UMAP1, y=UMAP2)) +
       {if(any(umap_df$cluster==0))
         geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
           size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
-      # Hull outline + fill by dominant protein class
+      # HULL: outlined per cluster, filled by cluster ID
       ggforce::geom_mark_hull(
-        aes(fill=dominant_class, group=cluster,
+        aes(fill=cluster_f, group=cluster,
             label=cluster_id, description=label),
-        colour=NA, alpha=0.3,
+        colour="grey40", linewidth=0.3, alpha=0.22,
         expand=unit(3, "mm"), radius=unit(3, "mm"),
         concavity=2,
         label.fontsize=c(14, 11),
@@ -635,7 +638,8 @@ make_umap_fig <- function(label_style = "radial") {
         label.colour="grey10",
         con.colour="grey40", con.size=0.4,
         con.cap=unit(1.5, "mm")) +
-      geom_point(aes(color=dominant_class), size=1.8, alpha=0.7) +
+      # POINTS: colored by protein class
+      geom_point(aes(color=protein_class), size=1.8, alpha=0.85) +
       # Example gene names per cluster
       geom_text_repel(data=examples_df,
         aes(x=UMAP1, y=UMAP2, label=gene),
@@ -645,8 +649,10 @@ make_umap_fig <- function(label_style = "radial") {
         box.padding=0.2, point.padding=0.1,
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         inherit.aes=FALSE) +
-      scale_fill_manual(values=pc_cols, name="Dominant protein class") +
-      scale_color_manual(values=pc_cols, guide="none")
+      scale_fill_manual(values=pal10, guide="none") +
+      scale_color_manual(values=pc_cols, name="Protein class") +
+      guides(color = guide_legend(override.aes = list(size = 4, alpha = 1),
+        ncol = 1))
 
   } else {
     # "radial" mode — original concave-hull / ray-intersection placement
