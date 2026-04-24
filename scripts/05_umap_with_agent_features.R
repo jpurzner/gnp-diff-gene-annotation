@@ -5,6 +5,8 @@ suppressMessages({
   library(cluster)
   library(patchwork)
   library(ggrepel)
+  library(sf)
+  library(concaveman)
 })
 
 setwd("~/Dropbox/GNP_MB_integrate/Ezh2_2022/")
@@ -394,30 +396,64 @@ centroids$label <- cluster_labels[centroids$cluster]
 # =============================================================================
 cat("\nGenerating figures...\n")
 
-# Term annotations — ONE BOX PER CLUSTER, placed on an ELLIPSE that tightly
-# wraps the point cloud (a = x-axis semi-width, b = y-axis semi-height).
-# Each label sits on the ellipse in the direction from plot center to centroid.
+# Term annotations — ONE BOX PER CLUSTER, placed on a CONCAVE HULL around the
+# point cloud. The hull is dilated outward from the plot center so boxes sit
+# just outside the actual data shape (which is rarely elliptical for UMAPs).
 
-# Plot center and ellipse semi-axes sized to the point cloud
+# Tunable parameters
+HULL_CONCAVITY <- 2.0         # concaveman param (higher = more convex; 1-3 typical)
+HULL_DILATE <- 1.15           # scale factor outward from centroid of hull
+N_EXAMPLES_PER_CLUSTER <- 3
+
+# Plot center — midpoint of data extents
 plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
 plot_cy <- mean(range(umap_df$UMAP2[umap_df$cluster>0]))
-a_axis <- (max(umap_df$UMAP1[umap_df$cluster>0]) -
-           min(umap_df$UMAP1[umap_df$cluster>0])) / 2
-b_axis <- (max(umap_df$UMAP2[umap_df$cluster>0]) -
-           min(umap_df$UMAP2[umap_df$cluster>0])) / 2
 
-# Ellipse expansion beyond the data (1.00 = exact bounding ellipse)
-ELLIPSE_EXPAND <- 1.25
+# Build concave hull of all clustered points
+pts_mat <- as.matrix(umap_df %>% dplyr::filter(cluster>0) %>%
+  dplyr::select(UMAP1, UMAP2))
+hull_raw <- concaveman::concaveman(pts_mat, concavity = HULL_CONCAVITY)
+# Close the polygon (first and last point must match)
+if (!all(hull_raw[1,] == hull_raw[nrow(hull_raw),])) {
+  hull_raw <- rbind(hull_raw, hull_raw[1, , drop=FALSE])
+}
 
-# Example genes per cluster
-N_EXAMPLES_PER_CLUSTER <- 3
+# Dilate: scale each hull vertex outward from its centroid
+hull_cx <- mean(hull_raw[, 1])
+hull_cy <- mean(hull_raw[, 2])
+hull_dilated <- cbind(
+  hull_cx + (hull_raw[, 1] - hull_cx) * HULL_DILATE,
+  hull_cy + (hull_raw[, 2] - hull_cy) * HULL_DILATE
+)
+
+# Convert to sf polygons for intersection math
+poly_hull_sf <- sf::st_sfc(sf::st_polygon(list(hull_raw)))
+poly_dilated_sf <- sf::st_sfc(sf::st_polygon(list(hull_dilated)))
+
+# For each cluster: cast a ray from plot center through centroid, find where
+# it exits the dilated polygon — that's where the label sits.
+ray_intersect_polygon <- function(cx, cy, px, py, poly_sf, L=1e5) {
+  dx <- px - cx; dy <- py - cy
+  d <- sqrt(dx^2 + dy^2)
+  if (d < 1e-6) { dx <- 1; dy <- 0 } else { dx <- dx/d; dy <- dy/d }
+  # Extend ray far past the polygon
+  far_x <- cx + dx * L; far_y <- cy + dy * L
+  ray <- sf::st_sfc(sf::st_linestring(rbind(c(cx,cy), c(far_x,far_y))))
+  # Boundary of polygon as linestring
+  bdy <- sf::st_boundary(poly_sf)
+  inter <- sf::st_intersection(ray, bdy)
+  if (length(inter) == 0) return(c(far_x, far_y))
+  pts <- sf::st_coordinates(inter)
+  # Take intersection furthest from the center (outermost)
+  dists <- sqrt((pts[, 1]-cx)^2 + (pts[, 2]-cy)^2)
+  pts[which.max(dists), 1:2]
+}
 
 term_annot_list <- list()
 for (cl in 1:K_CLUSTERS) {
   ct <- centroids[centroids$cluster==cl,]
   terms_df <- cluster_term_lists[[cl]]
 
-  # Build label: top 4 enriched terms, or fallback to "Mixed / Other"
   if (!is.null(terms_df) && nrow(terms_df) > 0) {
     lines <- character()
     for (j in 1:min(4, nrow(terms_df))) {
@@ -430,22 +466,19 @@ for (cl in 1:K_CLUSTERS) {
     label_txt <- "Mixed / Other"
   }
 
-  # Direction from plot center to centroid
-  dx <- ct$x - plot_cx
-  dy <- ct$y - plot_cy
-  if (abs(dx) < 1e-6 && abs(dy) < 1e-6) { dx <- 1; dy <- 0 }
-  # Intersect this ray with the ellipse (t*dx/a)^2 + (t*dy/b)^2 = 1
-  t <- 1 / sqrt((dx / a_axis)^2 + (dy / b_axis)^2)
-  seed_x <- plot_cx + t * dx * ELLIPSE_EXPAND
-  seed_y <- plot_cy + t * dy * ELLIPSE_EXPAND
+  # Intersect ray (plot_center -> centroid) with dilated hull
+  seed_xy <- ray_intersect_polygon(plot_cx, plot_cy, ct$x, ct$y, poly_dilated_sf)
 
   term_annot_list[[as.character(cl)]] <- data.frame(
     cluster = cl, label = label_txt,
-    x_anchor = ct$x, y_anchor = ct$y,     # segment anchor at centroid
-    seed_x = seed_x, seed_y = seed_y,     # seed position on ellipse
+    x_anchor = ct$x, y_anchor = ct$y,
+    seed_x = seed_xy[1], seed_y = seed_xy[2],
     stringsAsFactors = FALSE)
 }
 term_annot <- do.call(rbind, term_annot_list)
+
+# Also prepare polygon coordinates for optional overlay
+hull_df <- data.frame(UMAP1 = hull_dilated[, 1], UMAP2 = hull_dilated[, 2])
 
 # =============================================================================
 # EXAMPLE GENES — pick N_EXAMPLES_PER_CLUSTER genes per cluster closest to
@@ -509,45 +542,50 @@ pal10 <- scales::hue_pal()(K_CLUSTERS)
 names(pal10) <- as.character(1:K_CLUSTERS)
 umap_df$cluster_f <- factor(umap_df$cluster)
 
-# Main UMAP — single box per cluster, no radiating lines
+# Toggle for showing the polygon outline (useful for debugging label placement)
+SHOW_HULL <- FALSE
+
+# Main UMAP — single box per cluster, placed on dilated concave hull
 p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
     aes(x=UMAP1, y=UMAP2, color=cluster_f)) +
-  geom_point(size=1.6, alpha=0.55) +
+  geom_point(size=1.8, alpha=0.55) +
   {if(any(umap_df$cluster==0))
     geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
-      size=0.8, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
-  # Connecting segment from cluster centroid outward to where label sits on the ring
-  # Drawn FIRST so it sits under the labels and centroid boxes.
+      size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
+  {if (SHOW_HULL)
+    geom_polygon(data=hull_df, aes(x=UMAP1, y=UMAP2),
+      fill=NA, color="grey70", linetype="dashed", linewidth=0.3,
+      inherit.aes=FALSE)} +
+  # Connecting segment from cluster centroid outward to label
   geom_segment(data=term_annot,
     aes(x=x_anchor, y=y_anchor, xend=seed_x, yend=seed_y),
-    color="grey55", linewidth=0.3, alpha=0.55,
+    color="grey55", linewidth=0.4, alpha=0.55,
     inherit.aes=FALSE) +
-  # Example gene names per cluster — small text repelled near the centroid
+  # Example gene names per cluster — repelled near centroid
   geom_text_repel(data=examples_df,
     aes(x=UMAP1, y=UMAP2, label=gene),
-    size=2.5, color="grey25", fontface="bold",
-    bg.color="white", bg.r=0.12,
+    size=4.0, color="grey15", fontface="bold",
+    bg.color="white", bg.r=0.15,
     force=3, force_pull=0.5,
-    box.padding=0.15, point.padding=0.08,
-    min.segment.length=Inf,  # no segment for gene names
+    box.padding=0.2, point.padding=0.1,
+    min.segment.length=Inf,
     max.overlaps=Inf, seed=42,
     inherit.aes=FALSE) +
   # Cluster number at centroid
   geom_label(data=centroids,
     aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
-    size=4, fontface="bold", fill=alpha("white",0.85),
-    label.size=0.3, color="black", inherit.aes=FALSE) +
-  # Labels placed on the outer ring (seed_x, seed_y).
-  # ggrepel only nudges boxes to avoid overlap between OTHER BOXES.
+    size=6, fontface="bold", fill=alpha("white",0.85),
+    label.size=0.4, color="black", inherit.aes=FALSE) +
+  # Ontology boxes at ray/hull intersection points
   geom_label_repel(data=term_annot,
     aes(x=seed_x, y=seed_y, label=label),
-    size=2.8, color="grey15", hjust=0.5, vjust=0.5,
+    size=4.2, color="grey10", hjust=0.5, vjust=0.5,
     fontface="italic", fill=alpha("white", 0.92),
-    label.size=0.2, label.padding=unit(0.3, "lines"),
+    label.size=0.3, label.padding=unit(0.4, "lines"),
     lineheight=0.95,
     force=3, force_pull=0.05,
-    box.padding=0.4, point.padding=0,
-    min.segment.length=Inf,   # no automatic segments — we draw them manually
+    box.padding=0.5, point.padding=0,
+    min.segment.length=Inf,
     max.overlaps=Inf, seed=42,
     xlim=c(-Inf, Inf), ylim=c(-Inf, Inf),
     inherit.aes=FALSE) +
