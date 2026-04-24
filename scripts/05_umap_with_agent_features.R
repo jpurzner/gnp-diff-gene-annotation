@@ -407,7 +407,10 @@ b_axis <- (max(umap_df$UMAP2[umap_df$cluster>0]) -
            min(umap_df$UMAP2[umap_df$cluster>0])) / 2
 
 # Ellipse expansion beyond the data (1.00 = exact bounding ellipse)
-ELLIPSE_EXPAND <- 1.08
+ELLIPSE_EXPAND <- 1.25
+
+# Example genes per cluster
+N_EXAMPLES_PER_CLUSTER <- 3
 
 term_annot_list <- list()
 for (cl in 1:K_CLUSTERS) {
@@ -444,6 +447,64 @@ for (cl in 1:K_CLUSTERS) {
 }
 term_annot <- do.call(rbind, term_annot_list)
 
+# =============================================================================
+# EXAMPLE GENES — pick N_EXAMPLES_PER_CLUSTER genes per cluster closest to
+# centroid (prefer well-annotated genes with a one_line_summary).
+# =============================================================================
+cat("\nSelecting example genes per cluster...\n")
+
+umap_with_ann <- umap_df %>%
+  dplyr::filter(cluster > 0) %>%
+  dplyr::select(-any_of(c("one_line_summary", "protein_class"))) %>%  # drop any prior
+  dplyr::left_join(agent %>% dplyr::select(gene, one_line_summary), by="gene") %>%
+  dplyr::mutate(has_annot = !is.na(one_line_summary) & one_line_summary != "NA" &
+    nchar(one_line_summary) > 40)
+
+# Skip predicted/Gm/RIKEN-only genes by default when better candidates exist
+is_predicted_name <- function(g) {
+  grepl("^(Gm[0-9]+|[0-9]{4}[A-Z][0-9]+Rik|[0-9]+[A-Z]{1,2}[0-9]+Rik|BC[0-9]+|AI[0-9]+|LOC[0-9]+)$", g)
+}
+
+example_list <- list()
+for (cl in 1:K_CLUSTERS) {
+  sub <- umap_with_ann %>% dplyr::filter(cluster == cl)
+  ct <- centroids[centroids$cluster == cl, ]
+
+  # Distance from centroid
+  sub$dist_centroid <- sqrt((sub$UMAP1 - ct$x)^2 + (sub$UMAP2 - ct$y)^2)
+  sub$predicted <- sapply(sub$gene, is_predicted_name)
+
+  # Prefer annotated + non-predicted, sorted by closeness to centroid
+  picked <- sub %>%
+    dplyr::filter(has_annot, !predicted) %>%
+    dplyr::arrange(dist_centroid) %>%
+    dplyr::slice_head(n = N_EXAMPLES_PER_CLUSTER)
+
+  # If not enough, fall back to any annotated gene
+  if (nrow(picked) < N_EXAMPLES_PER_CLUSTER) {
+    more <- sub %>%
+      dplyr::filter(!gene %in% picked$gene, has_annot) %>%
+      dplyr::arrange(dist_centroid) %>%
+      dplyr::slice_head(n = N_EXAMPLES_PER_CLUSTER - nrow(picked))
+    picked <- rbind(picked, more)
+  }
+  # Last resort: any gene
+  if (nrow(picked) < N_EXAMPLES_PER_CLUSTER) {
+    more <- sub %>%
+      dplyr::filter(!gene %in% picked$gene) %>%
+      dplyr::arrange(dist_centroid) %>%
+      dplyr::slice_head(n = N_EXAMPLES_PER_CLUSTER - nrow(picked))
+    picked <- rbind(picked, more)
+  }
+
+  if (nrow(picked) > 0) {
+    example_list[[as.character(cl)]] <- picked %>%
+      dplyr::select(gene, UMAP1, UMAP2, cluster)
+    cat(sprintf("  Cl%d: %s\n", cl, paste(picked$gene, collapse=", ")))
+  }
+}
+examples_df <- do.call(rbind, example_list)
+
 pal10 <- scales::hue_pal()(K_CLUSTERS)
 names(pal10) <- as.character(1:K_CLUSTERS)
 umap_df$cluster_f <- factor(umap_df$cluster)
@@ -460,6 +521,16 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
   geom_segment(data=term_annot,
     aes(x=x_anchor, y=y_anchor, xend=seed_x, yend=seed_y),
     color="grey55", linewidth=0.3, alpha=0.55,
+    inherit.aes=FALSE) +
+  # Example gene names per cluster — small text repelled near the centroid
+  geom_text_repel(data=examples_df,
+    aes(x=UMAP1, y=UMAP2, label=gene),
+    size=2.5, color="grey25", fontface="bold",
+    bg.color="white", bg.r=0.12,
+    force=3, force_pull=0.5,
+    box.padding=0.15, point.padding=0.08,
+    min.segment.length=Inf,  # no segment for gene names
+    max.overlaps=Inf, seed=42,
     inherit.aes=FALSE) +
   # Cluster number at centroid
   geom_label(data=centroids,
@@ -490,7 +561,7 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
   theme_void(base_size=14) +
   theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
     plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
-    plot.margin=margin(30, 90, 30, 90, "pt"))
+    plot.margin=margin(50, 130, 50, 130, "pt"))
 
 ggsave("Fig_gene_umap_agent_k10.pdf", p_main, width=20, height=16)
 cat("Saved: Fig_gene_umap_agent_k10.pdf\n")
