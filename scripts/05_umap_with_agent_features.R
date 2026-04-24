@@ -394,19 +394,20 @@ centroids$label <- cluster_labels[centroids$cluster]
 # =============================================================================
 cat("\nGenerating figures...\n")
 
-# Term annotations — ONE BOX PER CLUSTER with terms stacked newline-separated
-# Labels are pushed RADIALLY outward past the point cloud, then ggrepel only
-# repels boxes from each other (not from data points) to keep them outside.
+# Term annotations — ONE BOX PER CLUSTER, placed on an ELLIPSE that tightly
+# wraps the point cloud (a = x-axis semi-width, b = y-axis semi-height).
+# Each label sits on the ellipse in the direction from plot center to centroid.
 
-# Compute plot center and max radial distance from center for clusters
+# Plot center and ellipse semi-axes sized to the point cloud
 plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
 plot_cy <- mean(range(umap_df$UMAP2[umap_df$cluster>0]))
-max_radius <- max(sqrt(
-  (umap_df$UMAP1[umap_df$cluster>0] - plot_cx)^2 +
-  (umap_df$UMAP2[umap_df$cluster>0] - plot_cy)^2))
+a_axis <- (max(umap_df$UMAP1[umap_df$cluster>0]) -
+           min(umap_df$UMAP1[umap_df$cluster>0])) / 2
+b_axis <- (max(umap_df$UMAP2[umap_df$cluster>0]) -
+           min(umap_df$UMAP2[umap_df$cluster>0])) / 2
 
-# Labels placed on a ring at radius = max_radius * LABEL_RING_FACTOR
-LABEL_RING_FACTOR <- 1.35
+# Ellipse expansion beyond the data (1.00 = exact bounding ellipse)
+ELLIPSE_EXPAND <- 1.08
 
 term_annot_list <- list()
 for (cl in 1:K_CLUSTERS) {
@@ -426,19 +427,19 @@ for (cl in 1:K_CLUSTERS) {
     label_txt <- "Mixed / Other"
   }
 
-  # Seed label position: push radially outward from plot center past all points
+  # Direction from plot center to centroid
   dx <- ct$x - plot_cx
   dy <- ct$y - plot_cy
-  d <- sqrt(dx^2 + dy^2)
-  if (d < 0.01) { dx <- 1; dy <- 0; d <- 1 }
-  # Scale direction unit vector out to the label ring radius
-  seed_x <- plot_cx + (dx / d) * max_radius * LABEL_RING_FACTOR
-  seed_y <- plot_cy + (dy / d) * max_radius * LABEL_RING_FACTOR
+  if (abs(dx) < 1e-6 && abs(dy) < 1e-6) { dx <- 1; dy <- 0 }
+  # Intersect this ray with the ellipse (t*dx/a)^2 + (t*dy/b)^2 = 1
+  t <- 1 / sqrt((dx / a_axis)^2 + (dy / b_axis)^2)
+  seed_x <- plot_cx + t * dx * ELLIPSE_EXPAND
+  seed_y <- plot_cy + t * dy * ELLIPSE_EXPAND
 
   term_annot_list[[as.character(cl)]] <- data.frame(
     cluster = cl, label = label_txt,
-    x_anchor = ct$x, y_anchor = ct$y,     # where segment points to (centroid)
-    seed_x = seed_x, seed_y = seed_y,     # seed for ggrepel (radial ring)
+    x_anchor = ct$x, y_anchor = ct$y,     # segment anchor at centroid
+    seed_x = seed_x, seed_y = seed_y,     # seed position on ellipse
     stringsAsFactors = FALSE)
 }
 term_annot <- do.call(rbind, term_annot_list)
@@ -489,7 +490,7 @@ p_main <- ggplot(umap_df %>% dplyr::filter(cluster>0),
   theme_void(base_size=14) +
   theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
     plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
-    plot.margin=margin(60, 150, 60, 150, "pt"))
+    plot.margin=margin(30, 90, 30, 90, "pt"))
 
 ggsave("Fig_gene_umap_agent_k10.pdf", p_main, width=20, height=16)
 cat("Saved: Fig_gene_umap_agent_k10.pdf\n")
