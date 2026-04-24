@@ -403,7 +403,12 @@ cat("\nGenerating figures...\n")
 # Tunable parameters
 HULL_CONCAVITY <- 2.0         # concaveman param (higher = more convex; 1-3 typical)
 HULL_DILATE <- 1.15           # scale factor outward from centroid of hull
-N_EXAMPLES_PER_CLUSTER <- 3
+N_EXAMPLES_PER_CLUSTER <- 3   # auto-picked genes per cluster (nearest centroid)
+
+# Genes to ALWAYS label (highlighted — drawn bolder, always included regardless
+# of distance to centroid). These supplement auto-picked examples.
+HIGHLIGHT_GENES <- c("St8sia5", "Gabra6", "Ablim1", "Unc5b", "Wnt7a",
+                      "Phyhip", "Hr", "Cbx7")
 
 # Plot center — midpoint of data extents
 plot_cx <- mean(range(umap_df$UMAP1[umap_df$cluster>0]))
@@ -538,6 +543,27 @@ for (cl in 1:K_CLUSTERS) {
 }
 examples_df <- do.call(rbind, example_list)
 
+# =============================================================================
+# HIGHLIGHT GENES — explicit list that must be labeled regardless of position
+# =============================================================================
+highlight_df <- umap_df %>%
+  dplyr::filter(cluster > 0, gene %in% HIGHLIGHT_GENES) %>%
+  dplyr::select(gene, UMAP1, UMAP2, cluster)
+
+missing_highlight <- setdiff(HIGHLIGHT_GENES, highlight_df$gene)
+if (length(missing_highlight) > 0) {
+  cat("\nWARNING — requested highlight genes not found in UMAP:\n  ",
+    paste(missing_highlight, collapse=", "), "\n")
+}
+cat("\nHighlight genes placed:\n")
+for (i in 1:nrow(highlight_df)) {
+  cat(sprintf("  %s -> cluster %d\n", highlight_df$gene[i], highlight_df$cluster[i]))
+}
+
+# Remove any highlighted genes that the auto-picker also chose, to avoid
+# double-labeling (the highlighted version takes precedence with bolder styling)
+examples_df <- examples_df %>% dplyr::filter(!gene %in% highlight_df$gene)
+
 pal10 <- scales::hue_pal()(K_CLUSTERS)
 names(pal10) <- as.character(1:K_CLUSTERS)
 umap_df$cluster_f <- factor(umap_df$cluster)
@@ -632,26 +658,43 @@ make_umap_fig <- function(label_style = "radial") {
         colour="grey40", linewidth=0.3, alpha=0.22,
         expand=unit(3, "mm"), radius=unit(3, "mm"),
         concavity=2,
-        label.fontsize=c(14, 11),
+        label.fontsize=c(18, 14),                # larger hull labels
         label.fontface=c("bold", "italic"),
-        label.margin=margin(2, 3, 2, 3, "mm"),
+        label.margin=margin(3, 4, 3, 4, "mm"),
         label.colour="grey10",
         con.colour="grey40", con.size=0.4,
         con.cap=unit(1.5, "mm")) +
       # POINTS: colored by protein class
-      geom_point(aes(color=protein_class), size=1.8, alpha=0.85) +
-      # Example gene names per cluster
+      geom_point(aes(color=protein_class), size=2.2, alpha=0.85) +
+      # HIGHLIGHTED genes: black-outlined marker so they stand out from the cloud
+      {if (nrow(highlight_df) > 0)
+        geom_point(data=highlight_df, aes(x=UMAP1, y=UMAP2),
+          size=4, shape=21, fill=NA, color="black", stroke=1.2,
+          inherit.aes=FALSE)} +
+      # Auto-picked gene names per cluster
       geom_text_repel(data=examples_df,
         aes(x=UMAP1, y=UMAP2, label=gene),
-        size=3.8, color="grey10", fontface="bold",
+        size=5.0, color="grey10", fontface="bold",
         bg.color="white", bg.r=0.15,
         force=3, force_pull=0.5,
-        box.padding=0.2, point.padding=0.1,
+        box.padding=0.25, point.padding=0.12,
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         inherit.aes=FALSE) +
+      # HIGHLIGHTED gene names: bolder label box with thin connector to point
+      {if (nrow(highlight_df) > 0)
+        geom_label_repel(data=highlight_df,
+          aes(x=UMAP1, y=UMAP2, label=gene),
+          size=5.5, color="black", fontface="bold.italic",
+          fill="#FFF7BC", label.size=0.4,
+          label.padding=unit(0.3, "lines"),
+          force=8, force_pull=0.3,
+          box.padding=0.6, point.padding=0.2,
+          min.segment.length=0, segment.color="black", segment.size=0.5,
+          max.overlaps=Inf, seed=42,
+          inherit.aes=FALSE)} +
       scale_fill_manual(values=pal10, guide="none") +
       scale_color_manual(values=pc_cols, name="Protein class") +
-      guides(color = guide_legend(override.aes = list(size = 4, alpha = 1),
+      guides(color = guide_legend(override.aes = list(size = 5, alpha = 1),
         ncol = 1))
 
   } else {
@@ -678,6 +721,22 @@ make_umap_fig <- function(label_style = "radial") {
         box.padding=0.2, point.padding=0.1,
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         inherit.aes=FALSE) +
+      # HIGHLIGHTED genes: black-outlined marker + label box
+      {if (nrow(highlight_df) > 0)
+        geom_point(data=highlight_df, aes(x=UMAP1, y=UMAP2),
+          size=4, shape=21, fill=NA, color="black", stroke=1.2,
+          inherit.aes=FALSE)} +
+      {if (nrow(highlight_df) > 0)
+        geom_label_repel(data=highlight_df,
+          aes(x=UMAP1, y=UMAP2, label=gene),
+          size=4.8, color="black", fontface="bold.italic",
+          fill="#FFF7BC", label.size=0.4,
+          label.padding=unit(0.3, "lines"),
+          force=8, force_pull=0.3,
+          box.padding=0.6, point.padding=0.2,
+          min.segment.length=0, segment.color="black", segment.size=0.5,
+          max.overlaps=Inf, seed=42,
+          inherit.aes=FALSE)} +
       geom_label(data=centroids,
         aes(x=x, y=y, label=paste0(cluster," (n=",n,")")),
         size=6, fontface="bold", fill=alpha("white",0.85),
@@ -703,13 +762,14 @@ make_umap_fig <- function(label_style = "radial") {
         subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
           " features | k=", K_CLUSTERS, " | sil=", sil))
      else labs(title=NULL, subtitle=NULL)} +
-    theme_void(base_size=14) +
-    theme(plot.title=element_text(size=16, face="bold", hjust=0.5),
-      plot.subtitle=element_text(size=11, face="italic", hjust=0.5),
+    theme_void(base_size=16) +
+    theme(plot.title=element_text(size=20, face="bold", hjust=0.5),
+      plot.subtitle=element_text(size=14, face="italic", hjust=0.5),
       plot.margin=margin(50, 130, 50, 130, "pt"),
       legend.position="right",
-      legend.text=element_text(size=11),
-      legend.title=element_text(size=12, face="bold"))
+      legend.text=element_text(size=14),
+      legend.title=element_text(size=15, face="bold"),
+      legend.key.size=unit(0.8, "cm"))
 }
 
 # Generate both versions
