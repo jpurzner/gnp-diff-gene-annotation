@@ -660,7 +660,9 @@ make_umap_fig <- function(label_style = "radial") {
         geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
           size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
       # HULL: outlined per cluster, filled by cluster ID
-      # label.buffer kept small so labels hug the hulls
+      # label.buffer kept small so labels hug the hulls.
+      # label.width set explicitly wider so multi-term descriptions don't
+      # wrap onto many short lines.
       ggforce::geom_mark_hull(
         aes(fill=cluster_f, group=cluster,
             label=cluster_id, description=label),
@@ -671,10 +673,12 @@ make_umap_fig <- function(label_style = "radial") {
         label.fontface=c("bold", "italic"),
         label.margin=margin(4, 5, 4, 5, "mm"),
         label.colour="grey10",
-        label.buffer=unit(8, "mm"),       # SMALL = labels stay close to hulls
+        label.buffer=unit(8, "mm"),
+        label.width=unit(110, "mm"),       # WIDER label callouts
+        label.minwidth=unit(80, "mm"),     # never wrap narrower than this
         con.colour="grey40", con.size=0.7,
         con.cap=unit(2, "mm"),
-        con.type="elbow") +               # elbow connectors look cleaner
+        con.type="elbow") +
       # POINTS: colored by protein class
       geom_point(aes(color=protein_class), size=3.0, alpha=0.85) +
       # Gene names
