@@ -647,29 +647,40 @@ make_umap_fig <- function(label_style = "radial") {
         by="cluster") %>%
       dplyr::mutate(cluster_f = factor(cluster))
 
+    # Compute extra horizontal padding so geom_mark_hull can spread labels
+    # to BOTH the left and right of the point cloud rather than stacking
+    # them vertically along one edge.
+    x_range <- range(umap_plot_df$UMAP1)
+    y_range <- range(umap_plot_df$UMAP2)
+    x_pad <- 0.55 * diff(x_range)   # generous side padding
+    y_pad <- 0.10 * diff(y_range)   # modest vertical padding
+
     p <- ggplot(umap_plot_df, aes(x=UMAP1, y=UMAP2)) +
       {if(any(umap_df$cluster==0))
         geom_point(data=umap_df %>% filter(cluster==0), color="grey60",
           size=1.0, alpha=0.3, inherit.aes=FALSE, aes(x=UMAP1,y=UMAP2))} +
       # HULL: outlined per cluster, filled by cluster ID
+      # label.buffer kept small so labels hug the hulls
       ggforce::geom_mark_hull(
         aes(fill=cluster_f, group=cluster,
             label=cluster_id, description=label),
         colour="grey40", linewidth=0.5, alpha=0.22,
         expand=unit(4, "mm"), radius=unit(4, "mm"),
         concavity=2,
-        label.fontsize=c(28, 22),                # publication-panel sized
+        label.fontsize=c(28, 22),
         label.fontface=c("bold", "italic"),
         label.margin=margin(4, 5, 4, 5, "mm"),
         label.colour="grey10",
+        label.buffer=unit(8, "mm"),       # SMALL = labels stay close to hulls
         con.colour="grey40", con.size=0.7,
-        con.cap=unit(2, "mm")) +
+        con.cap=unit(2, "mm"),
+        con.type="elbow") +               # elbow connectors look cleaner
       # POINTS: colored by protein class
       geom_point(aes(color=protein_class), size=3.0, alpha=0.85) +
-      # Gene names: auto-picked + highlighted rendered in the same style
+      # Gene names
       geom_text_repel(data=rbind(examples_df, highlight_df),
         aes(x=UMAP1, y=UMAP2, label=gene),
-        size=8, color="grey10", fontface="bold",     # larger gene names
+        size=8, color="grey10", fontface="bold",
         bg.color="white", bg.r=0.15,
         force=3, force_pull=0.5,
         box.padding=0.3, point.padding=0.15,
@@ -677,7 +688,14 @@ make_umap_fig <- function(label_style = "radial") {
         inherit.aes=FALSE) +
       scale_fill_manual(values=pal10, guide="none") +
       scale_color_manual(values=pc_cols, name="Protein class") +
-      guides(color = guide_legend(override.aes = list(size = 7, alpha = 1),
+      # Force horizontal padding so labels go to the LEFT and RIGHT, not
+      # stacked top/bottom against a narrow plot. Vertical padding stays
+      # small so labels naturally end up on the sides.
+      coord_cartesian(
+        xlim = c(x_range[1] - x_pad, x_range[2] + x_pad),
+        ylim = c(y_range[1] - y_pad, y_range[2] + y_pad),
+        clip = "off") +
+      guides(color = guide_legend(override.aes = list(size = 8, alpha = 1),
         ncol = 1))
 
   } else {
@@ -719,24 +737,26 @@ make_umap_fig <- function(label_style = "radial") {
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         xlim=c(-Inf, Inf), ylim=c(-Inf, Inf),
         inherit.aes=FALSE) +
-      scale_color_manual(values=pal10, guide="none")
+      scale_color_manual(values=pal10, guide="none") +
+      coord_cartesian(clip="off")
   }
 
   p +
-    coord_cartesian(clip="off") +
+    # Don't override coord here — branches may set their own xlim/ylim
     {if (SHOW_TITLE)
       labs(title="Functional landscape of GNP differentiation genes",
         subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
           " features | k=", K_CLUSTERS, " | sil=", sil))
      else labs(title=NULL, subtitle=NULL)} +
-    theme_void(base_size=22) +
-    theme(plot.title=element_text(size=28, face="bold", hjust=0.5),
-      plot.subtitle=element_text(size=20, face="italic", hjust=0.5),
-      plot.margin=margin(100, 220, 100, 220, "pt"),
+    theme_void(base_size=24) +
+    theme(plot.title=element_text(size=30, face="bold", hjust=0.5),
+      plot.subtitle=element_text(size=22, face="italic", hjust=0.5),
+      plot.margin=margin(60, 60, 60, 60, "pt"),
       legend.position="right",
-      legend.text=element_text(size=20),
-      legend.title=element_text(size=22, face="bold"),
-      legend.key.size=unit(1.2, "cm"))
+      legend.text=element_text(size=26),       # bigger legend text
+      legend.title=element_text(size=28, face="bold"),
+      legend.key.size=unit(1.6, "cm"),
+      legend.key.spacing.y=unit(0.3, "cm"))
 }
 
 # Generate both versions
@@ -745,7 +765,7 @@ ggsave("Fig_gene_umap_agent_k10.pdf", p_radial, width=26, height=20)
 cat("Saved: Fig_gene_umap_agent_k10.pdf (radial)\n")
 
 p_hull <- make_umap_fig("mark_hull")
-ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=32, height=24)
+ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=42, height=22)
 cat("Saved: Fig_gene_umap_agent_k10_markhull.pdf (geom_mark_hull)\n")
 
 # H3K27me3 overlay
