@@ -674,8 +674,8 @@ make_umap_fig <- function(label_style = "radial") {
         label.margin=margin(4, 5, 4, 5, "mm"),
         label.colour="grey10",
         label.buffer=unit(8, "mm"),
-        label.width=unit(110, "mm"),       # WIDER label callouts
-        label.minwidth=unit(80, "mm"),     # never wrap narrower than this
+        label.width=unit(140, "mm"),       # WIDER label callouts
+        label.minwidth=unit(110, "mm"),    # never wrap narrower than this
         con.colour="grey40", con.size=0.7,
         con.cap=unit(2, "mm"),
         con.type="elbow") +
