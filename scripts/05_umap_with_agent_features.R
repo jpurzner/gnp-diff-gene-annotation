@@ -655,29 +655,29 @@ make_umap_fig <- function(label_style = "radial") {
       ggforce::geom_mark_hull(
         aes(fill=cluster_f, group=cluster,
             label=cluster_id, description=label),
-        colour="grey40", linewidth=0.3, alpha=0.22,
-        expand=unit(3, "mm"), radius=unit(3, "mm"),
+        colour="grey40", linewidth=0.5, alpha=0.22,
+        expand=unit(4, "mm"), radius=unit(4, "mm"),
         concavity=2,
-        label.fontsize=c(18, 14),                # larger hull labels
+        label.fontsize=c(28, 22),                # publication-panel sized
         label.fontface=c("bold", "italic"),
-        label.margin=margin(3, 4, 3, 4, "mm"),
+        label.margin=margin(4, 5, 4, 5, "mm"),
         label.colour="grey10",
-        con.colour="grey40", con.size=0.4,
-        con.cap=unit(1.5, "mm")) +
+        con.colour="grey40", con.size=0.7,
+        con.cap=unit(2, "mm")) +
       # POINTS: colored by protein class
-      geom_point(aes(color=protein_class), size=2.2, alpha=0.85) +
+      geom_point(aes(color=protein_class), size=3.0, alpha=0.85) +
       # Gene names: auto-picked + highlighted rendered in the same style
       geom_text_repel(data=rbind(examples_df, highlight_df),
         aes(x=UMAP1, y=UMAP2, label=gene),
-        size=5.0, color="grey10", fontface="bold",
+        size=8, color="grey10", fontface="bold",     # larger gene names
         bg.color="white", bg.r=0.15,
         force=3, force_pull=0.5,
-        box.padding=0.25, point.padding=0.12,
+        box.padding=0.3, point.padding=0.15,
         min.segment.length=Inf, max.overlaps=Inf, seed=42,
         inherit.aes=FALSE) +
       scale_fill_manual(values=pal10, guide="none") +
       scale_color_manual(values=pc_cols, name="Protein class") +
-      guides(color = guide_legend(override.aes = list(size = 5, alpha = 1),
+      guides(color = guide_legend(override.aes = list(size = 7, alpha = 1),
         ncol = 1))
 
   } else {
@@ -729,14 +729,14 @@ make_umap_fig <- function(label_style = "radial") {
         subtitle=paste0(sum(umap_df$cluster>0), " genes | ", ncol(mat_combined),
           " features | k=", K_CLUSTERS, " | sil=", sil))
      else labs(title=NULL, subtitle=NULL)} +
-    theme_void(base_size=16) +
-    theme(plot.title=element_text(size=20, face="bold", hjust=0.5),
-      plot.subtitle=element_text(size=14, face="italic", hjust=0.5),
-      plot.margin=margin(80, 180, 80, 180, "pt"),
+    theme_void(base_size=22) +
+    theme(plot.title=element_text(size=28, face="bold", hjust=0.5),
+      plot.subtitle=element_text(size=20, face="italic", hjust=0.5),
+      plot.margin=margin(100, 220, 100, 220, "pt"),
       legend.position="right",
-      legend.text=element_text(size=14),
-      legend.title=element_text(size=15, face="bold"),
-      legend.key.size=unit(0.8, "cm"))
+      legend.text=element_text(size=20),
+      legend.title=element_text(size=22, face="bold"),
+      legend.key.size=unit(1.2, "cm"))
 }
 
 # Generate both versions
@@ -745,7 +745,7 @@ ggsave("Fig_gene_umap_agent_k10.pdf", p_radial, width=26, height=20)
 cat("Saved: Fig_gene_umap_agent_k10.pdf (radial)\n")
 
 p_hull <- make_umap_fig("mark_hull")
-ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=28, height=20)
+ggsave("Fig_gene_umap_agent_k10_markhull.pdf", p_hull, width=32, height=24)
 cat("Saved: Fig_gene_umap_agent_k10_markhull.pdf (geom_mark_hull)\n")
 
 # H3K27me3 overlay
